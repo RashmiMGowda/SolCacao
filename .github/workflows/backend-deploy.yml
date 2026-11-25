@@ -1,0 +1,85 @@
+name: Backend deployment
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'server/**'
+      - 'db/**'
+      - 'deploy/**'
+      - '.github/workflows/backend-deploy.yml'
+  pull_request:
+    branches: [main, development]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && github.ref || 'solcacao-backend-production' }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: ci-test-password
+          MYSQL_ROOT_HOST: '%'
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - run: npm --prefix server ci
+      - run: npm --prefix server test
+      - run: npm --prefix server run test:mysql
+        env:
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_USER: root
+          DB_PASSWORD: ci-test-password
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - name: Release tested commit over SSH
+        env:
+          SSH_HOST: ${{ secrets.LIGHTSAIL_HOST }}
+          SSH_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.LIGHTSAIL_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          : "${SSH_HOST:?Missing LIGHTSAIL_HOST}"
+          : "${SSH_KEY:?Missing LIGHTSAIL_SSH_KEY}"
+          : "${SSH_KNOWN_HOSTS:?Missing LIGHTSAIL_KNOWN_HOSTS}"
+          SSH_HOST="${SSH_HOST#"${SSH_HOST%%[![:space:]]*}"}"
+          SSH_HOST="${SSH_HOST%"${SSH_HOST##*[![:space:]]}"}"
+          if [[ ! "$SSH_HOST" =~ ^[a-zA-Z0-9.-]+$ ]]; then
+            echo "::error::LIGHTSAIL_HOST must contain only the server IP or hostname, without a URL, username, or port."
+            exit 1
+          fi
+          umask 077
+          scratch=$(mktemp -d)
+          trap 'rm -rf -- "$scratch"' EXIT
+          printf '%s\n' "$SSH_KEY" | tr -d '\r' > "$scratch/key"
+          printf '%s\n' "$SSH_KNOWN_HOSTS" | tr -d '\r' > "$scratch/known_hosts"
+          opts=(-i "$scratch/key" -o BatchMode=yes -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$scratch/known_hosts")
+          target="solcacao@$SSH_HOST"
+          remote="/opt/solcacao/incoming/$GITHUB_SHA-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.tar.gz"
+          git archive --format=tar.gz -o "$scratch/release.tar.gz" "$GITHUB_SHA" \
+            server/src server/package.json server/package-lock.json db
+          scp "${opts[@]}" "$scratch/release.tar.gz" "$target:$remote"
+          ssh "${opts[@]}" "$target" bash -s -- "$GITHUB_SHA" "$remote" < deploy/release.sh

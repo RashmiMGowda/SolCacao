@@ -1,0 +1,2918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolCacao — Artisan Chocolate</title>
+  <style>
+    :root {
+      --cream: #fbf7f0;
+      --cream2: #f2e8dc;
+      --paper: #fffdf8;
+      --cocoa: #2f1b12;
+      --cocoa2: #5a3929;
+      --gold: #b8883b;
+      --gold2: #d5b36b;
+      --sage: #7b8b74;
+      --line: #e3d6c7;
+      --muted: #857265;
+      --danger: #a44c42;
+      --success: #4f7655;
+      --shadow: 0 8px 30px rgba(52, 33, 23, .09);
+      --r: 16px;
+      --rs: 10px;
+      --max: 1440px;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family: var(--font);
+      color: var(--cocoa);
+      background: linear-gradient(180deg, #fbf7f0 0%, #f8f1e8 100%);
+      line-height: 1.5
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit
+    }
+
+    button {
+      cursor: pointer
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 48px));
+      margin: auto
+    }
+
+    .screen {
+      min-height: 100vh
+    }
+
+    /* MockFlow-like shell */
+    .proto-note {
+      background: #fff8df;
+      border-bottom: 1px dashed #d5bc71;
+      color: #69531d;
+      font-size: 12px;
+      text-align: center;
+      padding: 7px 16px;
+      letter-spacing: .02em
+    }
+
+    .hdr {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(251, 247, 240, .97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .hdr-inner {
+      width: min(var(--max), calc(100% - 48px));
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding: 16px 0
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 850
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--cocoa);
+      color: var(--gold2);
+      font-family: Georgia, serif
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 650;
+      color: var(--cocoa2)
+    }
+
+    .nav a:hover {
+      color: var(--gold)
+    }
+
+    .spacer {
+      flex: 1
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .lang {
+      display: flex;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      padding: 3px;
+      border-radius: 999px
+    }
+
+    .lang button {
+      border: 0;
+      background: transparent;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-weight: 800;
+      color: var(--muted)
+    }
+
+    .lang .on {
+      background: var(--cocoa);
+      color: var(--gold2)
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 10px;
+      padding: 8px 10px
+    }
+
+    .mobile-nav {
+      display: none;
+      border-top: 1px solid var(--line);
+      background: var(--paper);
+      padding: 12px 24px
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee2d2;
+      font-weight: 700
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px
+    }
+
+    .btn-sm {
+      padding: 8px 13px;
+      font-size: 13px
+    }
+
+    .primary {
+      background: var(--cocoa);
+      color: var(--gold2)
+    }
+
+    .primary:hover {
+      background: var(--cocoa2)
+    }
+
+    .gold {
+      background: var(--gold);
+      color: white
+    }
+
+    .outline {
+      background: transparent;
+      border: 1.5px solid var(--cocoa);
+      color: var(--cocoa)
+    }
+
+    .soft {
+      background: var(--cream2);
+      color: var(--cocoa)
+    }
+
+    .block {
+      width: 100%
+    }
+
+    .link-btn {
+      border: 0;
+      background: none;
+      color: var(--gold);
+      font-weight: 800;
+      padding: 0
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      background: var(--cream2);
+      color: var(--cocoa2)
+    }
+
+    /* hero / content */
+    .hero {
+      padding: 64px 0 46px
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 52px;
+      align-items: center
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 56px;
+      line-height: 1.04;
+      margin: 10px 0 16px
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--cocoa2);
+      max-width: 600px
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 26px
+    }
+
+    .hero-art {
+      height: 410px;
+      border-radius: 24px;
+      background: #3a2117;
+      box-shadow: 0 18px 50px rgba(47, 27, 18, .18);
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.9) contrast(1.03)
+    }
+
+    .hero-art:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(47, 27, 18, .05), rgba(47, 27, 18, .34))
+    }
+
+    .hero-note {
+      position: absolute;
+      z-index: 2;
+      bottom: 22px;
+      left: 22px;
+      background: rgba(255, 253, 248, .94);
+      padding: 12px 15px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--cocoa);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .12)
+    }
+
+    .section {
+      padding: 44px 0
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 24px
+    }
+
+    .section-head h2 {
+      font-family: Georgia, serif;
+      font-size: 33px;
+      margin: 0
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .grid4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: 0 2px 0 rgba(52, 33, 23, .02)
+    }
+
+    .product {
+      transition: .2s
+    }
+
+    .product:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow)
+    }
+
+    .product-img {
+      height: 210px;
+      background: #efe4d7;
+      position: relative;
+      overflow: hidden
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease
+    }
+
+    .product:hover .product-img img {
+      transform: scale(1.035)
+    }
+
+    .tag {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      background: var(--gold);
+      color: white;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 11px;
+      font-weight: 900
+    }
+
+    .card-body {
+      padding: 17px
+    }
+
+    .card-body h3 {
+      margin: 0 0 4px;
+      font-size: 16px
+    }
+
+    .price {
+      font-size: 19px;
+      font-weight: 900;
+      margin-top: 10px
+    }
+
+    .b2b-band {
+      background: linear-gradient(135deg, #2f1b12, #4b2d20);
+      color: var(--cream);
+      border-radius: 22px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 35px;
+      align-items: center
+    }
+
+    .b2b-band h2 {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      margin: 0 0 10px
+    }
+
+    .b2b-band p {
+      color: #eadccb
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .feature-list div {
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 12px;
+      padding: 13px;
+      color: var(--gold2);
+      font-weight: 750;
+      font-size: 13px
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      margin-top: 50px;
+      padding: 35px 0 50px
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px
+    }
+
+    .footer h4 {
+      margin: 0 0 9px
+    }
+
+    .footer p,
+    .footer li {
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .footer li {
+      margin: 7px 0
+    }
+
+    .packaging-showcase {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 12px 34px rgba(47, 27, 18, .07)
+    }
+
+    .packaging-showcase img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block
+    }
+
+    .packaging-copy h2 {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      margin: 7px 0 10px
+    }
+
+    .packaging-copy ul {
+      padding-left: 18px;
+      color: var(--cocoa2)
+    }
+
+    .service-media {
+      height: 160px;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 14px;
+      background: #eee1d4
+    }
+
+    .service-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    @media(max-width:760px) {
+      .packaging-showcase {
+        grid-template-columns: 1fr
+      }
+
+      .packaging-showcase img {
+        height: 240px
+      }
+    }
+
+    /* Catalog */
+    .page-head {
+      padding: 34px 0 10px
+    }
+
+    .page-head h1 {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      margin: 0 0 5px
+    }
+
+    .catalog {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 25px;
+      padding: 20px 0 50px
+    }
+
+    .filters {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 20px;
+      height: max-content
+    }
+
+    .filter {
+      margin: 0 0 20px
+    }
+
+    .filter strong {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 13px
+    }
+
+    .chips {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: transparent;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      color: var(--cocoa2)
+    }
+
+    .chip.on {
+      background: var(--cocoa);
+      color: var(--gold2);
+      border-color: var(--cocoa)
+    }
+
+    .search {
+      display: flex;
+      gap: 10px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 11px 13px;
+      margin-bottom: 18px
+    }
+
+    .search input {
+      border: 0;
+      outline: 0;
+      background: transparent;
+      width: 100%
+    }
+
+    .catalog-tools {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px
+    }
+
+    /* Detail */
+    .detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+      padding: 34px 0
+    }
+
+    .detail-img {
+      min-height: 470px;
+      background: #efe4d7;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow)
+    }
+
+    .detail-img img {
+      width: 100%;
+      height: 100%;
+      min-height: 470px;
+      object-fit: cover;
+      display: block
+    }
+
+    .detail h1 {
+      font-family: Georgia, serif;
+      font-size: 40px;
+      margin: 0
+    }
+
+    .meta-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 14px;
+      border-radius: 12px;
+      margin: 18px 0
+    }
+
+    .meta-box div {
+      font-size: 13px
+    }
+
+    .qty {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      width: max-content;
+      border-radius: 9px;
+      overflow: hidden;
+      background: var(--paper)
+    }
+
+    .qty button {
+      width: 40px;
+      height: 40px;
+      border: 0;
+      background: transparent;
+      font-size: 19px
+    }
+
+    .qty span {
+      width: 44px;
+      text-align: center;
+      font-weight: 900
+    }
+
+    .detail-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      margin-top: 28px
+    }
+
+    .detail-buy-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .detail-actions .qty {
+      height: 48px
+    }
+
+    .detail-actions .qty button {
+      width: 48px;
+      height: 48px
+    }
+
+    .detail-actions .btn {
+      min-height: 48px
+    }
+
+    /* Cart / checkout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 24px;
+      padding: 26px 0 50px
+    }
+
+    .cart-list,
+    .summary,
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r)
+    }
+
+    .cart-list {
+      padding: 6px
+    }
+
+    .cart-row {
+      display: grid;
+      grid-template-columns: 72px 1fr auto auto;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .cart-info {
+      min-width: 0
+    }
+
+    .cart-line-total {
+      white-space: nowrap
+    }
+
+    .cart-row:last-child {
+      border-bottom: 0
+    }
+
+    .thumb {
+      width: 68px;
+      height: 68px;
+      border-radius: 10px;
+      background: #eadfd1;
+      overflow: hidden
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .summary {
+      padding: 23px;
+      height: max-content
+    }
+
+    .summary .btn {
+      width: 100%;
+      min-height: 48px;
+      margin-top: 16px
+    }
+
+    .summary .btn+.btn {
+      margin-top: 12px
+    }
+
+    .sum-line {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      color: var(--cocoa2)
+    }
+
+    .total {
+      border-top: 1px solid var(--line);
+      margin-top: 8px;
+      padding-top: 13px;
+      font-size: 20px;
+      font-weight: 900
+    }
+
+    .guest-banner {
+      background: #fff7df;
+      border: 1px solid #e3c979;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 16px;
+      font-size: 13px
+    }
+
+    /* Forms */
+    .form-shell {
+      padding: 42px 0 60px
+    }
+
+    .form-card {
+      max-width: 590px;
+      margin: auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: var(--shadow)
+    }
+
+    .form-card.wide {
+      max-width: 840px
+    }
+
+    .form-card h1 {
+      font-family: Georgia, serif;
+      text-align: center;
+      margin: 0 0 5px
+    }
+
+    .sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 22px
+    }
+
+    .field {
+      margin-bottom: 15px
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 850;
+      margin-bottom: 6px
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--cream);
+      border-radius: 9px;
+      padding: 11px 12px;
+      outline: 0
+    }
+
+    .field textarea {
+      min-height: 105px;
+      resize: vertical
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--gold)
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px
+    }
+
+    .account-types {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+      margin-bottom: 18px
+    }
+
+    .role-card {
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      background: var(--paper)
+    }
+
+    .role-card.on {
+      border-color: var(--gold);
+      background: #fff8e5
+    }
+
+    .role-card .big {
+      font-size: 28px
+    }
+
+    .role-card .t {
+      font-weight: 900
+    }
+
+    .role-card .d {
+      font-size: 12px;
+      color: var(--muted)
+    }
+
+    .auth-tabs {
+      display: flex;
+      background: var(--cream2);
+      padding: 4px;
+      border-radius: 10px;
+      margin-bottom: 20px
+    }
+
+    .auth-tabs button {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      padding: 9px;
+      border-radius: 8px;
+      font-weight: 850
+    }
+
+    .auth-tabs .on {
+      background: var(--paper);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, .07)
+    }
+
+    /* profile */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      gap: 24px;
+      padding: 28px 0 55px
+    }
+
+    .profile-side,
+    .profile-main {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 22px
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      background: var(--cocoa);
+      color: var(--gold2);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 12px
+    }
+
+    .side-links button {
+      width: 100%;
+      text-align: left;
+      border: 0;
+      background: transparent;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 750
+    }
+
+    .side-links button.on {
+      background: var(--cream2)
+    }
+
+    .address-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px;
+      margin-bottom: 18px
+    }
+
+    .address-summary .link-btn {
+      flex: 0 0 auto;
+      margin-left: auto
+    }
+
+    .address-editor {
+      padding: 18px;
+      margin-bottom: 18px
+    }
+
+    .address-summary[hidden],
+    .address-editor[hidden] {
+      display: none
+    }
+
+    .address-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end
+    }
+
+    .global-language-actions {
+      flex: 0 0 auto
+    }
+
+    .screen-language {
+      position: absolute;
+      top: 18px;
+      right: max(18px, calc((100% - var(--max)) / 2));
+      z-index: 10
+    }
+
+    /* B2B */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px
+    }
+
+    .service-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 24px
+    }
+
+    .service-card .big {
+      font-size: 36px
+    }
+
+    .service-card h3 {
+      margin: 8px 0
+    }
+
+    .gate {
+      max-width: 850px;
+      margin: 35px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center
+    }
+
+    .gate-visual {
+      min-height: 260px;
+      background: linear-gradient(145deg, #4a2b1c, #755038);
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: white;
+      text-align: center;
+      padding: 20px
+    }
+
+    .gate-visual .big {
+      font-size: 70px
+    }
+
+    .gate h1 {
+      font-family: Georgia, serif;
+      margin-top: 0
+    }
+
+    .wiz {
+      padding: 30px 0 55px
+    }
+
+    .wiz-progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px
+    }
+
+    .wstep {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--line);
+      background: var(--paper);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: var(--muted)
+    }
+
+    .wstep.on .dot {
+      background: var(--cocoa);
+      border-color: var(--cocoa);
+      color: var(--gold2)
+    }
+
+    .wstep.done .dot {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: white
+    }
+
+    .wlabel {
+      font-size: 12px;
+      font-weight: 800
+    }
+
+    .bar {
+      width: 55px;
+      height: 2px;
+      background: var(--line);
+      margin: 0 10px
+    }
+
+    .wiz-card {
+      max-width: 900px;
+      margin: auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 30px
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px
+    }
+
+    .choice {
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center
+    }
+
+    .choice.on {
+      border-color: var(--gold);
+      background: #fff8e5
+    }
+
+    .upload {
+      border: 2px dashed var(--line);
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 42px 20px;
+      text-align: center
+    }
+
+    .wiz-foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      margin-top: 22px
+    }
+
+    .review {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 10px
+    }
+
+    .review h4 {
+      margin: 0 0 7px;
+      color: var(--gold)
+    }
+
+    .review-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      padding: 4px 0
+    }
+
+    /* confirmations */
+    .confirm {
+      max-width: 680px;
+      margin: 55px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 46px;
+      text-align: center;
+      box-shadow: var(--shadow)
+    }
+
+    .check {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #e7f1e7;
+      color: var(--success);
+      display: grid;
+      place-items: center;
+      margin: 0 auto 15px;
+      font-size: 35px
+    }
+
+    .confirm h1 {
+      font-family: Georgia, serif
+    }
+
+    .status-box {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 14px;
+      margin: 20px 0;
+      text-align: left
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translate(-50%, 18px);
+      background: var(--cocoa);
+      color: var(--gold2);
+      border-radius: 999px;
+      padding: 12px 20px;
+      font-size: 13px;
+      font-weight: 850;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s;
+      z-index: 200
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0)
+    }
+
+    /* Responsive */
+    @media(max-width:1050px) {
+      .nav {
+        display: none
+      }
+
+      .mobile-menu-btn {
+        display: block
+      }
+
+      .grid4 {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .catalog-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .hero h1 {
+        font-size: 47px
+      }
+
+      .catalog {
+        grid-template-columns: 220px 1fr
+      }
+
+      .two-col {
+        grid-template-columns: 1fr 310px
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr
+      }
+    }
+
+    @media(max-width:760px) {
+
+      .wrap,
+      .hdr-inner {
+        width: min(100% - 28px, var(--max))
+      }
+
+      .hdr-inner {
+        gap: 10px
+      }
+
+      .actions .login-action,
+      .actions .auth-signout-auto,
+      .actions .cart-label {
+        display: none
+      }
+
+      [data-screen^="b2b-"] .actions .login-action,
+      [data-screen^="b2b-"] .actions .auth-signout-auto {
+        display: inline-flex
+      }
+
+      [data-screen="b2b-gate"] .actions>[data-nav="b2b-services"] {
+        display: none
+      }
+
+      .hero {
+        padding-top: 34px
+      }
+
+      .hero-grid,
+      .b2b-band,
+      .detail,
+      .two-col,
+      .profile-grid,
+      .gate {
+        grid-template-columns: 1fr
+      }
+
+      .hero h1 {
+        font-size: 39px
+      }
+
+      .hero-art {
+        height: 300px
+      }
+
+      .grid4,
+      .catalog-grid,
+      .services,
+      .form-grid {
+        grid-template-columns: 1fr
+      }
+
+      .catalog {
+        display: block
+      }
+
+      .filters {
+        margin-bottom: 16px
+      }
+
+      .catalog .filters {
+        display: none
+      }
+
+      .detail-img {
+        min-height: 330px;
+        font-size: 100px
+      }
+
+      .cart-row {
+        grid-template-columns: 60px 1fr auto
+      }
+
+      .cart-row .cart-price {
+        grid-column: 2
+      }
+
+      .thumb {
+        width: 56px;
+        height: 56px
+      }
+
+      .account-types,
+      .choice-grid {
+        grid-template-columns: 1fr
+      }
+
+      .wiz-progress {
+        overflow: auto;
+        justify-content: flex-start;
+        padding-bottom: 6px
+      }
+
+      .wlabel {
+        display: none
+      }
+
+      .bar {
+        width: 28px
+      }
+
+      .wiz-card {
+        padding: 20px
+      }
+
+      .b2b-band {
+        padding: 26px
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr
+      }
+
+      .profile-side {
+        display: flex;
+        align-items: center;
+        gap: 16px
+      }
+
+      .side-links {
+        display: none
+      }
+
+      .confirm {
+        margin: 28px 14px;
+        padding: 30px 20px
+      }
+
+      .mobile-nav.open {
+        display: block
+      }
+
+      .section-head {
+        align-items: start
+      }
+
+      .page-head h1 {
+        font-size: 32px
+      }
+
+      .form-card {
+        padding: 23px
+      }
+    }
+
+    /* ===== SolCacao visual refinement v2 ===== */
+    :root {
+      --cream: #f4efe8;
+      --cream2: #ebe0d4;
+      --paper: #fffaf4;
+      --cocoa: #2f1d16;
+      --cocoa2: #684739;
+      --gold: #b98b4c;
+      --gold2: #dfc28d;
+      --line: #d9cbbd;
+      --muted: #7d6d62;
+      --shadow: 0 12px 34px rgba(47, 29, 22, .09);
+    }
+
+    html,
+    body {
+      background: #f4efe8
+    }
+
+    .hdr {
+      background: rgba(255, 250, 244, .96);
+      box-shadow: 0 3px 18px rgba(47, 29, 22, .05)
+    }
+
+    .hdr-inner {
+      padding: 14px 0
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -.02em
+    }
+
+    .logo-mark {
+      font-size: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 13px;
+      background: linear-gradient(145deg, #3b2116, #1f120e);
+      position: relative;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08), 0 5px 12px rgba(47, 29, 22, .12)
+    }
+
+    .logo-mark:before,
+    .logo-mark:after {
+      content: "";
+      position: absolute;
+      width: 11px;
+      height: 23px;
+      border: 1.8px solid var(--gold2);
+      border-radius: 50%;
+      top: 8px
+    }
+
+    .logo-mark:before {
+      left: 10px;
+      transform: rotate(-23deg)
+    }
+
+    .logo-mark:after {
+      right: 9px;
+      transform: rotate(23deg)
+    }
+
+    .nav a {
+      position: relative;
+      padding: 8px 0
+    }
+
+    .nav a:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 1px;
+      height: 2px;
+      background: var(--gold);
+      transition: .2s
+    }
+
+    .nav a:hover:after {
+      right: 0
+    }
+
+    .btn {
+      border-radius: 9px
+    }
+
+    .primary {
+      background: #351f17;
+      color: #fff7e8
+    }
+
+    .gold {
+      background: #b98b4c;
+      color: #fff
+    }
+
+    .hero {
+      padding: 50px 0 34px
+    }
+
+    .hero h1 {
+      font-size: 54px;
+      max-width: 680px
+    }
+
+    .lead {
+      font-size: 17px
+    }
+
+    .hero-art {
+      background: #2d1a13;
+      border: 1px solid #d7c5b4
+    }
+
+    .home-search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      max-width: 650px;
+      background: #fffaf4;
+      border: 1px solid #d6c7b8;
+      border-radius: 12px;
+      padding: 8px 8px 8px 15px;
+      box-shadow: 0 5px 20px rgba(47, 29, 22, .05)
+    }
+
+    .home-search .icon {
+      font-size: 18px;
+      color: var(--gold)
+    }
+
+    .home-search input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--cocoa);
+      min-width: 0
+    }
+
+    .home-search button {
+      white-space: nowrap
+    }
+
+    .section {
+      padding: 38px 0
+    }
+
+    .card {
+      background: #fffaf4
+    }
+
+    .product-img {
+      background: #eadfd4
+    }
+
+    .product .card-body {
+      min-height: 128px
+    }
+
+    .quick-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 12px
+    }
+
+    .quick-add {
+      border: 1px solid var(--line);
+      background: #fffaf4;
+      color: var(--cocoa);
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 12px
+    }
+
+    .quick-add:hover {
+      background: var(--cocoa);
+      color: white
+    }
+
+    .packaging-showcase {
+      background: #efe5da;
+      border-color: #d6c5b3
+    }
+
+    .b2b-band {
+      background: linear-gradient(135deg, #2c1912 0%, #4d2f22 70%, #6b4937 100%)
+    }
+
+    /* Catalog refinement */
+    .page-head {
+      padding: 34px 0 6px
+    }
+
+    .page-head h1 {
+      font-size: 42px
+    }
+
+    .catalog {
+      grid-template-columns: 285px 1fr;
+      gap: 28px;
+      padding-top: 16px
+    }
+
+    .filters {
+      padding: 0;
+      background: #fffaf4;
+      border: 1px solid #d7c8ba;
+      box-shadow: 0 4px 18px rgba(47, 29, 22, .04);
+      overflow: hidden
+    }
+
+    .filter-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 17px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #f9f4ee
+    }
+
+    .filter-head strong {
+      font-size: 15px
+    }
+
+    .filter-clear {
+      border: 0;
+      background: none;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 12px
+    }
+
+    .filter-group {
+      padding: 17px 18px;
+      border-bottom: 1px solid #e7ddd3
+    }
+
+    .filter-group:last-child {
+      border-bottom: 0
+    }
+
+    .filter-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 11px
+    }
+
+    .check-list {
+      display: grid;
+      gap: 9px
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--cocoa2)
+    }
+
+    .check-row label {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      cursor: pointer
+    }
+
+    .check-row input {
+      accent-color: var(--cocoa);
+      width: 15px;
+      height: 15px
+    }
+
+    .count {
+      font-size: 11px;
+      color: #a08f82
+    }
+
+    .range-note {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 6px
+    }
+
+    .search {
+      background: #fffaf4;
+      border: 1px solid #d6c7b8;
+      padding: 12px 14px;
+      box-shadow: 0 3px 16px rgba(47, 29, 22, .035)
+    }
+
+    .catalog-tools {
+      background: #f9f4ee;
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-bottom: 16px
+    }
+
+    .catalog-tools select {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: var(--cocoa)
+    }
+
+    .mobile-filter-btn {
+      display: none;
+      border: 1px solid var(--line);
+      background: #fffaf4;
+      border-radius: 8px;
+      padding: 9px 11px;
+      font-weight: 800;
+      color: var(--cocoa)
+    }
+
+    /* B2B */
+    .b2b-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+      padding: 34px 0 20px
+    }
+
+    .b2b-hero-card {
+      background: #fffaf4;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 34px
+    }
+
+    .b2b-hero-card h1 {
+      font-family: Georgia, serif;
+      font-size: 44px;
+      line-height: 1.08;
+      margin: 8px 0 12px
+    }
+
+    .b2b-hero-media {
+      height: 420px;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow)
+    }
+
+    .b2b-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .services {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px
+    }
+
+    .service-card {
+      background: #fffaf4;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px
+    }
+
+    .service-card .big {
+      height: 160px;
+      display: grid;
+      place-items: center;
+      background: #eee2d5;
+      border-radius: 14px;
+      margin-bottom: 14px;
+      font-size: 46px
+    }
+
+    .service-card h3 {
+      margin: 5px 0
+    }
+
+    .b2b-cta-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      background: #e9ddcf;
+      border: 1px solid #d4c2af;
+      border-radius: 18px;
+      padding: 22px 24px;
+      margin: 26px 0 52px
+    }
+
+    .b2b-cta-strip h3 {
+      margin: 0 0 4px;
+      font-family: Georgia, serif;
+      font-size: 25px
+    }
+
+    /* announcement styling */
+    .proto-note {
+      background: #f8f0de;
+      color: #6a5637;
+      border-bottom: 1px dashed #cdb37a
+    }
+
+    @media(max-width:1050px) {
+      .catalog {
+        grid-template-columns: 245px 1fr
+      }
+
+      .b2b-hero {
+        grid-template-columns: 1fr
+      }
+
+      .b2b-hero-media {
+        height: 340px
+      }
+
+      .services {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:760px) {
+
+      html,
+      body {
+        background: #f5f0e9
+      }
+
+      .logo {
+        font-size: 22px
+      }
+
+      .logo-mark {
+        width: 36px;
+        height: 36px
+      }
+
+      .home-search {
+        max-width: none
+      }
+
+      .home-search button {
+        padding: 10px 13px
+      }
+
+      .hero h1 {
+        font-size: 38px
+      }
+
+      .hero-art {
+        height: 285px
+      }
+
+      .catalog {
+        display: block
+      }
+
+      .catalog .filters {
+        display: none;
+        margin-bottom: 14px
+      }
+
+      .catalog .filters.mobile-open {
+        display: block
+      }
+
+      .mobile-filter-btn {
+        display: inline-flex
+      }
+
+      .catalog-tools {
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap
+      }
+
+      .catalog-tools select {
+        margin-left: auto
+      }
+
+      .b2b-hero-card {
+        padding: 24px
+      }
+
+      .b2b-hero-card h1 {
+        font-size: 35px
+      }
+
+      .b2b-hero-media {
+        height: 260px
+      }
+
+      .services {
+        grid-template-columns: 1fr
+      }
+
+      .b2b-cta-strip {
+        align-items: flex-start;
+        flex-direction: column
+      }
+
+      .packaging-showcase {
+        background: #eee4da
+      }
+
+      .address-summary {
+        align-items: flex-start;
+        padding: 14px
+      }
+
+      .address-summary .link-btn {
+        line-height: 1.5;
+        padding: 2px 0
+      }
+
+      .address-actions {
+        justify-content: stretch
+      }
+
+      .address-actions .btn {
+        flex: 1
+      }
+
+      .screen-language {
+        top: 12px;
+        right: 14px
+      }
+
+      [data-screen="b2b-wizard"] .actions .pill {
+        display: none
+      }
+    }
+  </style>
+<style>[hidden]{display:none!important}button:disabled{opacity:.45;cursor:not-allowed}a, [data-nav]{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.stock{display:inline-block;font-size:13px;color:var(--success);margin-top:8px}.stock.out{color:var(--danger)}.stock.low{color:#916019}.sc-nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.sc-nav button{padding:10px 14px}.sc-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0}.sc-stat{padding:20px}.sc-stat b{display:block;font-size:28px}.sc-record{padding:20px;margin:14px 0}.sc-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.sc-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.sc-page{max-width:1100px;padding-bottom:48px}.sc-page h1{font-family:Georgia,serif;font-size:38px}.sc-empty{padding:30px;text-align:center}.sc-form{max-width:720px;padding:24px}.sc-form label{display:block;font-weight:700;margin-bottom:6px}.sc-form input,.sc-form select,.sc-form textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:var(--cream)}.sc-form .field{margin-bottom:16px}.sc-timeline{list-style:none;padding:0 0 0 15px;border-left:2px solid var(--gold)}.sc-timeline li{padding:12px 20px;position:relative}.sc-timeline li:before{content:'●';position:absolute;left:-8px;color:var(--gold)}.sc-timeline .future{color:var(--muted)}.sc-error{color:var(--danger);font-weight:700}.sc-pager{display:flex;justify-content:center;align-items:center;gap:10px;margin:24px 0}.sc-overlay{position:fixed;inset:0;background:#2f1b1270;z-index:99}.sc-drawer{position:fixed;right:0;top:0;bottom:0;width:min(460px,95vw);padding:24px;background:var(--paper);z-index:100;overflow:auto;box-shadow:var(--shadow)}.sc-drawer .cart-row{grid-template-columns:72px 1fr;align-items:start}.sc-drawer .cart-row .cart-info{grid-column:2}.sc-drawer .cart-row .qty{grid-column:2;justify-self:start;margin-top:10px}.sc-drawer .cart-row .cart-line-total{grid-column:2;justify-self:end;align-self:center;margin-top:-42px}.sc-drawer .summary{margin-top:0}.sc-hero-controls{display:flex;gap:10px;align-items:center;margin-top:20px}.sc-hero-controls button{min-width:36px;min-height:36px}.sc-hero-controls .on{background:var(--cocoa);color:white}.sc-footer{border-top:1px solid var(--line);padding:26px 0;margin-top:30px}.sc-footer nav{display:flex;gap:20px;flex-wrap:wrap}.sc-footer form{display:flex;gap:10px;max-width:500px;margin:20px 0}.sc-footer input{min-width:0;flex:1;padding:12px;border:1px solid var(--line);border-radius:9px}.sc-file{overflow-wrap:anywhere}.sc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.sc-check{display:flex!important;gap:10px;align-items:center}.sc-check input{width:auto}.sc-summary{padding:20px;background:var(--cream2);border-radius:12px;margin:18px 0}.mobile-nav.open{display:block}.sc-menu{display:none}.review-row{gap:20px;overflow-wrap:anywhere}.review-row b{max-width:65%;text-align:right}.field label{font-size:14px}.sc-page p{font-size:16px}.sc-badge{padding:5px 10px;background:var(--cream2);border-radius:20px}.sc-toast{border-radius:12px;max-width:90vw}.sc-form textarea{min-height:100px}
+ .sc-header .hdr-inner{gap:18px;padding:10px 0}.sc-header .logo{font-size:28px;white-space:nowrap}.sc-header .nav{gap:8px;align-items:center}.sc-header .header-link{border:0;background:transparent;color:var(--cocoa2);padding:8px 10px;border-radius:8px;font-size:14px;font-weight:800;min-height:0}.sc-header .header-link:hover{background:var(--cream2);color:var(--cocoa)}.sc-header .actions .btn{padding:8px 12px;border-radius:9px;font-size:14px;line-height:1.15;min-height:38px}.sc-header .account-link .btn{max-width:160px;text-align:center}.sc-header .lang button{padding:6px 9px}.sc-page>.auth-tabs,.sc-page>.sc-form{width:min(720px,100%)}.sc-page>.auth-tabs{margin:18px 0 20px}.account-shell{display:grid;grid-template-columns:240px 1fr;gap:22px}.account-side{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px;height:max-content}.account-side strong{display:block;margin-bottom:12px;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--gold)}.account-side button{width:100%;justify-content:flex-start;margin:4px 0}.account-main{min-width:0}.demo-help{background:var(--cream2);border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:16px;font-size:13px}.sc-footer{padding:30px 0}.sc-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px}.sc-footer h4{margin:0 0 8px}.sc-footer ul{list-style:none;padding:0;margin:0}.sc-footer li{margin:6px 0}.sc-footer .footer-link{border:0;background:transparent;padding:0;color:var(--muted);font-weight:700}.sc-footer .footer-link:hover{color:var(--gold)}.sc-footer form{display:none}.sc-footer .copyright{text-align:center;margin:18px 0 0;color:var(--muted);font-size:13px}
+@media(max-width:1050px){.sc-menu{display:block}.hdr-inner{flex-wrap:wrap}.hdr .actions{margin-left:auto}.sc-header .nav{display:none}}
+@media(max-width:760px){.sc-grid,.account-shell,.sc-footer-grid{grid-template-columns:1fr}.sc-page h1{font-size:30px}.sc-form{padding:18px}.sc-nav{gap:6px}.sc-nav button{flex:1 1 auto}.sc-actions .btn{flex:1 1 auto}.sc-row{display:block}.sc-row>*{margin-bottom:8px}.hdr-inner{gap:8px}.actions{flex-wrap:wrap}.sc-header .logo{font-size:20px}.sc-header .actions .btn{padding:8px}.sc-stats{grid-template-columns:1fr 1fr}.sc-drawer{padding:18px}.review-row{font-size:14px}.hero h1{font-size:38px}.sc-pager .desktop-page{display:none}.sc-header .lang button{padding:7px}.sc-header .account-link{display:none}.account-side{display:flex;gap:8px;overflow:auto}.account-side strong{min-width:max-content;margin:9px 6px 0 0}.account-side button{min-width:max-content}.detail-img img{min-height:300px}.detail-img{min-height:300px}.side-links{display:flex;flex-wrap:wrap}.sc-form input,.sc-form select{font-size:16px}}
+  .sc-drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin: 0 0 18px;
+  }
+
+  .sc-drawer-head h2 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.15;
+  }
+
+  .sc-drawer-close {
+    flex: 0 0 auto;
+    width: 112px;
+    height: 56px;
+    padding: 0;
+    border-radius: 12px;
+  }
+
+  .sc-drawer .sc-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    min-height: 140px;
+  }
+
+  .sc-drawer .sc-empty .btn {
+    min-width: 96px;
+    min-height: 48px;
+  }
+
+  @media(max-width:760px) {
+    .sc-drawer {
+      width: min(420px, 92vw);
+      padding: 22px;
+    }
+
+    .sc-drawer-head {
+      margin-bottom: 14px;
+    }
+
+    .sc-drawer-head h2 {
+      font-size: 28px;
+    }
+
+    .sc-drawer-close {
+      width: 96px;
+      height: 52px;
+    }
+  }
+
+  /* Shop catalog page: match the MockFlow reference layout */
+  .page-head {
+    width: min(1120px, calc(100% - 72px));
+    padding: 38px 0 18px;
+  }
+
+  .page-head h1 {
+    font-size: 39px;
+    line-height: 1.05;
+    margin: 0;
+  }
+
+  .catalog {
+    width: min(1120px, calc(100% - 72px));
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 28px;
+    padding: 0 0 86px;
+    align-items: start;
+  }
+
+  .filters {
+    border-radius: 8px;
+    background: #fffaf4;
+    box-shadow: 0 10px 22px rgba(47, 29, 22, .055);
+  }
+
+  .filter-head {
+    min-height: 72px;
+    padding: 16px 18px;
+  }
+
+  .filter-head .btn {
+    min-width: 72px;
+    min-height: 42px;
+    padding: 0 15px;
+    border-radius: 7px;
+    font-size: 13px;
+    background: transparent;
+  }
+
+  .filter-group {
+    padding: 17px 18px 18px;
+  }
+
+  .filter-title {
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #120906;
+  }
+
+  .check-row {
+    min-height: 20px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  .check-row + .check-row {
+    margin-top: 5px;
+  }
+
+  .check-row span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .check-row input {
+    flex: 0 0 auto;
+    width: 13px;
+    height: 13px;
+    margin: 0;
+  }
+
+  .filter-group label[for="price-range"] {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  #price-range {
+    height: 18px;
+    accent-color: #1b72ff;
+  }
+
+  .catalog > div {
+    min-width: 0;
+  }
+
+  .search {
+    height: 42px;
+    align-items: center;
+    margin-bottom: 16px;
+    border-radius: 7px;
+    padding: 0 15px;
+  }
+
+  .search input {
+    font-size: 13px;
+  }
+
+  .catalog-tools {
+    min-height: 48px;
+    padding: 10px 14px;
+    border-radius: 7px;
+    background: #fffaf4;
+  }
+
+  .catalog-tools b {
+    font-size: 14px;
+  }
+
+  .catalog-tools select {
+    width: 150px;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 7px;
+    font-size: 13px;
+  }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 18px;
+    align-items: start;
+  }
+
+  .catalog-grid .product {
+    border-radius: 8px;
+    min-height: 0;
+    box-shadow: none;
+  }
+
+  .catalog-grid .product:hover {
+    transform: none;
+    box-shadow: 0 10px 28px rgba(47, 29, 22, .08);
+  }
+
+  .catalog-grid .product-img {
+    height: 145px;
+  }
+
+  .catalog-grid .product-img img {
+    object-fit: cover;
+  }
+
+  .catalog-grid .tag {
+    left: 12px;
+    top: 10px;
+    padding: 4px 8px;
+    font-size: 10px;
+    background: var(--gold);
+  }
+
+  .catalog-grid .card-body {
+    min-height: 112px;
+    padding: 14px 17px 15px;
+  }
+
+  .catalog-grid .card-body h3 {
+    font-size: 15px;
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+
+  .catalog-grid .muted {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .catalog-grid .stock {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  .catalog-grid .price {
+    font-size: 20px;
+    line-height: 1;
+    margin-top: 12px;
+  }
+
+  .catalog .sc-pager {
+    margin: 22px 0 0;
+    min-height: 42px;
+  }
+
+  .catalog .sc-pager .btn {
+    min-width: 72px;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 7px;
+    font-size: 13px;
+  }
+
+  .catalog .sc-pager span {
+    font-size: 13px;
+    min-width: 68px;
+    text-align: center;
+  }
+
+  .catalog + .sc-footer,
+  .catalog ~ .sc-footer {
+    margin-top: 0;
+  }
+
+  @media(max-width:1050px) {
+    .page-head,
+    .catalog {
+      width: min(100% - 48px, 980px);
+    }
+
+    .catalog {
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 22px;
+    }
+
+    .catalog-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media(max-width:760px) {
+    .page-head,
+    .catalog {
+      width: min(100% - 28px, 520px);
+    }
+
+    .page-head {
+      padding: 26px 0 14px;
+    }
+
+    .page-head h1 {
+      font-size: 32px;
+    }
+
+    .catalog {
+      padding-bottom: 46px;
+    }
+
+    .catalog .filters.mobile-open {
+      display: block;
+    }
+
+    .filter-head {
+      min-height: 60px;
+    }
+
+    .catalog-tools {
+      align-items: stretch;
+    }
+
+    .mobile-filter-btn,
+    .catalog-tools select {
+      height: 40px;
+    }
+
+    .catalog-tools select {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .catalog-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .catalog-grid .product-img {
+      height: 190px;
+    }
+  }
+</style></head>
+<body><noscript><p>Please enable JavaScript to use SolCacao.</p></noscript>
+  <div class="toast" id="toast"></div>
+
+  <!-- HOME EN -->
+  <section data-screen="home-en" data-screen-start class="screen">
+    <header class="hdr">
+      <div class="hdr-inner">
+        <div class="logo"><span class="logo-mark" aria-hidden="true"></span>SolCacao</div>
+        <nav class="nav"><a data-nav="home-en">Home</a><a data-nav="catalog-en">Shop</a><a
+            data-nav="b2b-services">B2B</a><a data-nav="contact">Contact</a></nav>
+        <div class="spacer"></div>
+        <div class="actions">
+          <div class="lang"><button class="on">EN</button><button data-nav="home-es">ES</button></div><button
+            class="btn soft btn-sm" data-nav="cart"><span>🛒</span><span class="cart-label">Cart</span><b
+              id="cart-count-home">2</b></button><button class="btn outline btn-sm login-action" data-nav="auth">Login /
+            Register</button><button class="mobile-menu-btn" data-menu>☰</button>
+        </div>
+      </div>
+      <div class="mobile-nav" data-mobile-nav><a data-nav="catalog-en">Shop</a><a data-nav="b2b-services">B2B
+          Services</a><a data-nav="contact">Contact</a><a data-nav="auth">Login / Register</a></div>
+    </header>
+    <main>
+      <div class="wrap hero">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Single-origin • Organic • Handcrafted</div>
+            <h1>Chocolate with a story in every square.</h1>
+            <p class="lead">Browse artisan cacao without creating an account. Shop freely, sign in when you want to save
+              your cart, or explore custom B2B chocolate programs.</p>
+            <div class="home-search"><span class="icon">⌕</span><input id="home-search-en"
+                placeholder="Search chocolate bars, truffles, origin..." aria-label="Search chocolates"><button
+                class="btn primary btn-sm" id="home-search-btn-en">Search</button></div>
+            <div class="hero-cta"><button class="btn primary" data-nav="catalog-en">Browse Chocolates</button><button
+                class="btn outline" data-nav="b2b-services">Explore B2B Services</button></div>
+            <p class="muted" style="margin-top:14px;font-size:13px">✓ No login required to browse products</p>
+          </div>
+          <div class="hero-art"><img
+              src="https://mir-s3-cdn-cf.behance.net/project_modules/hd_webp/2fb9e3249375285.6a06008911d47.png"
+              alt="Premium dark chocolate bar and packaging">
+            <div class="hero-note">Seasonal Release • Ecuador 75%</div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Featured collection</div>
+            <h2>Discover by origin</h2>
+          </div><button class="link-btn" data-nav="catalog-en">View full catalog →</button>
+        </div>
+        <div class="grid4">
+          <div class="card product" data-nav="product-detail">
+            <div class="product-img"><span class="tag">Best Seller</span><img
+                src="https://mir-s3-cdn-cf.behance.net/project_modules/hd_webp/2fb9e3249375285.6a06008911d47.png"
+                alt="Premium dark chocolate bar"></div>
+            <div class="card-body">
+              <h3>Madagascar 55% Dark</h3>
+              <div class="muted">Sambirano Valley • Bright berry</div>
+              <div class="price">$12.00</div>
+            </div>
+          </div>
+          <div class="card product" data-nav="product-detail">
+            <div class="product-img"><img
+                src="https://images.unsplash.com/photo-1575377427642-087cf684f29d?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                alt="Ecuador dark chocolate bar"></div>
+            <div class="card-body">
+              <h3>Ecuador 75% Dark</h3>
+              <div class="muted">Esmeraldas • Floral cacao</div>
+              <div class="price">$13.50</div>
+            </div>
+          </div>
+          <div class="card product" data-nav="product-detail">
+            <div class="product-img"><span class="tag">Seasonal</span><img
+                src="https://img.shoplineapp.com/media/image_clips/691d7ff7c46aaf00102334d1/original.jpg?1763540983=&amp;owner_id=5ca6dda99972ff000189e573"
+                alt="Luxury truffle gift collection"></div>
+            <div class="card-body">
+              <h3>Peru Truffle Collection</h3>
+              <div class="muted">Cusco • 12 pieces</div>
+              <div class="price">$28.00</div>
+            </div>
+          </div>
+          <div class="card product" data-nav="product-detail">
+            <div class="product-img"><img
+                src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                alt="Mexico milk chocolate bar"></div>
+            <div class="card-body">
+              <h3>Mexico 60% Milk</h3>
+              <div class="muted">Tabasco • Caramel finish</div>
+              <div class="price">$11.50</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap section">
+        <div class="packaging-showcase"><img
+            src="https://img.shoplineapp.com/media/image_clips/691d7ff7c46aaf00102334d1/original.jpg?1763540983=&owner_id=5ca6dda99972ff000189e573"
+            alt="Luxury boxed chocolates and cocoa beans">
+          <div class="packaging-copy">
+            <div class="eyebrow">Designed to be gifted</div>
+            <h2>Packaging that feels as considered as the chocolate.</h2>
+            <p class="muted">Premium boxes, elegant presentation and branded sleeves create a high-end unboxing
+              experience for retail gifts and corporate programs.</p>
+            <ul>
+              <li>Gift-ready presentation boxes</li>
+              <li>Corporate sleeves and white-label options</li>
+              <li>Seasonal collections and event packaging</li>
+            </ul><button class="btn outline" data-nav="b2b-services">Explore Packaging Options</button>
+          </div>
+        </div>
+      </div>
+      <div class="wrap section">
+        <div class="b2b-band">
+          <div>
+            <div class="eyebrow" style="color:var(--gold2)">Corporate & wholesale</div>
+            <h2>Create chocolate made for your brand.</h2>
+            <p>Custom molds, white-label packaging, gifting programs and high-volume manufacturing quotes for hotels,
+              events and wholesale customers.</p><button class="btn gold" data-nav="b2b-services">View B2B
+              Services</button>
+          </div>
+          <div class="feature-list">
+            <div>✓ Custom cacao profiles</div>
+            <div>✓ Branded molds</div>
+            <div>✓ Luxury packaging</div>
+            <div>✓ White-label options</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div>
+          <div class="logo"><span class="logo-mark" aria-hidden="true"></span>SolCacao</div>
+          <p>Premium single-origin cacao for retail customers and business customers.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li data-nav="catalog-en">Catalog</li>
+            <li data-nav="cart">Cart</li>
+            <li data-nav="profile">My Profile</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li data-nav="b2b-services">B2B Services</li>
+            <li data-nav="contact">Contact</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- HOME ES -->
+  
+
+  <!-- CATALOG EN -->
+  
+
+  <!-- CATALOG ES -->
+  
+
+  <!-- PRODUCT DETAIL -->
+  
+
+  <!-- CART -->
+  
+
+  <!-- CHECKOUT CHOICE -->
+  
+
+  <!-- D2C CHECKOUT -->
+  
+
+  
+
+  <!-- AUTH -->
+  
+
+  <!-- PROFILE -->
+  
+
+  <!-- B2B SERVICES -->
+  <section data-screen="b2b-services" class="screen">
+    <header class="hdr">
+      <div class="hdr-inner">
+        <div class="logo" data-nav="home-en"><span class="logo-mark" aria-hidden="true"></span>SolCacao</div>
+        <nav class="nav"><a data-nav="home-en">Home</a><a data-nav="catalog-en">Shop</a><a
+            data-nav="b2b-services">Corporate & B2B</a><a data-nav="contact">Contact</a></nav>
+        <div class="spacer"></div>
+        <div class="actions"><button class="btn outline btn-sm login-action" data-nav="auth" data-b2b-login>Business
+            Login</button></div>
+      </div>
+    </header>
+    <div class="wrap b2b-hero">
+      <div class="b2b-hero-card">
+        <div class="eyebrow">Corporate gifting & wholesale</div>
+        <h1>Chocolate experiences made for your brand.</h1>
+        <p class="lead">Explore premium gifting, hospitality programs, custom molds, private-label packaging and volume
+          manufacturing. Browsing is public; sign in to a business account before starting a custom quote.</p>
+        <div class="hero-cta"><button class="btn primary" data-nav="b2b-gate">Start a Custom Quote</button><button
+            class="btn outline" data-nav="contact">Talk to Our Team</button></div>
+        <p class="muted" style="font-size:12px;margin-top:12px">Hotels • Corporate events • Wholesale • Private label
+        </p>
+      </div>
+      <div class="b2b-hero-media"><img
+          src="https://img.shoplineapp.com/media/image_clips/691d7ff7c46aaf00102334d1/original.jpg?1763540983=&owner_id=5ca6dda99972ff000189e573"
+          alt="Premium chocolate gift box and cocoa beans"></div>
+    </div>
+    <div class="wrap section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Business solutions</div>
+          <h2>Choose how you want to work with SolCacao</h2>
+        </div>
+      </div>
+      <div class="services">
+        <div class="service-card">
+          <div class="service-media"><img
+              src="https://mir-s3-cdn-cf.behance.net/project_modules/hd_webp/2fb9e3249375285.6a06008911d47.png"
+              alt="Premium branded chocolate box"></div>
+          <h3>Custom Corporate Molds</h3>
+          <p class="muted">Create branded chocolate shapes for hotels, launches and signature experiences.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-media"><img
+              src="https://img.shoplineapp.com/media/image_clips/691d7ff7c46aaf00102334d1/original.jpg?1763540983=&owner_id=5ca6dda99972ff000189e573"
+              alt="Luxury boxed chocolates"></div>
+          <h3>Luxury Packaging</h3>
+          <p class="muted">Rigid boxes, gift sleeves and branded presentation kits for premium gifting.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-media"><img
+              src="https://chocolatephilosophy.co.in/cdn/shop/products/craftcollectiondark_25752_1080x.jpg?v=1657884464"
+              alt="Premium packaged chocolate bars"></div>
+          <h3>White-Label Programs</h3>
+          <p class="muted">Pair your brand identity with SolCacao sourcing and manufacturing.</p>
+        </div>
+        <div class="service-card">
+          <div class="big">🏨</div>
+          <h3>Hospitality & Events</h3>
+          <p class="muted">Volume programs for guest rooms, conferences, weddings and corporate events.</p>
+        </div>
+      </div>
+      <div class="b2b-cta-strip">
+        <div>
+          <h3>Ready to design your custom chocolate program?</h3>
+          <div class="muted">Business account authentication is required before creating a custom quote.</div>
+        </div><button class="btn primary" data-nav="b2b-gate">Request a Custom Quote</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- B2B GATE -->
+  
+
+  <!-- B2B WIZARD -->
+  <section data-screen="b2b-wizard" class="screen">
+    <header class="hdr">
+      <div class="hdr-inner">
+        <div class="logo" data-nav="home-en"><span class="logo-mark" aria-hidden="true"></span>SolCacao</div>
+        <nav class="nav"><a data-nav="home-en">Home</a><a data-nav="catalog-en">Shop</a><a
+            data-nav="b2b-services">B2B</a><a data-nav="contact">Contact</a></nav>
+        <div class="spacer"></div>
+        <div class="actions"><span class="pill">Company: ABC Luxury Hotels</span><button
+            class="btn outline btn-sm login-action" data-nav="auth" data-b2b-login>Business Login</button></div>
+      </div>
+    </header>
+    <div class="wrap wiz">
+      <div class="wiz-progress">
+        <div class="wstep on" data-step="1"><span class="dot">1</span><span class="wlabel">Cacao</span></div><span
+          class="bar"></span>
+        <div class="wstep" data-step="2"><span class="dot">2</span><span class="wlabel">Brand Files</span></div><span
+          class="bar"></span>
+        <div class="wstep" data-step="3"><span class="dot">3</span><span class="wlabel">Packaging</span></div><span
+          class="bar"></span>
+        <div class="wstep" data-step="4"><span class="dot">4</span><span class="wlabel">Review</span></div>
+      </div>
+      <div class="wiz-card">
+        <div class="wiz-panel" data-panel="1">
+          <div class="eyebrow">Step 1 of 4</div>
+          <h2>Select cacao profile & quantity</h2>
+          <p class="muted">Choose a starting profile for your custom manufacturing request.</p>
+          <div class="choice-grid" id="cacao-choices"><button class="choice on">
+              <div style="font-size:28px">🍓</div><b>Madagascar 55%</b>
+              <div class="muted" style="font-size:12px">Berry • bright</div>
+            </button><button class="choice">
+              <div style="font-size:28px">🌸</div><b>Ecuador 75%</b>
+              <div class="muted" style="font-size:12px">Floral • rich</div>
+            </button><button class="choice">
+              <div style="font-size:28px">🌰</div><b>Peru 80%</b>
+              <div class="muted" style="font-size:12px">Nutty • bold</div>
+            </button></div>
+          <div class="field" style="margin-top:18px"><label>Requested Quantity (kg)</label><input id="wiz-qty"
+              type="number" value="25" min="5"></div>
+          <div class="wiz-foot"><span></span><button class="btn primary" data-wiz-next="2">Continue</button></div>
+        </div>
+        <div class="wiz-panel" data-panel="2" style="display:none">
+          <div class="eyebrow">Step 2 of 4</div>
+          <h2>Upload brand or technical files</h2>
+          <p class="muted">Upload your logo, vector artwork, PDF, or technical design files for this request.</p>
+
+          <div class="upload" id="upload-zone">
+            <div style="font-size:48px">⬆️</div>
+            <b>Drop a logo, PDF, SVG or tech pack here</b>
+            <p class="muted">or click to simulate upload</p>
+            <button class="btn outline btn-sm" id="upload-sim">Choose File</button>
+            <div id="upload-name" style="display:none;margin-top:12px;font-weight:850"></div>
+          </div>
+
+          <div class="field" style="margin-top:18px">
+            <label>Brand / Campaign Name</label>
+            <input id="brand-name" value="ABC Luxury Hotels">
+          </div>
+
+          <div class="field">
+            <label>Custom Mold / Design Details</label>
+            <textarea id="mold-customization"
+              placeholder="Describe the custom mold, shape, logo, or design request..."></textarea>
+          </div>
+
+          <div class="wiz-foot">
+            <button class="btn soft" data-wiz-prev="1">Back</button>
+            <button class="btn primary" data-wiz-next="3">Continue</button>
+          </div>
+        </div>
+        <div class="wiz-panel" data-panel="3" style="display:none">
+          <div class="eyebrow">Step 3 of 4</div>
+          <h2>Choose packaging & white-label options</h2>
+          <div class="choice-grid" id="pkg-choices"><button class="choice on"><b>Luxury Gift Box</b>
+              <div class="muted" style="font-size:12px">Rigid premium box</div>
+            </button><button class="choice"><b>Foil Wrap</b>
+              <div class="muted" style="font-size:12px">Minimal branded wrap</div>
+            </button><button class="choice"><b>Event Sleeve</b>
+              <div class="muted" style="font-size:12px">Custom printed sleeve</div>
+            </button></div>
+          <div class="field" style="margin-top:18px"><label>White Label Branding</label><select id="white-label">
+              <option>Yes — use our company branding</option>
+              <option>No — SolCacao co-branding</option>
+            </select></div>
+          <div class="field"><label>Special Instructions</label><textarea id="special-notes"
+              placeholder="Gold logo on top, individual guest room packaging..."></textarea></div>
+          <div class="wiz-foot"><button class="btn soft" data-wiz-prev="2">Back</button><button class="btn primary"
+              data-wiz-next="4">Review</button></div>
+        </div>
+        <div class="wiz-panel" data-panel="4" style="display:none">
+          <div class="eyebrow">Step 4 of 4</div>
+          <h2>Review your custom quote request</h2>
+          <div class="review">
+            <h4>Chocolate</h4>
+            <div class="review-row"><span>Cacao Profile</span><b id="rv-cacao">Madagascar 55%</b></div>
+            <div class="review-row"><span>Quantity</span><b id="rv-qty">25 kg</b></div>
+          </div>
+          <div class="review">
+            <h4>Branding</h4>
+            <div class="review-row"><span>Company</span><b>ABC Luxury Hotels</b></div>
+            <div class="review-row"><span>Uploaded File</span><b id="rv-file">No file</b></div>
+            <div class="review-row"><span>Custom Mold / Design</span><b id="rv-mold">Not entered</b></div>
+          </div>
+          <div class="review">
+            <h4>Packaging</h4>
+            <div class="review-row"><span>Packaging</span><b id="rv-pkg">Luxury Gift Box</b></div>
+            <div class="review-row"><span>White Label</span><b id="rv-wl">Yes</b></div>
+          </div>
+          <div class="wiz-foot"><button class="btn soft" data-wiz-prev="3">Back</button><button class="btn gold"
+              id="submit-quote">Submit Quote Request</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- CONTACT -->
+  
+
+  
+
+
+  
+
+
+
+<script>
+const PRODUCTS=[
+    {id:'madagascar-70',origin:'Madagascar',cacao:55,type:'dark',price:12,stock:8,weight:'80 g',seasonal:false,image:'https://mir-s3-cdn-cf.behance.net/project_modules/hd_webp/2fb9e3249375285.6a06008911d47.png',en:{name:'Madagascar 55% Dark',region:'Sambirano Valley',description:'Bright red berry acidity with a smooth cocoa finish. Crafted in small batches to highlight the natural character of Sambirano cacao.',features:'Single-origin organic cacao • Vegan • Small-batch roasted'},es:{name:'Madagascar 55% Oscuro',region:'Valle de Sambirano',description:'Acidez brillante de frutos rojos con un final suave de cacao. Elaborado en lotes pequeños para resaltar el carácter natural del cacao de Sambirano.',features:'Cacao orgánico de origen único • Vegano • Tostado artesanal'}},
+    {id:'ecuador-75',origin:'Ecuador',cacao:75,type:'dark',price:13.5,stock:3,weight:'80 g',seasonal:true,image:'https://images.unsplash.com/photo-1575377427642-087cf684f29d?auto=format&fit=crop&w=900&q=85',en:{name:'Ecuador 75% Dark',region:'Esmeraldas',description:'Floral cacao with roasted nut notes and a lingering dark-chocolate finish.',features:'Single origin • Vegan • Seasonal release'},es:{name:'Ecuador 75% Oscuro',region:'Esmeraldas',description:'Cacao floral con notas de frutos secos tostados y un final prolongado de chocolate oscuro.',features:'Origen único • Vegano • Edición de temporada'}},
+    {id:'peru-truffles',origin:'Peru',cacao:60,type:'gifts',price:28,stock:5,weight:'12 pieces',seasonal:false,image:'https://img.shoplineapp.com/media/image_clips/691d7ff7c46aaf00102334d1/original.jpg?1763540983=&owner_id=5ca6dda99972ff000189e573',en:{name:'Peru Truffle Collection',region:'Cusco',description:'A gift-ready collection of smooth cacao truffles inspired by the flavors of Peru.',features:'Assorted truffles • Gift ready • Hand finished'},es:{name:'Colección de Trufas de Perú',region:'Cusco',description:'Una colección de trufas suaves de cacao, lista para regalar e inspirada en los sabores del Perú.',features:'Trufas surtidas • Lista para regalar • Acabado artesanal'}},
+    {id:'mexico-60',origin:'Mexico',cacao:60,type:'milk',price:11.5,stock:0,weight:'80 g',seasonal:false,image:'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=900&q=85',en:{name:'Mexico 60% Milk',region:'Tabasco',description:'Creamy milk chocolate with caramel notes and a mellow cacao finish.',features:'Single origin • Creamy milk • Caramel finish'},es:{name:'México 60% Leche',region:'Tabasco',description:'Chocolate con leche cremoso, notas de caramelo y un final suave de cacao.',features:'Origen único • Leche cremosa • Final de caramelo'}},
+    {id:'peru-85',origin:'Peru',cacao:85,type:'dark',price:15,stock:2,weight:'80 g',seasonal:true,image:'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=900&q=85',en:{name:'Peru 85% Reserve',region:'San Martín',description:'An intense reserve bar with deep roasted cacao and a clean, balanced finish.',features:'High cacao • Vegan • Seasonal reserve'},es:{name:'Perú 85% Reserva',region:'San Martín',description:'Una barra de reserva intensa con cacao tostado profundo y un final limpio y equilibrado.',features:'Alto contenido de cacao • Vegano • Reserva de temporada'}},
+    {id:'ecuador-citrus',origin:'Ecuador',cacao:55,type:'gifts',price:22,stock:7,weight:'8 pieces',seasonal:false,image:'https://images.unsplash.com/photo-1582176604856-e824b4736522?auto=format&fit=crop&w=900&q=85',en:{name:'Ecuador Citrus Truffles',region:'Esmeraldas',description:'Silky Ecuadorian cacao truffles lifted with bright citrus notes.',features:'Eight pieces • Citrus ganache • Gift ready'},es:{name:'Trufas Cítricas de Ecuador',region:'Esmeraldas',description:'Trufas sedosas de cacao ecuatoriano realzadas con notas cítricas brillantes.',features:'Ocho piezas • Ganache cítrica • Lista para regalar'}}
+  ];
+const ES={
+    "Home":"Inicio", "Shop":"Tienda", "B2B":"Empresas", "B2B Services":"Servicios B2B", "Contact":"Contacto",
+    "Login / Register":"Ingresar / Registrarse", "Login":"Ingresar", "Continue Browsing":"Seguir explorando",
+    "Continue Shopping":"Seguir comprando", "← Back to Cart":"← Volver al carrito", "Cart":"Carrito",
+    "Checkout":"Pago", "Login is optional for D2C checkout.":"Iniciar sesión es opcional para completar la compra.",
+    "Checkout option":"Opción de pago", "Continue without creating an account":"Continuar sin crear una cuenta",
+    "Enter your contact, delivery and prepaid payment details below.":"Ingresa tus datos de contacto, entrega y pago anticipado.",
+    "Continue to Payment":"Continuar al pago", "D2C Checkout":"Pago de compra",
+    "Delivery & Payment":"Entrega y pago",
+    "Prepaid orders only. Review your delivery and card details before placing your order.":"Solo pedidos prepagados. Revisa los datos de entrega y de la tarjeta antes de realizar el pedido.",
+    "Delivery details":"Datos de entrega", "First Name":"Nombre", "Last Name":"Apellido", "Email":"Correo electrónico",
+    "Phone":"Teléfono", "Address":"Dirección", "City":"Ciudad", "State":"Estado", "ZIP":"Código postal",
+    "ZIP Code":"Código postal", "Country":"País", "United States":"Estados Unidos", "Payment":"Pago",
+    "Prepaid only • Cash on delivery is not available":"Solo prepago • No se acepta pago contra entrega",
+    "Credit / Debit Card":"Tarjeta de crédito/débito", "Cardholder Name":"Nombre del titular",
+    "Card Number":"Número de tarjeta", "Expiry":"Vencimiento", "Pay & Place Order":"Pagar y realizar pedido",
+    "Order Confirmed":"Pedido confirmado", "Your prepaid D2C order has been placed successfully.":"Tu pedido prepagado se realizó correctamente.",
+    "Reference":"Referencia", "Customer":"Cliente", "Prepaid • Card":"Prepago • Tarjeta", "Status":"Estado",
+    "Confirmed":"Confirmado", "Sign In":"Iniciar sesión", "Create Account":"Crear cuenta", "Welcome Back":"Bienvenido de nuevo",
+    "Sign in when you want account features, profile access, or to save your cart.":"Inicia sesión para acceder a tu cuenta, administrar tu perfil o guardar tu carrito.",
+    "Retail Customer":"Cliente minorista", "Shopping & profile":"Compras y perfil", "Business Account":"Cuenta empresarial",
+    "B2B quotes & branding":"Cotizaciones B2B y marca", "Password":"Contraseña",
+    "Choose the account type that matches your use case.":"Elige el tipo de cuenta que mejor se adapte a tus necesidades.",
+    "Retail":"Minorista", "Business":"Empresa", "Personal shopping account":"Cuenta personal de compras", "Corporate / B2B":"Corporativa / B2B",
+    "Wholesale & custom quotes":"Mayoreo y cotizaciones personalizadas", "Company Name":"Nombre de la empresa",
+    "Business Phone":"Teléfono empresarial", "Industry":"Industria", "Hotel / Hospitality":"Hotel / Hospitalidad",
+    "Corporate Events":"Eventos corporativos", "Wholesale Retailer":"Distribuidor mayorista", "Other":"Otro",
+    "Sign Out":"Cerrar sesión", "My Profile":"Mi perfil",
+    "Profile management panel required for account users.":"Administra aquí la información y las preferencias de tu cuenta.",
+    "Profile":"Perfil", "Addresses":"Direcciones", "Preferences":"Preferencias", "Personal Information":"Información personal",
+    "Preferred Language":"Idioma preferido", "English":"Inglés", "Spanish":"Español", "Account Type":"Tipo de cuenta",
+    "Default Address":"Dirección predeterminada", "Edit":"Editar", "Street Address":"Dirección",
+    "Cancel":"Cancelar", "Save Address":"Guardar dirección", "Save Changes":"Guardar cambios",
+    "Corporate & B2B":"Empresas", "Business Login":"Acceso empresarial",
+    "Corporate gifting & wholesale":"Regalos corporativos y mayoreo", "Chocolate experiences made for your brand.":"Experiencias de chocolate creadas para tu marca.",
+    "Explore premium gifting, hospitality programs, custom molds, private-label packaging and volume manufacturing. Browsing is public; sign in to a business account before starting a custom quote.":"Explora regalos premium, programas de hospitalidad, moldes personalizados, empaques de marca privada y producción por volumen. La navegación es pública; inicia sesión con una cuenta empresarial antes de comenzar una cotización personalizada.",
+    "Start a Custom Quote":"Iniciar cotización personalizada", "Talk to Our Team":"Hablar con nuestro equipo",
+    "Hotels • Corporate events • Wholesale • Private label":"Hoteles • Eventos corporativos • Mayoreo • Marca privada",
+    "Business solutions":"Soluciones empresariales", "Choose how you want to work with SolCacao":"Elige cómo quieres trabajar con SolCacao",
+    "Custom Corporate Molds":"Moldes corporativos personalizados", "Create branded chocolate shapes for hotels, launches and signature experiences.":"Crea chocolates con la forma de tu marca para hoteles, lanzamientos y experiencias especiales.",
+    "Luxury Packaging":"Empaque de lujo", "Rigid boxes, gift sleeves and branded presentation kits for premium gifting.":"Cajas rígidas, fundas de regalo y presentaciones de marca para obsequios premium.",
+    "White-Label Programs":"Programas de marca blanca", "Pair your brand identity with SolCacao sourcing and manufacturing.":"Combina la identidad de tu marca con el abastecimiento y la producción de SolCacao.",
+    "Hospitality & Events":"Hospitalidad y eventos", "Volume programs for guest rooms, conferences, weddings and corporate events.":"Programas por volumen para habitaciones, conferencias, bodas y eventos corporativos.",
+    "Ready to design your custom chocolate program?":"¿Listo para diseñar tu programa de chocolate personalizado?",
+    "Business account authentication is required before creating a custom quote.":"Se requiere una cuenta empresarial antes de crear una cotización personalizada.",
+    "Request a Custom Quote":"Solicitar cotización personalizada", "← B2B Services":"← Servicios B2B", "Business Portal":"Portal empresarial",
+    "Custom manufacturing requests are associated with a verified corporate business account.":"Las solicitudes de fabricación personalizada se vinculan a una cuenta empresarial verificada.",
+    "B2B account required":"Se requiere cuenta B2B", "Sign in before creating a quote":"Inicia sesión antes de crear una cotización",
+    "This keeps company details, uploaded brand files and quote history connected to the correct business account.":"Esto mantiene los datos de la empresa, los archivos de marca y el historial de cotizaciones vinculados a la cuenta correcta.",
+    "Sign In to Business Account":"Iniciar sesión empresarial", "Create Business Account":"Crear cuenta empresarial",
+    "Continue browsing services":"Seguir explorando servicios", "Company: ABC Luxury Hotels":"Empresa: ABC Luxury Hotels",
+    "Cacao":"Cacao", "Brand Files":"Archivos de marca", "Packaging":"Empaque", "Review":"Revisión",
+    "Step 1 of 4":"Paso 1 de 4", "Select cacao profile & quantity":"Selecciona el perfil de cacao y la cantidad",
+    "Choose a starting profile for your custom manufacturing request.":"Elige un perfil inicial para tu solicitud de fabricación personalizada.",
+    "Berry • bright":"Frutos rojos • brillante", "Floral • rich":"Floral • intenso", "Nutty • bold":"Nuez • intenso",
+    "Requested Quantity (kg)":"Cantidad solicitada (kg)", "Continue":"Continuar", "Step 2 of 4":"Paso 2 de 4",
+    "Upload brand or technical files":"Sube archivos de marca o técnicos",
+    "Upload your logo, vector artwork, PDF, or technical design files for this request.":"Sube tu logotipo, archivos vectoriales, PDF o diseños técnicos para esta solicitud.",
+    "Drop a logo, PDF, SVG or tech pack here":"Suelta aquí un logotipo, PDF, SVG o ficha técnica",
+    "or click to simulate upload":"o haz clic para seleccionar un archivo", "Choose File":"Elegir archivo",
+    "Brand / Campaign Name":"Nombre de marca / campaña", "Custom Mold / Design Details":"Detalles del molde / diseño personalizado",
+    "Back":"Atrás", "Step 3 of 4":"Paso 3 de 4", "Choose packaging & white-label options":"Elige el empaque y las opciones de marca blanca",
+    "Luxury Gift Box":"Caja de regalo de lujo", "Rigid premium box":"Caja rígida premium", "Foil Wrap":"Envoltura de aluminio",
+    "Minimal branded wrap":"Envoltura minimalista de marca", "Event Sleeve":"Funda para eventos", "Custom printed sleeve":"Funda impresa personalizada",
+    "White Label Branding":"Marca blanca", "Yes — use our company branding":"Sí — usar la marca de nuestra empresa",
+    "No — SolCacao co-branding":"No — marca compartida con SolCacao", "Special Instructions":"Instrucciones especiales",
+    "Step 4 of 4":"Paso 4 de 4", "Review your custom quote request":"Revisa tu solicitud de cotización personalizada",
+    "Chocolate":"Chocolate", "Cacao Profile":"Perfil de cacao", "Quantity":"Cantidad", "Branding":"Marca", "Company":"Empresa",
+    "Uploaded File":"Archivo subido", "No file":"Sin archivo", "Custom Mold / Design":"Molde / diseño personalizado",
+    "Not entered":"Sin información", "White Label":"Marca blanca", "Yes":"Sí", "Peru 80%":"Perú 80%", "Submit Quote Request":"Enviar solicitud de cotización",
+    "Quote Request Received":"Solicitud de cotización recibida", "Custom Quote Submitted":"Cotización personalizada enviada",
+    "Your B2B request and brand files are now associated with your business account.":"Tu solicitud B2B y los archivos de marca ya están vinculados a tu cuenta empresarial.",
+    "Quote ID":"ID de cotización", "Submitted":"Enviada", "Next step":"Siguiente paso", "SolCacao team review":"Revisión del equipo de SolCacao",
+    "Back to B2B":"Volver a B2B", "Contact & Support":"Contacto y soporte", "How can we help?":"¿Cómo podemos ayudarte?",
+    "No login is required to contact us. Choose a category and our team will route your message to the right specialist.":"No necesitas iniciar sesión para contactarnos. Elige una categoría y nuestro equipo enviará tu mensaje al especialista adecuado.",
+    "Full Name":"Nombre completo", "Category":"Categoría", "General Inquiry":"Consulta general", "Wholesale / B2B":"Mayoreo / B2B",
+    "Custom Chocolate Sampler":"Muestra de chocolate personalizada", "Order Support":"Ayuda con pedidos", "Feedback":"Comentarios",
+    "Subject":"Asunto", "Message":"Mensaje", "Submit Message":"Enviar mensaje", "Open WhatsApp Demo":"Abrir WhatsApp",
+    "Message Received":"Mensaje recibido", "Your inquiry has been submitted successfully.":"Tu consulta se envió correctamente.",
+    "New":"Nueva", "Expected response":"Respuesta estimada", "Within 24–48 hours":"En un plazo de 24–48 horas", "Back to Home":"Volver al inicio",
+    "Enter your email address":"Ingresa tu correo electrónico", "Business account signed in":"Sesión empresarial iniciada",
+    "Retail account signed in":"Sesión iniciada", "Cart synced with your account":"Carrito sincronizado con tu cuenta",
+    "Corporate account created":"Cuenta empresarial creada", "Retail account created":"Cuenta personal creada",
+    "Profile changes saved":"Cambios del perfil guardados", "Complete all address fields":"Completa todos los campos de la dirección",
+    "Default address updated":"Dirección predeterminada actualizada", "Brand file attached":"Archivo de marca adjuntado",
+    "Name and email are required":"El nombre y el correo son obligatorios", "WhatsApp redirection would open here":"Se abrirá WhatsApp",
+    "Describe the custom mold, shape, logo, or design request...":"Describe el molde, la forma, el logotipo o el diseño solicitado...",
+    "Gold logo on top, individual guest room packaging...":"Logotipo dorado en la parte superior, empaque individual para habitaciones...",
+    "Search chocolate bars, truffles, origin...":"Buscar barras, trufas u origen...", "Search chocolates":"Buscar chocolates",
+    "Search chocolate, origin or cacao profile...":"Buscar chocolate, origen o perfil de cacao...", "Create a password":"Crea una contraseña",
+    "Tell us more...":"Cuéntanos más...", "Complete all account fields":"Completa todos los campos de la cuenta",
+    "Signed out":"Sesión cerrada", "Sign in before checkout":"Inicia sesión antes de pagar",
+    "Sign in with a business account first":"Primero inicia sesión con una cuenta empresarial",
+    "Enter a search term":"Ingresa un término de búsqueda",
+    "Premium chocolate gift box and cocoa beans":"Caja de regalo de chocolate premium y granos de cacao",
+    "Premium branded chocolate box":"Caja de chocolate premium personalizada",
+    "Luxury boxed chocolates":"Chocolates en caja de lujo",
+    "Premium packaged chocolate bars":"Barras de chocolate con empaque premium"
+  };
+(()=>{'use strict';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const clone=v=>JSON.parse(JSON.stringify(v));
+const uid=()=>crypto.randomUUID?crypto.randomUUID():'id-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
+const money=n=>new Intl.NumberFormat(locale==='es'?'es-US':'en-US',{style:'currency',currency:'USD'}).format(n);
+let locale='en',route='home',param=null,current=null,returnTo=null,drawer=false,hero=0,detailQty=1;
+const dict={'My Account':'Mi cuenta','Business Dashboard':'Panel empresarial','Admin Dashboard':'Panel de administración','Overview':'Resumen','My Orders':'Mis pedidos','Payment History':'Historial de pagos','Sampler Requests':'Solicitudes de muestras','Company Profile':'Perfil de empresa','Approval Status':'Estado de aprobación','My Quotes':'Mis cotizaciones','For Business':'Para empresas','Build a Sampler':'Crear una caja de muestras','Personal Account':'Cuenta personal','Pending Review':'Pendiente de revisión','Approved':'Aprobada','Needs Attention':'Requiere atención','Submitted':'Enviada','Under Review':'En revisión','Quoted':'Cotizada','Accepted':'Aceptada','Declined':'Rechazada','Order Placed':'Pedido realizado','Payment Confirmed':'Pago confirmado','Processing':'En preparación','Shipped':'Enviado','Delivered':'Entregado','View Details':'Ver detalles','Track Order':'Rastrear pedido','No records yet.':'Todavía no hay registros.','Start Custom Quote':'Iniciar cotización personalizada','Save':'Guardar','Amount':'Importe','Date':'Fecha','Valid Until':'Válida hasta','Notes':'Notas','Accept Quote':'Aceptar cotización','Decline Quote':'Rechazar cotización','Contact SolCacao':'Contactar a SolCacao','New Request':'Nueva solicitud','View Cart':'Ver carrito','Close':'Cerrar','Previous':'Anterior','Next':'Siguiente','Forgot Password?':'¿Olvidaste tu contraseña?','Send Reset Link':'Enviar enlace de recuperación','Check Your Email':'Revisa tu correo','Reset Password':'Restablecer contraseña','New Password':'Nueva contraseña','Confirm New Password':'Confirmar contraseña','Password Updated':'Contraseña actualizada','Back to Sign In':'Volver a iniciar sesión','About SolCacao':'Acerca de SolCacao','Subscribe':'Suscribirse','Box Size':'Tamaño de la caja','Select Chocolates':'Seleccionar chocolates','Gift Message':'Mensaje de regalo','Request Received':'Solicitud recibida','Active Orders':'Pedidos activos','Past Orders':'Pedidos anteriores','Saved Addresses':'Direcciones guardadas','Quotes Received':'Cotizaciones recibidas','Open Quote Requests':'Solicitudes abiertas','Uploaded Files':'Archivos subidos','Website':'Sitio web','Contact Support':'Contactar con soporte','Update Company Information':'Actualizar datos de empresa','Business Account Review':'Revisión de cuenta empresarial','Your business account is currently under review.':'Tu cuenta empresarial está en revisión.','Your business account has been approved. You can now submit custom quote requests.':'Tu cuenta empresarial ha sido aprobada. Ya puedes solicitar cotizaciones personalizadas.','Your business account needs additional information before quote access can be enabled.':'Tu cuenta necesita información adicional para habilitar las cotizaciones.','If an account exists for this email, reset instructions have been sent.':'Si existe una cuenta con este correo, se han enviado instrucciones.','In stock':'Disponible','Out of stock':'Agotado','Remove':'Eliminar','No products match these filters.':'Ningún producto coincide con estos filtros.','Your cart is empty.':'Tu carrito está vacío.','Single-Origin Collection':'Colección de origen único','Seasonal Collection':'Colección de temporada','Corporate Gifting':'Regalos corporativos','Get exclusive offers and seasonal updates.':'Recibe ofertas exclusivas y novedades de temporada.','All rights reserved.':'Todos los derechos reservados.','Continue without creating an account':'Continuar sin crear una cuenta','Payment successful':'Pago realizado','Payment declined':'Pago rechazado','Try again':'Intentar de nuevo','Choose File':'Elegir archivo','No file selected':'Ningún archivo seleccionado','Total':'Total','Order':'Pedido','Order Detail':'Detalle del pedido','Order Tracking':'Seguimiento del pedido','Carrier':'Transportista','Tracking Number':'Número de seguimiento','Expected Delivery':'Entrega estimada','Transaction ID':'ID de transacción','Method':'Método','Status':'Estado','Successful':'Correcto','Failed':'Fallido','Refunded':'Reembolsado','Delivery':'Entrega','Confirmation':'Confirmación','Submit':'Enviar','Packaging / Gift Message':'Empaque / Mensaje de regalo','Brand / Design':'Marca / Diseño','Review / Submit':'Revisar / Enviar','Choose a saved payment option.':'Elige una opción de pago guardada.','Card •••• 4242':'Tarjeta •••• 4242','Card •••• 0002 — declined':'Tarjeta •••• 0002 — rechazada','No shipment yet.':'Todavía no hay envío.','Company Name':'Nombre de la empresa','Enter a valid email address.':'Ingresa un correo válido.','Complete all required fields.':'Completa todos los campos obligatorios.','Incorrect email or password.':'Correo o contraseña incorrectos.','Password must have at least 8 characters.':'La contraseña debe tener al menos 8 caracteres.','An account already uses this email.':'Ya existe una cuenta con este correo.','Passwords do not match.':'Las contraseñas no coinciden.','Request':'Solicitud','Quote Detail':'Detalle de cotización','Brand Files':'Archivos de marca','Profile changes saved':'Cambios guardados','Sign Out':'Cerrar sesión','Home':'Inicio','Shop':'Tienda','Contact':'Contacto','Login / Register':'Ingresar / Registrarse'};
+Object.assign(dict,{'Artisan Chocolate':'Chocolate artesanal','Filter by':'Filtrar por','Clear all':'Limpiar filtros','Chocolate type':'Tipo de chocolate','Dark':'Oscuro','Milk':'Leche','Truffles & gifts':'Trufas y regalos','Featured':'Destacados','Price: Low to High':'Precio: menor a mayor','Price: High to Low':'Precio: mayor a menor','Sort by':'Ordenar por','Shipping Address':'Dirección de envío','Payment Summary':'Resumen de pago','Quote Number':'Número de cotización','Format':'Formato','No':'No','Size':'Tamaño','Download':'Descargar','Peru':'Perú','Mexico':'México','Ecuador 75%':'Ecuador 75%','Single-Origin Collection':'Colección de origen único','Featured collection':'Colección destacada','Discover by origin':'Descubre por origen','View full catalog →':'Ver catálogo completo →','Designed to be gifted':'Diseñado para regalar','Packaging that feels as considered as the chocolate.':'Empaques tan cuidados como el chocolate.','Premium boxes, elegant presentation and branded sleeves create a high-end unboxing experience for retail gifts and corporate programs.':'Cajas premium, presentaciones elegantes y fundas personalizadas para regalos y programas empresariales.','Gift-ready presentation boxes':'Cajas listas para regalar','Corporate sleeves and white-label options':'Fundas corporativas y opciones de marca blanca','Seasonal collections and event packaging':'Colecciones de temporada y empaques para eventos','Explore Packaging Options':'Explorar opciones de empaque','Corporate & wholesale':'Empresas y mayoreo','Create chocolate made for your brand.':'Crea chocolate para tu marca.','Custom molds, white-label packaging, gifting programs and high-volume manufacturing quotes for hotels, events and wholesale customers.':'Moldes personalizados, marca blanca y regalos para hoteles, eventos y clientes mayoristas.','View B2B Services':'Ver servicios empresariales','✓ Custom cacao profiles':'✓ Perfiles de cacao personalizados','✓ Branded molds':'✓ Moldes con marca','✓ Luxury packaging':'✓ Empaques de lujo','✓ White-label options':'✓ Opciones de marca blanca','A Business Account is required.':'Se requiere una cuenta empresarial.','Reset link expired. Request a new link.':'El enlace venció. Solicita uno nuevo.','Some items are no longer available. Update your cart.':'Algunos productos ya no están disponibles. Actualiza tu carrito.'});
+const t=s=>locale==='es'?(dict[s]||ES[s]||s):s;
+function translate(root){if(locale!=='es')return;const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;while(n=walker.nextNode()){if(n.parentElement.closest('script,style,textarea'))continue;const value=n.nodeValue.trim();if(dict[value]||ES[value])n.nodeValue=n.nodeValue.replace(value,t(value));}$$('[placeholder]',root).forEach(e=>e.placeholder=t(e.placeholder));}
+const products=PRODUCTS.map(p=>({...p,active:true}));
+const accounts=[{id:'customer',role:'CUSTOMER',first:'Alex',last:'Morgan',email:'customer@solcacao.test',password:'12345',phone:'555-0101',address:{street:'123 Main Street',city:'Arlington',state:'TX',zip:'76010'},cart:[]},...['APPROVED','PENDING','REJECTED'].map((status,i)=>({id:'business'+i,role:'BUSINESS',first:['Jamie','Morgan','Taylor'][i],last:'Rivera',email:['business','pending','rejected'][i]+'@solcacao.test',password:'12345',phone:'555-0201',address:{},cart:[],company:{name:['ABC Luxury Hotels','Gather Events','Cedar Gifts'][i],phone:'555-0201',industry:'Hotel / Hospitality',website:'https://example.com',status,submitted:'2026-09-01',reviewed:status==='PENDING'?null:'2026-09-02',reason:status==='REJECTED'?'Please add a business website and complete contact phone number.':''}})),{id:'owner',role:'ADMIN',first:'SolCacao',last:'Owner',email:'owner@solcacao.test',password:'12345',phone:'',address:{},cart:[]}];
+const orders=[],requests=[],inquiries=[],subscriptions=[];let guestCart=[],draft=null,sampler=null,guestOrder=null;
+const filter={query:'',origin:[],cacao:[],type:[],max:40,sort:0,page:1};
+const date=()=>new Date().toISOString().slice(0,10), account=()=>accounts.find(a=>a.id===current), cart=()=>account()?account().cart:guestCart;
+const pBy=id=>products.find(p=>p.id===id), name=p=>p[locale].name, status=s=>t(s);
+const samplerBase={6:18,12:30,24:52}, packagingFees={'Classic Box':0,'Luxury Gift Box':5,'Event Sleeve':3};
+const itemPrice=x=>x.type==='sampler'?x.price:(pBy(x.id)?.price||x.price||0);
+const itemName=x=>x.type==='sampler'?x.name:name(pBy(x.id));
+const itemImage=x=>x.type==='sampler'?(products.find(p=>p.type==='gifts')||products[0]).image:pBy(x.id).image;
+const itemStock=x=>x.type==='sampler'?99:pBy(x.id).stock;
+const itemMeta=x=>x.type==='sampler'?`<div>${line('Packaging',x.packaging)}${x.giftMessage?line('Gift Message',x.giftMessage):''}${x.chocolates?.length?`<p class="muted">${esc(x.chocolates.map(c=>c.qty+' × '+c.name).join(', '))}</p>`:''}</div>`:'';
+const cartSubtotal=()=>cart().reduce((n,x)=>n+itemPrice(x)*x.qty,0);
+function toast(s){const e=$('#toast');e.textContent=t(s);e.classList.add('show','sc-toast');clearTimeout(toast.timer);toast.timer=setTimeout(()=>e.classList.remove('show'),3000)}
+const btn=(label,action,arg='',cls='outline')=>`<button type="button" class="btn ${cls}" data-action="${action}" data-arg="${esc(arg)}">${esc(t(label))}</button>`;
+const nav=(label,r,arg='',cls='soft')=>`<button type="button" class="btn ${cls}" data-route="${r}" data-param="${esc(arg)}">${esc(t(label))}</button>`;
+const field=(label,key,value='',type='text',required=true)=>`<div class="field"><label for="f-${key}">${esc(t(label))}</label><input id="f-${key}" name="${key}" type="${type}" ${type==='number'?'step="any"':''} value="${esc(value)}" ${type==='password'?'autocomplete="new-password"':''}></div>`;
+const select=(label,key,options,value)=>`<div class="field"><label for="f-${key}">${esc(t(label))}</label><select id="f-${key}" name="${key}">${options.map(o=>`<option value="${esc(o)}" ${o===value?'selected':''}>${esc(t(o))}</option>`).join('')}</select></div>`;
+const area=(label,key,value='')=>`<div class="field"><label for="f-${key}">${esc(t(label))}</label><textarea id="f-${key}" name="${key}">${esc(value)}</textarea></div>`;
+const form=(id,body,submit)=>`<form data-form="${id}" class="panel sc-form">${body}<p class="sc-error" role="alert" data-error></p><button class="btn primary" type="submit">${esc(t(submit))}</button></form>`;
+const empty=()=>`<div class="panel sc-empty">${t('No records yet.')}</div>`;
+const line=(label,value)=>`<div class="sum-line"><span>${esc(t(label))}</span><b>${esc(value)}</b></div>`;
+const dashboard=()=>account()?.role==='ADMIN'?'admin':account()?.role==='BUSINESS'?'business':'customer';
+function header(){const a=account(),h=(label,r,arg='')=>`<button type="button" class="header-link" data-route="${r}" data-param="${esc(arg)}">${esc(t(label))}</button>`,links=h('Home','home')+h('Shop','catalog')+(a?.role==='ADMIN'?'':h('Build a Sampler','sampler'))+h('For Business','b2b-services')+h('Contact','contact'),accountLabel=a?.role==='ADMIN'?'Shop Owner':a?.role==='BUSINESS'?'Business Account':'My Account';return `<header class="hdr sc-header"><div class="hdr-inner"><div class="logo" data-route="home" role="link" tabindex="0"><span class="logo-mark" aria-hidden="true"></span>SolCacao</div><nav class="nav">${links}</nav><div class="spacer"></div><div class="actions"><div class="lang"><button data-action="locale" data-arg="en" class="${locale==='en'?'on':''}" aria-pressed="${locale==='en'}">EN</button><button data-action="locale" data-arg="es" class="${locale==='es'?'on':''}" aria-pressed="${locale==='es'}">ES</button></div>${a?.role==='ADMIN'?'':btn('Cart','drawer','', 'soft')}${a?.role==='ADMIN'?'':`<span aria-label="Items in cart">${cart().reduce((n,x)=>n+x.qty,0)}</span>`}<span class="account-link">${a?nav(accountLabel,dashboard()):nav('Login / Register','auth')}</span>${a?btn('Sign Out','signout','', 'outline'):''}<button class="mobile-menu-btn sc-menu" data-action="menu" aria-label="Menu" aria-expanded="false">☰</button></div></div><nav class="mobile-nav">${links}${a?nav(accountLabel,dashboard())+btn('Sign Out','signout'):nav('Login / Register','auth')}</nav></header>`}
+function footer(){const f=(label,r,arg='')=>`<button type="button" class="footer-link" data-route="${r}" data-param="${esc(arg)}">${esc(t(label))}</button>`,s=(label,arg)=>`<button type="button" class="footer-link" data-action="social" data-arg="${arg}">${esc(label)}</button>`;return `<footer class="sc-footer"><div class="wrap"><div class="sc-footer-grid"><div><div class="logo"><span class="logo-mark" aria-hidden="true"></span>SolCacao</div><p>Artisan single-origin chocolate for retail customers, gifts, and business programs.</p></div><div><h4>SHOP</h4><ul><li>${f('Shop','catalog')}</li><li>${f('Build a Sampler','sampler')}</li></ul></div><div><h4>BUSINESS</h4><ul><li>${f('For Business','b2b-services')}</li><li>${f('Contact','contact')}</li></ul></div><div><h4>CONNECT</h4><ul><li>${s('Instagram','instagram')}</li><li>${s('WhatsApp','whatsapp')}</li></ul></div></div><p class="copyright">© 2026 SolCacao. ${t('All rights reserved.')}</p></div></footer>`}
+const originals={};$$('[data-screen]').forEach(e=>originals[e.dataset.screen]=e.innerHTML);$$('[data-screen]').forEach(e=>e.remove());const root=document.createElement('div');root.id='app';document.body.appendChild(root);
+function original(id){const e=document.createElement('div');e.innerHTML=originals[id];$$('header,footer',e).forEach(x=>x.remove());return e.innerHTML}
+function go(r,p=null){capture();if(r==='orders'){r='customer';p='orders'}if(r==='tracking')r='order';if(r==='files')r='quotes';if(r==='approval')r='business';if(r==='b2b-gate')r='start-quote';if(r==='start-quote'){draft=newDraft();r='b2b-wizard'}const customerRoutes=['customer','order'];const businessRoutes=['business','company','quotes','quote'];if((customerRoutes.includes(r)||businessRoutes.includes(r)||r==='profile'||r==='admin')&&!account()){returnTo=r;r='auth'}if(account()&&customerRoutes.includes(r)&&account().role!=='CUSTOMER')r=dashboard();if(account()&&businessRoutes.includes(r)&&account().role!=='BUSINESS')r=dashboard();if(r==='admin'&&account()?.role!=='ADMIN')r=dashboard();route=r;param=p;drawer=false;render();window.scrollTo(0,0)}
+function shell(title,body,menus=''){return `<main class="wrap sc-page"><h1>${esc(t(title))}</h1>${menus}${body}</main>`}
+function menus(){const role=account()?.role;const items=role==='BUSINESS'?[['Business Account','business'],['My Requests','quotes']]:[['My Account','customer'],['Recent Orders','orders']];return `<nav class="sc-nav">${items.map(i=>nav(...i)).join('')}</nav>`}
+function stats(items){return `<div class="sc-stats">${items.map(([label,n])=>`<div class="panel sc-stat"><span>${t(label)}</span><b>${esc(n)}</b></div>`).join('')}</div>`}
+function render(){document.documentElement.lang=locale;document.title='SolCacao — '+(locale==='es'?'Chocolate artesanal':'Artisan Chocolate');let content='';switch(route){case'home':content=home();break;case'catalog':content=catalog();break;case'product':content=detail();break;case'cart':content=shell('Your Cart',cartHTML());break;case'auth':content=auth();break;case'checkout':content=checkout();break;case'order-confirmation':content=orderConfirmation();break;case'customer':content=customer();break;case'profile':content=profile();break;case'order':content=orderDetail();break;case'business':content=business();break;case'company':content=company();break;case'b2b-services':content=original('b2b-services');break;case'b2b-wizard':content=wizard();break;case'quote-confirmation':content=quoteConfirmation();break;case'quotes':content=quoteList();break;case'quote':content=quoteDetail();break;case'admin':content=admin();break;case'sampler':content=samplerView();break;case'contact':content=shell('Contact & Support',form('contact',field('Full Name','name',account()?account().first+' '+account().last:'')+field('Email','email',account()?.email||'','email')+select('Category','category',['General Inquiry','Business Inquiry','Sampler Inquiry','Order Support','Feedback'],'General Inquiry')+`<div class="field" id="feedback-rating" hidden><label for="f-rating">Rating</label><select id="f-rating" name="rating"><option>5 - Excellent</option><option>4 - Good</option><option>3 - Okay</option><option>2 - Poor</option><option>1 - Bad</option></select></div>`+field('Subject','subject')+area('Message','message'),'Submit Message'));break;case'contact-confirmation':content=shell('Message Received',`<div class="panel sc-record">${line('Reference',param)}<p>${t('Within 24–48 hours')}</p>${nav('Home','home')}</div>`);break;case'about':content=shell('About SolCacao',`<div class="panel sc-record"><h2>${locale==='es'?'Cacao con carácter. Chocolate hecho con cuidado.':'Cacao with character. Chocolate made with care.'}</h2><p>${locale==='es'?'SolCacao celebra el cacao de origen único con barras artesanales, trufas y regalos cuidadosamente presentados. Descubre sabores de Madagascar, Ecuador, Peru y Mexico.':'SolCacao celebrates single-origin cacao through artisan bars, truffles and thoughtfully presented gifts. Explore flavors from Madagascar, Ecuador, Peru and Mexico.'}</p>${nav('Shop','catalog')}${nav('For Business','b2b-services')}</div>`);break;default:content=shell('Home',nav('Home','home'));}root.innerHTML=header()+content+footer();translate(root);bindOriginal();if(drawer)renderDrawer();}
+
+function card(p){return `<div class="card product" data-route="product" data-param="${p.id}" role="button" tabindex="0"><div class="product-img">${p.seasonal?`<span class="tag">${t('Seasonal')}</span>`:''}<img src="${p.image}" alt="${esc(name(p))}"></div><div class="card-body"><h3>${esc(name(p))}</h3><div class="muted">${esc(p[locale].region)}</div><span class="stock ${p.stock?'':'out'}">${t(p.stock?'In stock':'Out of stock')}${p.stock>0&&p.stock<=3?' · '+p.stock:''}</span><div class="price">${money(p.price)}</div></div></div>`}
+function home(){const e=document.createElement('div');e.innerHTML=original('home-en');const titles=['Chocolate with a story in every square.','A little chocolate. A special season.','Create chocolate made for your brand.'];const spanish=['Chocolate con una historia en cada pieza.','Un poco de chocolate. Una temporada especial.','Crea chocolate para tu marca.'];$('.hero h1',e).textContent=locale==='es'?spanish[hero]:titles[hero];$('.hero .eyebrow',e).textContent=t(['Single-Origin Collection','Seasonal Collection','Corporate Gifting'][hero]);$('.hero .lead',e).textContent=locale==='es'?'Barras de origen único, regalos elegantes y cacao artesanal para disfrutar y compartir.':'Single-origin bars, thoughtful gifts and artisan cacao to savor and share.';$('.hero-note',e).textContent=t(['Single-Origin Collection','Seasonal Collection','Corporate Gifting'][hero]);const cta=$('.hero-cta',e);cta.innerHTML=hero===2?nav('Start Custom Quote','start-quote','','primary')+nav('For Business','b2b-services'):nav('Browse Chocolates','catalog','','primary')+nav('Build a Sampler','sampler');$('.hero-cta + p',e)?.remove();$('.grid4',e).innerHTML=products.filter(p=>p.active).slice(0,4).map(card).join('');const input=$('.home-search input',e);input.id='home-search';input.placeholder=t('Search chocolate bars, truffles, origin...');const b=$('.home-search button',e);b.id='';b.dataset.action='home-search';return e.innerHTML}
+function filtered(){return products.filter(p=>{const bucket=p.cacao<=60?'45-60':p.cacao<=75?'61-75':'76-90';const hay=(p.en.name+' '+p.es.name+' '+p.en.region+' '+p.es.region+' '+p.origin+' '+p.cacao).toLowerCase();return p.active&&p.price<=filter.max&&(!filter.query||hay.includes(filter.query.toLowerCase()))&&(!filter.origin.length||filter.origin.includes(p.origin))&&(!filter.cacao.length||filter.cacao.includes(bucket))&&(!filter.type.length||filter.type.includes(p.type))}).sort((a,b)=>filter.sort===1?a.price-b.price:filter.sort===2?b.price-a.price:filter.sort===3?b.cacao-a.cacao:0)}
+function catalog(){const choices=(label,key,values)=>`<div class="filter-group"><div class="filter-title">${t(label)}</div>${values.map(([val,label])=>`<label class="check-row"><span><input type="checkbox" data-filter="${key}" value="${val}" ${filter[key].includes(val)?'checked':''}> ${t(label)}</span><span>${products.filter(p=>p.active&&(key==='origin'?p.origin===val:key==='type'?p.type===val:(p.cacao<=60?'45-60':p.cacao<=75?'61-75':'76-90')===val)).length}</span></label>`).join('')}</div>`;let list=filtered();const pages=Math.max(1,Math.ceil(list.length/4));filter.page=Math.min(filter.page,pages);return `<div class="wrap page-head"><h1>${t('Artisan Chocolate')}</h1></div><div class="wrap catalog"><aside class="filters" id="filters"><div class="filter-head"><strong>${t('Filter by')}</strong>${btn('Clear all','clear-filters')}</div>${choices('Origin','origin',[['Madagascar','Madagascar'],['Ecuador','Ecuador'],['Peru','Peru'],['Mexico','Mexico']])}${choices('Cacao','cacao',[['45-60','45–60%'],['61-75','61–75%'],['76-90','76–90%']])}${choices('Chocolate type','type',[['dark','Dark'],['milk','Milk'],['gifts','Truffles & gifts']])}<div class="filter-group"><label for="price-range">${t('Price')} <b id="price-label">$8–$${filter.max}</b></label><input id="price-range" type="range" min="8" max="40" value="${filter.max}" style="width:100%"></div></aside><div><div class="search"><input id="catalog-query" aria-label="${t('Search chocolates')}" placeholder="${t('Search chocolates')}" value="${esc(filter.query)}"></div><div class="catalog-tools"><button class="mobile-filter-btn" data-action="filters">☰ ${t('Filter by')}</button><b>${list.length} ${locale==='es'?'productos':'products'}</b><select id="sort" aria-label="${t('Sort by')}">${['Featured','Price: Low to High','Price: High to Low','Cacao %'].map((v,i)=>`<option value="${i}" ${filter.sort===i?'selected':''}>${t(v)}</option>`).join('')}</select></div><div class="catalog-grid">${list.length?list.slice((filter.page-1)*4,filter.page*4).map(card).join(''):`<p>${t('No products match these filters.')}</p>`}</div><div class="sc-pager"><button class="btn soft" data-action="page" data-arg="${filter.page-1}" ${filter.page===1?'disabled':''}>${t('Previous')}</button><span>${locale==='es'?'Página':'Page'} ${filter.page} / ${pages}</span><button class="btn soft" data-action="page" data-arg="${filter.page+1}" ${filter.page===pages?'disabled':''}>${t('Next')}</button></div></div></div>`}
+function detail(){const p=pBy(param);if(!p?.active)return shell('Shop',empty()+nav('Shop','catalog'));const copy=p[locale];return `<main class="wrap detail"><div class="detail-img"><img src="${p.image}" alt="${esc(copy.name)}"></div><div><div class="eyebrow">${esc(p.origin)} • ${esc(copy.region)}</div><h1>${esc(copy.name)}</h1><p>${esc(copy.features)}</p><div class="price">${money(p.price)}</div><p>${esc(copy.description)}</p><div class="meta-box"><div><b>${p.cacao}%</b><br>${t('Cacao')}</div><div><b>${esc(p.weight)}</b><br>${t('Format')}</div><div><b>${esc(p.origin)}</b><br>${t('Origin')}</div></div><span class="stock ${p.stock?'':'out'}">${t(p.stock?'In stock':'Out of stock')}</span><div class="detail-actions"><div class="detail-buy-row"><div class="qty"><button data-action="detail-qty" data-arg="-1" ${detailQty<=1?'disabled':''}>−</button><span>${detailQty}</span><button data-action="detail-qty" data-arg="1" ${detailQty>=p.stock?'disabled':''}>+</button></div><button class="btn primary" data-action="add" data-arg="${p.id}" ${!p.stock?'disabled':''}>${t('Add to Cart')}</button></div>${nav('Continue Shopping','catalog')}</div></div></main>`}
+function quoteConfirmation(){const accountActions=account()?.role==='BUSINESS'?nav('Back to Business Account','business')+nav('View My Requests','business','requests'):'';return shell('Custom Request Submitted',`<div class="panel sc-record">${line('Request',param)}${line('Status',t('Submitted'))}<div class="sc-actions">${nav('Home','home')}${nav('New Custom Request','start-quote','','primary')}${accountActions}</div></div>`)}
+function cartHTML(compact=false){const list=cart(),subtotal=cartSubtotal();return `<div class="${compact?'':'two-col'}"><div class="cart-list">${list.length?list.map(x=>`<div class="cart-row"><div class="thumb"><img src="${itemImage(x)}" alt="${esc(itemName(x))}"></div><div class="cart-info"><b>${esc(itemName(x))}</b><div>${money(itemPrice(x))}</div>${itemMeta(x)}${btn('Remove','remove',x.id)}</div><div class="qty"><button data-action="cart-qty" data-arg="${x.id}|-1" ${x.qty<=1?'disabled':''}>−</button><span>${x.qty}</span><button data-action="cart-qty" data-arg="${x.id}|1" ${x.qty>=itemStock(x)?'disabled':''}>+</button></div><b class="cart-line-total">${money(itemPrice(x)*x.qty)}</b></div>`).join(''):`<div class="sc-empty">${t('Your cart is empty.')}${nav('Shop','catalog')}</div>`}</div><aside class="summary">${line('Subtotal',money(subtotal))}${line('Estimated tax',money(subtotal*.08))}${line('Total',money(subtotal*1.08))}<button class="btn primary block" data-route="checkout" ${!list.length?'disabled':''}>${t('Checkout')}</button>${compact?nav('View Cart','cart'):!account()?btn('Login / Register','checkout-login'):''}</aside></div>`}
+function renderDrawer(){document.getElementById('drawer-wrap')?.remove();const e=document.createElement('div');e.id='drawer-wrap';e.innerHTML=`<div class="sc-overlay" data-action="close-drawer"></div><aside class="sc-drawer" role="dialog" aria-modal="true" aria-label="${t('Your Cart')}"><div class="sc-drawer-head"><h2>${t('Your Cart')}</h2><button type="button" class="btn outline sc-drawer-close" data-action="close-drawer">${t('Close')}</button></div>${cartHTML(true)}</aside>`;root.appendChild(e);$('.sc-drawer button',e)?.focus()}
+let checkoutDraft={};
+function checkout(){if(!cart().length)return shell('Checkout',`<p>${t('Your cart is empty.')}</p>${nav('Shop','catalog')}`);const a=account(),d={first:a?.first||'',last:a?.last||'',email:a?.email||'',phone:a?.phone||'',...(a?.address||{}),...checkoutDraft},subtotal=cartSubtotal();return shell('Delivery & Payment',form('checkout',`<h2>${t('Delivery')}</h2><div class="sc-grid">${field('First Name','first',d.first)}${field('Last Name','last',d.last)}${field('Email','email',d.email,'email')}${field('Phone','phone',d.phone,'tel')}${field('Street Address','street',d.street)}${field('City','city',d.city)}${field('State','state',d.state)}${field('ZIP Code','zip',d.zip)}</div><h2>${t('Payment')}</h2><p>Credit / Debit Card</p><div class="sc-summary">${cart().map(x=>line(itemName(x),x.qty+' × '+money(itemPrice(x)))).join('')}${line('Subtotal',money(subtotal))}${line('Estimated tax',money(subtotal*.08))}${line('Total',money(subtotal*1.08))}</div>`,'Pay & Place Order'))}
+function orderConfirmation(){const o=orders.find(o=>o.id===param&&(o.user===current||o.id===guestOrder));return shell('Order Confirmed',o?`<div class="panel sc-record">${line('Order',o.id)}${line('Customer',[o.customer.first,o.customer.last].filter(Boolean).join(' ')||'Guest Customer')}<h3>Items</h3>${o.items.map(x=>`<div class="sc-summary">${line(itemName(x),x.qty+' × '+money(itemPrice(x)))}${itemMeta(x)}</div>`).join('')}${line('Total',money(o.total))}${line('Payment','Credit / Debit Card')}${line('Status',o.status)}<div class="sc-actions">${nav('Continue Shopping','catalog')}${nav('Home','home')}${current===o.user&&current?nav('View My Orders','customer','orders'):''}</div></div>`:empty())}
+function newSampler(){return{step:1,size:12,items:{},packaging:'Luxury Gift Box',message:''}}
+function samplerPrice(s=sampler){return (samplerBase[s.size]||30)+(packagingFees[s.packaging]||0)}
+function samplerChocolates(s=sampler){return Object.entries(s.items).filter(([,n])=>Number(n)>0).map(([id,n])=>({id,name:name(pBy(id)),qty:Number(n)}))}
+function samplerView(){if(!sampler)sampler=newSampler();const s=sampler,total=Object.values(s.items).reduce((a,b)=>a+Number(b||0),0),price=samplerPrice(s);let body='';if(s.step===1)body=`<div class="sc-grid">${[6,12,24].map(n=>`<button type="button" class="choice ${s.size===n?'on':''}" data-action="sampler-size" data-arg="${n}"><b>${n} pieces</b><span>${money(samplerBase[n])}</span></button>`).join('')}</div>`;if(s.step===2)body=`<p>${total} selected</p><div class="sc-grid">${products.filter(p=>p.active&&p.stock>0).map(p=>`<div class="panel sc-record"><h3>${esc(name(p))}</h3><p class="muted">${esc(p[locale].region)}</p><label>${t('Quantity')}<input type="number" data-sampler-item="${p.id}" min="0" value="${s.items[p.id]||0}"></label></div>`).join('')}</div>`;if(s.step===3)body=select('Packaging','sampler-packaging',['Classic Box','Luxury Gift Box','Event Sleeve'],s.packaging)+area('Gift Message','sampler-message',s.message);if(s.step===4)body=`<div class="panel sc-record">${line('Custom Sampler',`${s.size}-Piece Chocolate Sampler`)}${line('Box Size',s.size+' pieces')}${samplerChocolates(s).map(c=>line(c.name,c.qty)).join('')||line('Selected Chocolates','Prototype assortment')}${line('Packaging',t(s.packaging))}${s.message?line('Gift Message',s.message):''}${line('Sampler Price',money(price))}</div>`;return shell('Build a Sampler',`<div class="wiz-progress">${['Choose Box Size','Choose Chocolates','Packaging + Gift Message','Review + Price'].map((label,i)=>`<div class="wstep ${s.step===i+1?'on':s.step>i+1?'done':''}"><span class="dot">${i+1}</span><span class="wlabel">${t(label)}</span></div>${i<3?'<span class="bar"></span>':''}`).join('')}</div><div class="wiz-card sc-form">${body}<div class="wiz-foot">${s.step>1?btn('Back','sampler-step',s.step-1):'<span></span>'}${s.step<4?btn('Next','sampler-step',s.step+1,'primary'):btn('Add Sampler to Cart','add-sampler','','primary')}</div></div>`)}
+function bindOriginal(){$$('[data-nav]',root).forEach(e=>{const r=e.dataset.nav;e.dataset.route=r.startsWith('home-')?'home':r.startsWith('catalog-')?'catalog':r==='product-detail'?'product':r==='b2b-gate'?'start-quote':r;e.removeAttribute('data-nav')});}
+
+let authMode='login',regType='CUSTOMER';
+function auth(){return shell(authMode==='login'?'Welcome Back':'Create Account',`<div class="auth-tabs">${btn('Sign In','auth-mode','login')}${btn('Create Account','auth-mode','register')}</div>`+(authMode==='login'?form('login',field('Email','email','','email')+field('Password','password','','password'),'Sign In')+`<div class="demo-help"><b>Demo Accounts</b><br>Customer: customer@solcacao.test<br>Business: business@solcacao.test<br>Pending Business: pending@solcacao.test<br>Rejected Business: rejected@solcacao.test<br>Shop Owner: owner@solcacao.test<br><b>Password for all:</b> 12345</div>`:form('register',select('Account Type','role',['CUSTOMER','BUSINESS'],regType).replace('>CUSTOMER<','>'+t('Personal Account')+'<').replace('>BUSINESS<','>'+t('Business Account')+'<')+field(regType==='BUSINESS'?'Contact First Name':'First Name','first')+field(regType==='BUSINESS'?'Contact Last Name':'Last Name','last')+field('Email','email','','email')+field('Phone','phone','','tel')+field('Password','password','','password')+`<div id="company-fields" ${regType==='BUSINESS'?'':'hidden'}>${field('Company Name','company')}${select('Industry','industry',['Hotel / Hospitality','Corporate Events','Wholesale Retailer','Other'],'Hotel / Hospitality')}${field('Website','website','','url',false)}</div>`,'Create Account')))}
+function accountShell(title,items,body){return shell(title,`<div class="account-shell"><aside class="account-side"><strong>${esc(t(title))}</strong>${items.map(i=>i.disabled?`<button type="button" class="btn ${i.cls||'soft'}" disabled>${esc(t(i.label))}</button>`:i.action?btn(i.label,i.action,i.arg||'',i.cls||'soft'):nav(i.label,i.route,i.arg||'',i.cls||'soft')).join('')}</aside><main class="account-main">${body}</main></div>`)}
+function customer(){const a=account(),tab=param||'overview',list=orders.filter(o=>o.user===current).slice(0,3),items=[{label:'Overview',route:'customer',arg:'overview'},{label:'Orders',route:'customer',arg:'orders'},{label:'Addresses',route:'customer',arg:'addresses'}];let body='';if(tab==='orders')body=`<section class="panel sc-record"><h2>Orders</h2>${orders.filter(o=>o.user===current).map(o=>`<div class="sc-summary">${line('Order',o.id)}${line('Date',o.date)}${line('Total',money(o.total))}${line('Status',t(o.status))}${nav('View Details','order',o.id)}</div>`).join('')||'<p class="muted">No recent orders yet.</p>'}</section>`;else if(tab==='addresses')body=`<section class="panel sc-record"><h2>Default Address</h2>${form('address',field('Street Address','street',a.address.street||'')+field('City','city',a.address.city||'')+field('State','state',a.address.state||'')+field('ZIP Code','zip',a.address.zip||''),'Edit / Save')}</section>`;else body=`<section class="panel sc-record"><h2>Welcome, ${esc(a.first)}</h2><h3>Personal Information</h3>${line('Name',a.first+' '+a.last)}${line('Email',a.email)}${line('Phone',a.phone||'')}</section><section class="panel sc-record"><h2>Recent Orders</h2>${list.map(o=>`<div class="sc-summary">${line('Order',o.id)}${line('Date',o.date)}${line('Total',money(o.total))}${line('Status',t(o.status))}${nav('View Details','order',o.id)}</div>`).join('')||'<p class="muted">No recent orders yet.</p>'}</section>`;return accountShell('My Account',items,body)}
+function profile(){return account()?.role==='CUSTOMER'?customer():business()}
+function orderList(){return customer()}
+function ownedOrder(){return orders.find(o=>o.id===param&&o.user===current)}
+function orderDetail(){const o=ownedOrder();if(!o)return shell('Order Detail',empty(),menus());if(route==='tracking'){const steps=['Order Placed','Payment Confirmed','Processing','Shipped','Delivered'];return shell('Order Tracking',`<div class="panel sc-record"><h2>${esc(o.id)}</h2><ol class="sc-timeline">${steps.map(s=>`<li class="${o.history.some(h=>h.status===s)?'':'future'}">${t(s)} ${o.history.find(h=>h.status===s)?.date||''}</li>`).join('')}</ol>${o.shipment?line('Carrier',o.shipment.carrier)+line('Tracking Number',o.shipment.tracking)+line('Expected Delivery',o.shipment.expected):`<p>${t('No shipment yet.')}</p>`}${nav('View Details','order',o.id)}</div>`,menus())}return shell('Order Detail',`<div class="panel sc-record">${line('Order',o.id)}${line('Date',o.date)}${line('Status',t(o.status))}${o.items.map(x=>`<div class="sc-summary">${line(itemName(x),x.qty+' × '+money(itemPrice(x)))}${itemMeta(x)}${line('Total',money(x.qty*itemPrice(x)))}</div>`).join('')}<h3>${t('Shipping Address')}</h3><p>${esc([o.customer.first,o.customer.last].join(' '))}<br>${esc(o.customer.street)}<br>${esc([o.customer.city,o.customer.state,o.customer.zip].join(', '))}</p>${line('Subtotal',money(o.subtotal))}${line('Estimated tax',money(o.tax))}${line('Total',money(o.total))}<h3>${t('Payment Summary')}</h3>${o.payments.map(p=>line(t(p.status)+' · '+p.id,money(p.amount)+' · '+t(p.method))).join('')}${nav('Track Order','tracking',o.id)}</div>`,menus())}
+function payments(){return shell('Payment History',orders.filter(o=>o.user===current).flatMap(o=>o.payments.map(p=>`<div class="panel sc-record">${line('Transaction ID',p.id)}${line('Order',o.id)}${line('Date',p.date)}${line('Amount',money(p.amount))}${line('Method',t(p.method))}${line('Status',t(p.status))}${nav('View Details','order',o.id)}</div>`)).join('')||empty(),menus())}
+function afterLogin(){const destination=returnTo;returnTo=null;checkoutDraft={};draft=null;sampler=null;if(destination==='checkout'){go(account().role==='CUSTOMER'?'checkout':dashboard());return}if(destination==='start-quote'){go('start-quote');return}go(dashboard())}
+function mergeGuest(a){guestCart.forEach(x=>{if(x.type==='sampler'){a.cart.push(clone(x));return}const p=pBy(x.id);if(!p?.active||p.stock<1)return;const old=a.cart.find(y=>y.id===x.id);if(old)old.qty=Math.min(p.stock,old.qty+x.qty);else a.cart.push({id:x.id,qty:Math.min(p.stock,x.qty)})});guestCart=[]}
+function seed(){const items=[{id:products[0].id,qty:1,price:12}],total=12.96;orders.push({id:'SC-1001',user:'customer',date:'2026-09-04',customer:{first:'Alex',last:'Morgan',street:'123 Main Street',city:'Arlington',state:'TX',zip:'76010',email:'customer@solcacao.test'},items,subtotal:12,tax:.96,total,status:'Shipped',history:[{status:'Order Placed',date:'2026-09-04'},{status:'Payment Confirmed',date:'2026-09-04'},{status:'Processing',date:'2026-09-05'},{status:'Shipped',date:'2026-09-06'}],shipment:{carrier:'UPS',tracking:'SC1001-SAMPLE',expected:'2026-09-12'},payments:[{id:'PAY-1000',date:'2026-09-04',amount:total,method:'Card •••• 0002',status:'Failed'},{id:'PAY-1001',date:'2026-09-04',amount:total,method:'Card •••• 4242',status:'Successful'}]});orders.push({...clone(orders[0]),id:'SC-1002',status:'Delivered',date:'2026-08-20',history:[...clone(orders[0].history),{status:'Delivered',date:'2026-09-08'}],payments:[{id:'PAY-1002',date:'2026-08-20',amount:total,method:'Card •••• 4242',status:'Successful'}],shipment:{carrier:'UPS',tracking:'SC1002-SAMPLE',expected:'2026-09-08'}});requests.push({id:'REQ-1001',user:'business0',date:'2026-09-01',cacao:'Ecuador 75%',qty:25,brand:'ABC Welcome Collection',mold:'Hotel monogram on each square',pkg:'Luxury Gift Box',whiteLabel:true,notes:'Individual guest-room presentation',files:[],status:'Quoted',history:[{status:'Submitted',date:'2026-09-01'},{status:'Under Review',date:'2026-09-02'},{status:'Quoted',date:'2026-09-03'}],quote:{id:'QUOTE-1001',amount:850,until:'2026-12-31',notes:'Includes branded gift boxes.'}})}
+
+const approvalLabel=s=>s==='PENDING'?'Pending Review':s==='APPROVED'?'Approved':'Needs Attention';
+function business(){const a=account(),c=a.company,tab=param||'overview',list=requests.filter(r=>r.user===current),items=[{label:'Overview',route:'business',arg:'overview'},{label:'Company Information',route:'business',arg:'company'},{label:'My Requests',route:'business',arg:'requests'},{label:'New Custom Request',route:'start-quote',cls:'primary'}];let body='';if(tab==='company')body=`<section class="panel sc-record"><h2>Company Information</h2>${form('company',field('Company Name','name',c.name)+select('Industry','industry',['Hotel / Hospitality','Corporate Events','Wholesale Retailer','Other'],c.industry)+field('Contact Name','contact',a.first+' '+a.last)+field('Email','email',a.email,'email')+field('Business Phone','phone',c.phone,'tel')+field('Website','website',c.website,'url',false),'Save')}</section>`;else if(tab==='requests')body=`<section class="panel sc-record"><h2>My Requests</h2>${nav('New Custom Request','start-quote','','primary')}${list.map(r=>requestCard(r)).join('')||empty()}</section>`;else{const message=c.status==='PENDING'?'Your business account is under review.':c.status==='REJECTED'?'Your business account needs attention.':'';body=`<section class="panel sc-record"><h2>${esc(c.name)}</h2>${line('Approval Status',t(approvalLabel(c.status)))}${message?`<p>${esc(message)}</p>`:''}${c.reason?`<p>${esc(c.reason)}</p>`:''}${stats([['Open Requests',list.filter(r=>['Submitted','Under Review'].includes(r.status)).length],['Quotes Received',list.filter(r=>r.quote).length]])}${nav('New Custom Request','start-quote','','primary')}</section>`}return accountShell('Business Account',items,body)}
+function company(){return business()}
+function approval(){const c=account().company;return shell('Business Account Review',`<div class="panel sc-record"><h2>${t(approvalLabel(c.status))}</h2><p>${t(c.status==='PENDING'?'Your business account is currently under review.':c.status==='APPROVED'?'Your business account has been approved. You can now submit custom quote requests.':'Your business account needs additional information before quote access can be enabled.')}</p>${c.reason?`<p>${esc(c.reason)}</p>`:''}<div class="sc-actions">${c.status==='APPROVED'?nav('Start Custom Quote','start-quote','','primary'):nav('Update Company Information','company')}${nav('Contact Support','contact')}</div></div>`,menus())}
+function newDraft(){return{owner:current||'guest',step:1,cacao:'Madagascar 55%',qty:25,brand:'',mold:'',pkg:'Luxury Gift Box',whiteLabel:true,notes:'',files:[]}}
+function wizard(){if(!draft||draft.owner!==(current||'guest'))draft=newDraft();const d=draft;const e=document.createElement('div');e.innerHTML=original('b2b-wizard');$$('.wiz-panel',e).forEach(x=>x.style.display=Number(x.dataset.panel)===d.step?'block':'none');$$('.wstep',e).forEach((x,i)=>{x.classList.toggle('on',i+1===d.step);x.classList.toggle('done',i+1<d.step)});$$('.wlabel',e).forEach((x,i)=>x.textContent=t(['Cacao Profile + Quantity','Brand / Design','Packaging','Review / Submit'][i]));const q=$('#wiz-qty',e).closest('.field');$('[data-panel="3"] .wiz-foot',e).before(q);$('#wiz-qty',e).value=d.qty;$('[data-panel="1"] h2',e).textContent=t('Cacao Profile + Quantity');$('#brand-name',e).value=d.brand;$('#mold-customization',e).value=d.mold;$('#special-notes',e).value=d.notes;$('#white-label',e).selectedIndex=d.whiteLabel?0:1;$('#upload-zone',e).innerHTML=`<label for="brand-file"><b>${t('Upload brand or technical files')}</b></label><p>Click to simulate uploading a logo, PDF, SVG, or design file.</p><input id="brand-file" type="file" multiple><div class="sc-file">${d.files.length?d.files.map((f,i)=>`<p>${esc(f.name)} ${btn('Remove','file-remove',i)}</p>`).join(''):t('No file selected')}</div>`;$$('#cacao-choices .choice',e).forEach((b,i)=>{b.dataset.action='cacao';b.dataset.arg=['Madagascar 55%','Ecuador 75%','Peru 80%'][i];b.classList.toggle('on',b.dataset.arg===d.cacao)});$$('#pkg-choices .choice',e).forEach((b,i)=>{b.dataset.action='package';b.dataset.arg=['Luxury Gift Box','Foil Wrap','Event Sleeve'][i];b.classList.toggle('on',b.dataset.arg===d.pkg)});$$('[data-wiz-next],[data-wiz-prev]',e).forEach(b=>{b.dataset.action='wizard-step';b.dataset.arg=b.dataset.wizNext||b.dataset.wizPrev});const review=$('[data-panel="4"]',e);review.innerHTML=`<div class="eyebrow">${t('Step 4 of 4')}</div><h2>${t('Review your custom quote request')}</h2><div class="review">${line('Company',account()?.company?.name||'Guest Business Request')}${line('Cacao Profile',t(d.cacao))}${line('Quantity',d.qty+' kg')}${line('Brand / Campaign Name',d.brand)}${line('Custom Mold / Design',d.mold||t('Not entered'))}${line('Packaging',t(d.pkg))}${line('White Label',t(d.whiteLabel?'Yes':'No'))}${line('Special Instructions',d.notes||t('Not entered'))}${line('Uploaded Files',d.files.map(f=>f.name).join(', ')||t('No file'))}</div><div class="wiz-foot">${btn('Back','wizard-step',3)}${btn('Submit Quote Request','submit-request','','gold')}</div>`;$$('input:not([type="file"])',e).forEach(x=>x.setAttribute('value',x.value));$$('textarea',e).forEach(x=>x.textContent=x.value);$$('select',e).forEach(x=>{[...x.options].forEach(o=>o.toggleAttribute('selected',o.selected))});return e.innerHTML}
+function requestCard(r,admin=false){return `<article class="panel sc-record"><div class="sc-row"><h3>${esc(r.id)}</h3><span class="pill">${t(r.status)}</span></div>${line('Date',r.date)}${line('Summary',(r.cacao||'Custom cacao')+' · '+(r.qty||25)+' kg')}${admin?line('Company',accounts.find(a=>a.id===r.user)?.company?.name||'Guest Business Request'):''}${nav('View',admin?'admin':'quote',admin?'request:'+r.id:r.id)}</article>`}
+function quoteList(){param='requests';return business()}
+function requestInfo(r){return `<div class="panel sc-record">${line('Request',r.id)}${line('Company',accounts.find(a=>a.id===r.user)?.company?.name||'Guest Business Request')}${line('Submitted',r.date)}${line('Cacao Profile',t(r.cacao))}${line('Quantity',r.qty+' kg')}${line('Brand / Campaign Name',r.brand)}${line('Custom Mold / Design',r.mold)}${line('Packaging',t(r.pkg))}${line('White Label',t(r.whiteLabel?'Yes':'No'))}${line('Special Instructions',r.notes)}${line('Uploaded Files',r.files.map(f=>f.name).join(', ')||t('No file'))}${r.files.map((f,i)=>btn(f.name,'download',r.id+'|'+i)).join('')}<ol class="sc-timeline">${r.history.map(h=>`<li>${t(h.status)} · ${h.date}</li>`).join('')}</ol></div>`}
+function quoteDetail(){const r=requests.find(r=>r.id===param&&r.user===current);return shell('Request Detail',r?requestInfo(r)+(r.quote?`<div class="panel sc-record">${line('Quote Number',r.quote.id)}${line('Amount',money(r.quote.amount))}${line('Valid Until',r.quote.until)}${line('Owner Notes',r.quote.notes)}<div class="sc-actions">${btn('Accept Quote','quote-response',r.id+'|Accepted','primary')}${btn('Decline Quote','quote-response',r.id+'|Declined')}${nav('Contact SolCacao','contact')}</div></div>`:''):empty(),menus())}
+function files(){const list=requests.filter(r=>r.user===current).flatMap(r=>r.files.map((f,i)=>`<div class="panel sc-record sc-file">${line('Request',r.id)}${line('Uploaded File',f.name)}${line('Size',Math.ceil(f.size/1024)+' KB')}${btn('Download','download',r.id+'|'+i)}</div>`));return shell('Brand Files',list.join('')||empty(),menus())}
+const adminTabs=[['Dashboard','overview'],['Products','products'],['Orders','orders'],['Business Requests','requests'],['Messages','messages']];
+function admin(){const section=param||'overview',parts=section.split(':'),key=parts[0];let body='';const items=adminTabs.map(([label,arg])=>({label,route:'admin',arg}));if(key==='overview')body=stats([['Orders to Process',orders.filter(o=>['Paid','Processing'].includes(o.status)).length],['Low Stock Products',products.filter(p=>p.stock<=3).length],['Pending Business Accounts',accounts.filter(a=>a.company?.status==='PENDING').length],['Open B2B Requests',requests.filter(r=>['Submitted','Under Review'].includes(r.status)).length],['New Messages',inquiries.filter(i=>i.status==='New').length]]);if(key==='products')body=`<section class="panel sc-record"><h2>Products</h2><table class="data-table"><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Status</th><th>Action</th></tr></thead><tbody>${products.map(p=>`<tr><td>${esc(name(p))}</td><td>${esc(p.type)}</td><td>${money(p.price)}</td><td>${p.stock}</td><td>${p.active?'Active':'Inactive'}</td><td>${btn('Edit','demo','Product editor opened')}${btn('Update Stock','demo','Stock updated')}</td></tr>`).join('')}</tbody></table>${btn('Add Product','demo','Add product form opened','primary')}</section>`;if(key==='orders')body=`<section class="panel sc-record"><h2>Orders</h2>${orders.map(o=>`<div class="sc-summary">${line('Order',o.id)}${line('Customer',o.customer.email||o.customer.first+' '+o.customer.last)}${line('Total',money(o.total))}${select('Status','status-'+o.id,['Paid','Processing','Shipped','Delivered','Cancelled'],o.status)}${field('Carrier','carrier-'+o.id,o.shipment?.carrier||'','text',false)}${field('Tracking Number','tracking-'+o.id,o.shipment?.tracking||'','text',false)}${btn('View','demo','Order opened')}</div>`).join('')||empty()}</section>`;if(key==='requests')body=`<section class="panel sc-record"><h2>Business Requests</h2><h3>Pending Business Accounts</h3>${accounts.filter(a=>a.company).map(a=>`<div class="sc-summary">${line('Company',a.company.name)}${line('Contact',a.first+' '+a.last)}${line('Status',t(approvalLabel(a.company.status)))}${btn('Approve','approve',a.id,'primary')}${btn('Reject','reject-business',a.id)}</div>`).join('')}<h3>Custom B2B Requests</h3>${requests.map(r=>requestCard(r,true)).join('')||empty()}</section>`;if(key==='request'){const r=requests.find(r=>r.id===parts[1]);if(r)body=requestInfo(r)+btn('Mark Under Review','under-review',r.id,'primary')+form('quote',`<input type="hidden" name="id" value="${r.id}">${field('Amount','amount',r.quote?.amount||850,'number')}${field('Valid Until','until',r.quote?.until||'2026-12-31','date')}${area('Notes','notes',r.quote?.notes||'Four-week production estimate')}`,'Send Quote')}if(key==='messages')body=`<section class="panel sc-record"><h2>Messages</h2><div class="auth-tabs">${btn('Contact','demo','Contact messages shown')}${btn('Feedback','demo','Feedback messages shown')}</div><div class="sc-summary"><b>Contact</b><p>Wholesale availability - New</p></div><div class="sc-summary"><b>Feedback</b><p>Loved the seasonal collection.</p></div></section>`;return accountShell('Shop Owner',items,body)}
+
+function capture(){if(route==='b2b-wizard'&&draft){const v=id=>$('#'+id)?.value;draft.qty=Number(v('wiz-qty')??draft.qty);draft.brand=v('brand-name')??draft.brand;draft.mold=v('mold-customization')??draft.mold;draft.notes=v('special-notes')??draft.notes;if($('#white-label'))draft.whiteLabel=$('#white-label').selectedIndex===0;}if(route==='sampler'&&sampler){sampler.size=Number($('#f-sampler-size')?.value||sampler.size);sampler.packaging=$('#f-sampler-packaging')?.value||sampler.packaging;sampler.message=$('#f-sampler-message')?.value??sampler.message;sampler.name=$('#f-sampler-name')?.value??sampler.name;sampler.email=$('#f-sampler-email')?.value??sampler.email;$$('[data-sampler-item]').forEach(e=>sampler.items[e.dataset.samplerItem]=Number(e.value));}if(route==='checkout'&&$('[data-form="checkout"]'))checkoutDraft=Object.fromEntries(new FormData($('[data-form="checkout"]')));}
+function changeStatus(r,s){r.status=s;r.history.push({status:s,date:date()})}
+function clearPrivate(){draft=null;sampler=null;checkoutDraft={};pendingPayment=null;returnTo=null;guestOrder=null;guestCart=[];current=null;route='home';}
+document.addEventListener('click',e=>{const target=e.target.closest('button,[data-route],[data-action]');if(!target||target.disabled)return;const action=target.dataset.action,arg=target.dataset.arg;if(target.dataset.route){e.preventDefault();if(target.dataset.route==='product')detailQty=1;go(target.dataset.route,target.dataset.param||null);return}if(!action)return;e.preventDefault();capture();switch(action){case'locale':{const savedForms=$$('form',root).map(f=>({id:f.dataset.form,values:Object.fromEntries(new FormData(f))}));locale=arg;render();savedForms.forEach(s=>{const f=$('[data-form="'+s.id+'"]');if(f)Object.entries(s.values).forEach(([k,v])=>{const input=f.elements.namedItem(k);if(input&&input.type!=='file')input.value=v})});break;}case'menu':{const n=$('.mobile-nav');n.classList.toggle('open');target.setAttribute('aria-expanded',n.classList.contains('open'));break}case'signout':clearPrivate();go('home');toast('Signed out');break;case'auth-mode':authMode=arg;render();break;case'checkout-login':returnTo='checkout';authMode='login';go('auth');break;case'hero':hero=Number(arg);render();break;case'home-search':filter.query=$('#home-search').value.trim();filter.page=1;go('catalog');break;case'clear-filters':Object.assign(filter,{query:'',origin:[],cacao:[],type:[],max:40,sort:0,page:1});render();break;case'filters':$('#filters').classList.toggle('mobile-open');break;case'page':filter.page=Number(arg);render();break;case'detail-qty':detailQty=Math.max(1,Math.min(pBy(param).stock,detailQty+Number(arg)));render();break;case'add':{const p=pBy(arg);if(!p?.active||p.stock<=0)return toast('Out of stock');const x=cart().find(x=>x.id===arg),qty=Math.min(p.stock-(x?.qty||0),detailQty);if(qty<=0)return toast(locale==='es'?'Has alcanzado el stock disponible.':'Available stock limit reached.');if(x)x.qty+=qty;else cart().push({id:arg,qty});render();toast('Added to cart');break}case'drawer':drawer=true;renderDrawer();break;case'close-drawer':drawer=false;$('#drawer-wrap')?.remove();$('[data-action="drawer"]')?.focus();break;case'remove':{const i=cart().findIndex(x=>x.id===arg);if(i>=0)cart().splice(i,1);render();break}case'cart-qty':{const[id,delta]=arg.split('|'),x=cart().find(x=>x.id===id);if(x)x.qty=Math.max(1,Math.min(itemStock(x),x.qty+Number(delta)));render();break}case'cacao':draft.cacao=arg;render();break;case'package':draft.pkg=arg;render();break;case'wizard-step':draft.step=Number(arg);render();break;case'file-remove':{const f=draft.files.splice(Number(arg),1)[0];if(f?.url)URL.revokeObjectURL(f.url);render();break}case'submit-request':{const r={...draft,id:'REQ-'+(1002+requests.length),user:current||'guest',date:date(),files:draft.files.map(f=>({...f})),status:'Submitted',history:[{status:'Submitted',date:date()}],quote:null};delete r.owner;delete r.step;requests.push(r);draft=null;go('quote-confirmation',r.id);break}case'quote-response':{const[id,s]=arg.split('|'),r=requests.find(r=>r.id===id&&r.user===current);if(!r?.quote)return;changeStatus(r,s);render();break}case'approve':if(account()?.role==='ADMIN'){const a=accounts.find(a=>a.id===arg);a.company.status='APPROVED';a.company.reason='';a.company.reviewed=date();render();}break;case'reject-business':if(account()?.role==='ADMIN'){const a=accounts.find(a=>a.id===arg);a.company.status='REJECTED';a.company.reason='Please update the business account details.';a.company.reviewed=date();render();}break;case'under-review':if(account()?.role==='ADMIN'){const r=requests.find(r=>r.id===arg);if(r)changeStatus(r,'Under Review');render()}break;case'download':{const[id,i]=arg.split('|'),r=requests.find(r=>r.id===id&&(r.user===current||account()?.role==='ADMIN')),f=r?.files[Number(i)];if(f?.url){const a=document.createElement('a');a.href=f.url;a.download=f.name;a.click();}else toast('File unavailable.');break}case'sampler-size':sampler.size=Number(arg);render();break;case'sampler-step':sampler.step=Number(arg);render();break;case'add-sampler':{const s=sampler||newSampler(),id='sampler-'+uid().slice(0,8),item={type:'sampler',id,name:'Custom '+s.size+'-Piece Chocolate Sampler',boxSize:s.size,chocolates:samplerChocolates(s),packaging:s.packaging,giftMessage:s.message,price:samplerPrice(s),qty:1};cart().push(item);sampler=null;go('cart');toast('Sampler added to cart');break}case'inquiry-read':if(account()?.role==='ADMIN'){inquiries.find(i=>i.id===arg).status='Read';render()}break;case'demo':toast(arg);break;case'social':window.open(arg==='instagram'?'https://instagram.com/solcacao':'https://wa.me/15555555555','_blank','noopener');break;}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer){drawer=false;$('#drawer-wrap')?.remove();$('[data-action="drawer"]')?.focus()}if(drawer&&e.key==='Tab'){const items=$$('button,input,select,textarea,a[href]',$('.sc-drawer')).filter(x=>!x.disabled);if(e.shiftKey&&document.activeElement===items[0]){e.preventDefault();items.at(-1)?.focus()}else if(!e.shiftKey&&document.activeElement===items.at(-1)){e.preventDefault();items[0]?.focus()}}if(e.key==='Enter'&&e.target.id==='home-search'){e.preventDefault();filter.query=e.target.value.trim();filter.page=1;go('catalog')}if(['Enter',' '].includes(e.key)&&e.target.matches('[data-route]:not(button)')){e.preventDefault();go(e.target.dataset.route,e.target.dataset.param)}});
+document.addEventListener('input',e=>{if(e.target.id==='catalog-query'){const n=e.target.selectionStart;filter.query=e.target.value;filter.page=1;render();$('#catalog-query').focus();$('#catalog-query').setSelectionRange(n,n)}if(e.target.id==='price-range'){filter.max=Number(e.target.value);filter.page=1;const was=$('#filters').classList.contains('mobile-open');render();if(was)$('#filters').classList.add('mobile-open');$('#price-range').focus()} });
+document.addEventListener('change',e=>{if(e.target.dataset.filter){const k=e.target.dataset.filter;filter[k]=$$('[data-filter="'+k+'"]:checked').map(x=>x.value);filter.page=1;const was=$('#filters').classList.contains('mobile-open');render();if(was)$('#filters').classList.add('mobile-open')}if(e.target.id==='sort'){filter.sort=Number(e.target.value);render()}if(e.target.name==='role'){regType=e.target.value;$('#company-fields').hidden=regType!=='BUSINESS'}if(e.target.name==='category'&&$('#feedback-rating')){$('#feedback-rating').hidden=e.target.value!=='Feedback'}if(e.target.id==='brand-file'){const files=e.target.files.length?[...e.target.files]:[{name:'brand-logo.pdf',type:'application/pdf',size:180000}];for(const f of files)draft.files.push({id:uid(),name:f.name,type:f.type||'application/pdf',size:f.size||180000,path:'brand-files/demo/'+f.name,url:f instanceof File?URL.createObjectURL(f):''});capture();render()}});
+let pendingPayment=null;
+document.addEventListener('submit',e=>{const f=e.target.closest('[data-form]');if(!f)return;e.preventDefault();const type=f.dataset.form,d=Object.fromEntries(new FormData(f));switch(type){case'login':{let a=accounts.find(a=>a.email.toLowerCase()===(d.email||'').trim().toLowerCase()&&d.password==='12345');if(!a&&d.password==='12345'){a={id:uid(),role:'CUSTOMER',first:'Demo',last:'Customer',email:(d.email||'demo@solcacao.test').trim()||'demo@solcacao.test',password:'12345',phone:'',address:{},cart:[]};accounts.push(a)}if(!a){toast('Use password 12345 for demo accounts.');return}current=a.id;if(a.role==='CUSTOMER')mergeGuest(a);afterLogin();break}case'register':{const role=d.role==='BUSINESS'?'BUSINESS':'CUSTOMER',a={id:uid(),role,first:d.first||'Demo',last:d.last||'Customer',email:d.email||'demo@solcacao.test',password:'12345',phone:d.phone||'',address:{},cart:[]};if(role==='BUSINESS')a.company={name:d.company||'New Business Account',phone:d.phone||'',industry:d.industry||'Other',website:d.website||'',status:'PENDING',submitted:date(),reason:'',reviewed:null};accounts.push(a);current=a.id;if(a.role==='CUSTOMER')mergeGuest(a);afterLogin();break}case'profile':if(account()){Object.assign(account(),{first:d.first||account().first,last:d.last||account().last,email:d.email||account().email,phone:d.phone||account().phone});render();toast('Profile changes saved')}break;case'address':if(account()){account().address={street:d.street||'',city:d.city||'',state:d.state||'',zip:d.zip||''};render();toast('Default address updated')}break;case'company':if(account()?.role==='BUSINESS'){const c=account().company;Object.assign(c,{name:d.name||c.name,phone:d.phone||c.phone,industry:d.industry||c.industry,website:d.website||c.website});if(c.status==='REJECTED'){c.status='PENDING';c.reason='';c.reviewed=null}render();toast('Company information saved')}break;case'checkout':{const subtotal=cartSubtotal(),tax=Math.round(subtotal*8)/100,total=Math.round((subtotal+tax)*100)/100,customer={...d};const o={id:'SC-'+(1003+orders.length),date:date(),user:current,customer,items:cart().map(x=>({...clone(x),price:itemPrice(x)})),subtotal,tax,total,payments:[{id:'PAY-'+uid().slice(0,8),date:date(),amount:total,method:'Credit / Debit Card',status:'Paid'}],status:'Paid',shipment:null,history:['Order Placed','Payment Confirmed','Processing'].map(status=>({status,date:date()}))};orders.push(o);cart().splice(0);pendingPayment=null;checkoutDraft={};guestOrder=current?null:o.id;go('order-confirmation',o.id);break}case'reject':if(account()?.role==='ADMIN'){const a=accounts.find(a=>a.id===d.id&&a.company);if(a)Object.assign(a.company,{status:'REJECTED',reason:d.reason||'Needs attention.',reviewed:date()});go('admin','requests')}break;case'quote':if(account()?.role==='ADMIN'){const r=requests.find(r=>r.id===d.id);if(r){r.quote={id:'QUOTE-'+uid().slice(0,8),amount:Number(d.amount)||850,until:d.until||'2026-12-31',notes:d.notes||''};changeStatus(r,'Quoted');render();toast('Quote sent')}}break;case'product':if(account()?.role==='ADMIN'){const p=pBy(d.id);if(p){p.stock=Number(d.stock)||p.stock;if(d.price!==undefined)p.price=Number(d.price)||p.price;if(d.active!==undefined)p.active=d.active==='Active'}render();toast('Saved')}break;case'order-status':toast('Saved');break;case'contact':{const i={...d,id:'INQ-'+(1001+inquiries.length),date:date(),status:'New'};inquiries.push(i);go('contact-confirmation',i.id)}break;case'newsletter':f.reset();toast(locale==='es'?'Gracias por suscribirte.':'Thank you for subscribing.');break;}});
+seed();render();
+})();
+
+</script></body>
+
+</html>

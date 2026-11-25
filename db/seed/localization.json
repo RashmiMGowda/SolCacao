@@ -1,0 +1,3068 @@
+[
+  {
+    "namespace": "nav",
+    "keyName": "home",
+    "en": "Home",
+    "es": "Inicio"
+  },
+  {
+    "namespace": "nav",
+    "keyName": "about",
+    "en": "About",
+    "es": "Nosotros"
+  },
+  {
+    "namespace": "nav",
+    "keyName": "shop",
+    "en": "Shop",
+    "es": "Tienda"
+  },
+  {
+    "namespace": "nav",
+    "keyName": "sampler",
+    "en": "Build a Sampler",
+    "es": "Crea tu Muestrario"
+  },
+  {
+    "namespace": "nav",
+    "keyName": "business",
+    "en": "For Business",
+    "es": "Para Empresas"
+  },
+  {
+    "namespace": "nav",
+    "keyName": "contact",
+    "en": "Contact",
+    "es": "Contacto"
+  },
+  {
+    "namespace": "nav",
+    "keyName": "login",
+    "en": "Login / Register",
+    "es": "Iniciar sesión / Registrarse"
+  },
+  {
+    "namespace": "nav",
+    "keyName": "signOut",
+    "en": "Sign Out",
+    "es": "Cerrar sesión"
+  },
+  {
+    "namespace": "nav",
+    "keyName": "myAccount",
+    "en": "My Account",
+    "es": "Mi Cuenta"
+  },
+  {
+    "namespace": "nav",
+    "keyName": "businessAccount",
+    "en": "Business Account",
+    "es": "Cuenta Empresarial"
+  },
+  {
+    "namespace": "nav",
+    "keyName": "admin",
+    "en": "Admin",
+    "es": "Administrador"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "cart",
+    "en": "Cart",
+    "es": "Carrito"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "title",
+    "en": "Artisan Chocolate",
+    "es": "Chocolate Artesanal"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "eyebrow",
+    "en": "Single-origin catalog",
+    "es": "Catálogo de origen único"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "intro",
+    "en": "Explore small-batch bars and gift collections by origin, cacao profile, and flavor.",
+    "es": "Explora barras artesanales y colecciones de regalo por origen, perfil de cacao y sabor."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "smallBatchSelections",
+    "en": "small-batch selections",
+    "es": "selecciones de lotes pequeños"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "refine",
+    "en": "Refine your collection",
+    "es": "Refina tu colección"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "filters",
+    "en": "Filters",
+    "es": "Filtros"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "closeFilters",
+    "en": "Close filters",
+    "es": "Cerrar filtros"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "clearAll",
+    "en": "Clear all",
+    "es": "Limpiar todo"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "clearFilters",
+    "en": "Clear filters",
+    "es": "Limpiar filtros"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "origin",
+    "en": "Origin",
+    "es": "Origen"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "cacao",
+    "en": "Cacao",
+    "es": "Cacao"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "cacaoPercentage",
+    "en": "Cacao percentage",
+    "es": "Porcentaje de cacao"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "chocolateType",
+    "en": "Chocolate type",
+    "es": "Tipo de chocolate"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "maximumPrice",
+    "en": "Maximum price",
+    "es": "Precio máximo"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "search",
+    "en": "Search",
+    "es": "Buscar"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "searchLabel",
+    "en": "Search chocolates",
+    "es": "Buscar chocolates"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "searchPlaceholder",
+    "en": "Search bars, truffles, or origin…",
+    "es": "Buscar barras, trufas u origen…"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "sortBy",
+    "en": "Sort by",
+    "es": "Ordenar por"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "products",
+    "en": "products",
+    "es": "productos"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "noResults",
+    "en": "No chocolates found",
+    "es": "No encontramos chocolates"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "noResultsBody",
+    "en": "Try a different search or remove one of your filters.",
+    "es": "Prueba otra búsqueda o elimina uno de los filtros."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "pagination",
+    "en": "Catalog pagination",
+    "es": "Paginación del catálogo"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "previous",
+    "en": "Previous page",
+    "es": "Página anterior"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "next",
+    "en": "Next page",
+    "es": "Página siguiente"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "page",
+    "en": "Page",
+    "es": "Página"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "viewProduct",
+    "en": "View product",
+    "es": "Ver producto"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "inStock",
+    "en": "In stock",
+    "es": "Disponible"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "onlyLeft",
+    "en": "Only {count} left",
+    "es": "Solo quedan {count}"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "outOfStock",
+    "en": "Out of stock",
+    "es": "Agotado"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "unavailable",
+    "en": "Unavailable",
+    "es": "No disponible"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "quickAdd",
+    "en": "Quick add",
+    "es": "Agregar"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "addToCart",
+    "en": "Add to cart",
+    "es": "Agregar al carrito"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "addedToCart",
+    "en": "Added to your cart.",
+    "es": "Producto agregado al carrito."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "stockLimit",
+    "en": "You already have the available quantity in your cart.",
+    "es": "Ya tienes toda la cantidad disponible en el carrito."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "format",
+    "en": "Format",
+    "es": "Formato"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "backToCatalog",
+    "en": "Back to catalog",
+    "es": "Volver al catálogo"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "quantity",
+    "en": "Quantity",
+    "es": "Cantidad"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "decreaseQuantity",
+    "en": "Decrease quantity",
+    "es": "Disminuir cantidad"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "increaseQuantity",
+    "en": "Increase quantity",
+    "es": "Aumentar cantidad"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "alreadyInCart",
+    "en": "{count} already in cart — view cart",
+    "es": "{count} en el carrito — ver carrito"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "yourSelection",
+    "en": "Your selection",
+    "es": "Tu selección"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "yourCart",
+    "en": "Your Cart",
+    "es": "Tu Carrito"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "closeCart",
+    "en": "Close cart",
+    "es": "Cerrar carrito"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "items",
+    "en": "Items",
+    "es": "Productos"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "subtotal",
+    "en": "Subtotal",
+    "es": "Subtotal"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "estimatedTax",
+    "en": "Estimated tax",
+    "es": "Impuesto estimado"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "total",
+    "en": "Total",
+    "es": "Total"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "viewCart",
+    "en": "View cart",
+    "es": "Ver carrito"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "continueShopping",
+    "en": "Continue shopping",
+    "es": "Seguir comprando"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "emptyCart",
+    "en": "Your cart is empty",
+    "es": "Tu carrito está vacío"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "emptyCartBody",
+    "en": "Discover a new origin and add a small-batch favorite.",
+    "es": "Descubre un nuevo origen y agrega tu chocolate artesanal favorito."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "browseChocolate",
+    "en": "Browse chocolates",
+    "es": "Explorar chocolates"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "remove",
+    "en": "Remove",
+    "es": "Eliminar"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "clearCart",
+    "en": "Clear cart",
+    "es": "Vaciar carrito"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "cartIntro",
+    "en": "Review quantities and availability before continuing to checkout.",
+    "es": "Revisa las cantidades y la disponibilidad antes de continuar al pago."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "orderSummary",
+    "en": "Order Summary",
+    "es": "Resumen del Pedido"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "checkout",
+    "en": "Continue to checkout",
+    "es": "Continuar al pago"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "secureDemoCheckout",
+    "en": "Secure demo checkout",
+    "es": "Pago seguro de demostración"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "deliveryAndPayment",
+    "en": "Delivery & Payment",
+    "es": "Entrega y Pago"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "checkoutIntro",
+    "en": "Complete your delivery information and use the demonstration card to place your order.",
+    "es": "Completa los datos de entrega y usa la tarjeta de demostración para realizar el pedido."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "checkoutStep",
+    "en": "Step {step} of 2",
+    "es": "Paso {step} de 2"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "contactAndDelivery",
+    "en": "Contact & Delivery",
+    "es": "Contacto y Entrega"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "payment",
+    "en": "Payment",
+    "es": "Pago"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "firstName",
+    "en": "First name",
+    "es": "Nombre"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "lastName",
+    "en": "Last name",
+    "es": "Apellido"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "email",
+    "en": "Email",
+    "es": "Correo electrónico"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "phone",
+    "en": "Phone (optional)",
+    "es": "Teléfono (opcional)"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "streetAddress",
+    "en": "Street address",
+    "es": "Dirección"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "city",
+    "en": "City",
+    "es": "Ciudad"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "state",
+    "en": "State",
+    "es": "Estado"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "postalCode",
+    "en": "ZIP / Postal code",
+    "es": "Código postal"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "country",
+    "en": "Country",
+    "es": "País"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "nameOnCard",
+    "en": "Name on card",
+    "es": "Nombre en la tarjeta"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "cardNumber",
+    "en": "Card number",
+    "es": "Número de tarjeta"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "expiry",
+    "en": "Expiration date",
+    "es": "Fecha de vencimiento"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "cvv",
+    "en": "Security code",
+    "es": "Código de seguridad"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "demoPaymentNotice",
+    "en": "Demo payment only. No card information is transmitted or saved. Use",
+    "es": "Pago de demostración. No se transmite ni guarda la tarjeta. Usa"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "demoCheckout",
+    "en": "Demo Checkout",
+    "es": "Pago de Demostración"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "demoCheckoutBody",
+    "en": "Fill the complete delivery and payment form with one click.",
+    "es": "Completa toda la información de entrega y pago con un solo clic."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "fillSuccessfulDemo",
+    "en": "Successful order",
+    "es": "Pedido exitoso"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "fillDeclinedDemo",
+    "en": "Declined card",
+    "es": "Tarjeta rechazada"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "demoCheckoutFilled",
+    "en": "Demo checkout information filled in.",
+    "es": "Información de demostración completada."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "reviewCheckoutFields",
+    "en": "Review the highlighted checkout fields.",
+    "es": "Revisa los campos resaltados del formulario."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "processingDemoPayment",
+    "en": "Processing your demo payment…",
+    "es": "Procesando el pago de demostración…"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "processingPayment",
+    "en": "Processing payment…",
+    "es": "Procesando pago…"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "demoCardDeclined",
+    "en": "This demo card was declined. Try the 4242 test card.",
+    "es": "Esta tarjeta de demostración fue rechazada. Usa la tarjeta de prueba 4242."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "orderPlacedSuccessfully",
+    "en": "Payment approved. Your order has been placed.",
+    "es": "Pago aprobado. Tu pedido ha sido realizado."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "shipping",
+    "en": "Shipping",
+    "es": "Envío"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "free",
+    "en": "Free",
+    "es": "Gratis"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "payAndPlaceOrder",
+    "en": "Pay & place order",
+    "es": "Pagar y realizar pedido"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "demoPrivacy",
+    "en": "This is a classroom demonstration. Only the final four card digits are stored with the simulated order.",
+    "es": "Esta es una demostración académica. Solo se guardan los últimos cuatro dígitos con el pedido simulado."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "paymentSuccessful",
+    "en": "Payment successful",
+    "es": "Pago realizado"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "orderConfirmed",
+    "en": "Your order is confirmed",
+    "es": "Tu pedido está confirmado"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "confirmationSent",
+    "en": "Demo order saved for {email}. No confirmation email was sent.",
+    "es": "Pedido de prueba guardado para {email}. No se envió un correo de confirmación."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "orderNumber",
+    "en": "Order number",
+    "es": "Número de pedido"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "orderDetails",
+    "en": "Order details",
+    "es": "Detalles del pedido"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "totalPaid",
+    "en": "Total paid",
+    "es": "Total pagado"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "shippingTo",
+    "en": "Shipping to",
+    "es": "Enviar a"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "paymentAndStatus",
+    "en": "Payment & status",
+    "es": "Pago y estado"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "cardEnding",
+    "en": "Demo card ending in",
+    "es": "Tarjeta de demostración terminada en"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "status",
+    "en": "Status",
+    "es": "Estado"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "processing",
+    "en": "Processing",
+    "es": "En preparación"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "checkoutErrors.phone",
+    "en": "Enter a valid phone number with 7 to 15 digits.",
+    "es": "Introduce un teléfono válido de 7 a 15 dígitos."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "checkoutErrors.postalCode",
+    "en": "Enter a valid ZIP/postal code (3 to 12 characters).",
+    "es": "Introduce un código postal válido (3 a 12 caracteres)."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "checkoutErrors.storage",
+    "en": "Unable to save your demo order. Your cart is unchanged. Please try again.",
+    "es": "No se pudo guardar el pedido de prueba. Tu carrito no ha cambiado. Inténtalo de nuevo."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "checkoutErrors.required",
+    "en": "This field is required.",
+    "es": "Este campo es obligatorio."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "checkoutErrors.email",
+    "en": "Enter a valid email address.",
+    "es": "Ingresa un correo válido."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "checkoutErrors.cardNumber",
+    "en": "Enter a valid demo card number.",
+    "es": "Ingresa una tarjeta de demostración válida."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "checkoutErrors.expiry",
+    "en": "Use a future date in MM/YY format.",
+    "es": "Usa una fecha futura en formato MM/AA."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "checkoutErrors.cvv",
+    "en": "Enter a 3 or 4 digit security code.",
+    "es": "Ingresa un código de seguridad de 3 o 4 dígitos."
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "types.dark",
+    "en": "Dark chocolate",
+    "es": "Chocolate oscuro"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "types.milk",
+    "en": "Milk chocolate",
+    "es": "Chocolate con leche"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "types.gifts",
+    "en": "Truffles & gifts",
+    "es": "Trufas y regalos"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "sort.featured",
+    "en": "Featured",
+    "es": "Destacados"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "sort.priceAsc",
+    "en": "Price: low to high",
+    "es": "Precio: menor a mayor"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "sort.priceDesc",
+    "en": "Price: high to low",
+    "es": "Precio: mayor a menor"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "sort.cacao",
+    "en": "Cacao: high to low",
+    "es": "Cacao: mayor a menor"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "tags.bestSeller",
+    "en": "Best seller",
+    "es": "Más vendido"
+  },
+  {
+    "namespace": "catalog",
+    "keyName": "tags.seasonal",
+    "en": "Seasonal",
+    "es": "Temporada"
+  },
+  {
+    "namespace": "footer",
+    "keyName": "tagline",
+    "en": "Artisan single-origin chocolate for retail customers, gifts, and business programs.",
+    "es": "Chocolate artesanal de origen único para clientes minoristas, regalos y programas empresariales."
+  },
+  {
+    "namespace": "footer",
+    "keyName": "shopHeading",
+    "en": "Shop",
+    "es": "Tienda"
+  },
+  {
+    "namespace": "footer",
+    "keyName": "businessHeading",
+    "en": "Business",
+    "es": "Empresas"
+  },
+  {
+    "namespace": "footer",
+    "keyName": "connectHeading",
+    "en": "Connect",
+    "es": "Conéctate"
+  },
+  {
+    "namespace": "footer",
+    "keyName": "businessAccountLink",
+    "en": "Business Account",
+    "es": "Cuenta Empresarial"
+  },
+  {
+    "namespace": "footer",
+    "keyName": "instagram",
+    "en": "Instagram",
+    "es": "Instagram"
+  },
+  {
+    "namespace": "footer",
+    "keyName": "whatsapp",
+    "en": "Share on WhatsApp",
+    "es": "Compartir en WhatsApp"
+  },
+  {
+    "namespace": "footer",
+    "keyName": "email",
+    "en": "Email",
+    "es": "Correo"
+  },
+  {
+    "namespace": "footer",
+    "keyName": "copyright",
+    "en": "© 2026 SolCacao. All rights reserved.",
+    "es": "© 2026 SolCacao. Todos los derechos reservados."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.eyebrow",
+    "en": "Corporate gifting & wholesale",
+    "es": "Regalos corporativos y venta al por mayor"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.title",
+    "en": "Chocolate experiences made for your brand.",
+    "es": "Experiencias de chocolate creadas para tu marca."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.description",
+    "en": "Explore premium gifting, hospitality programs, custom molds, private-label packaging and volume manufacturing. Browsing is public; sign in to a business account before starting a custom quote.",
+    "es": "Explora regalos premium, programas de hospitalidad, moldes personalizados, empaques de marca privada y fabricación por volumen. Inicia sesión con una cuenta empresarial para solicitar una cotización."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.start",
+    "en": "Start a Custom Quote",
+    "es": "Iniciar cotización personalizada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.talk",
+    "en": "Talk to Our Team",
+    "es": "Habla con nuestro equipo"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.audience",
+    "en": "Hotels • Corporate events • Wholesale • Private label",
+    "es": "Hoteles • Eventos corporativos • Mayoristas • Marca privada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.solutions",
+    "en": "Business solutions",
+    "es": "Soluciones empresariales"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.solutionsTitle",
+    "en": "Choose how you want to work with SolCacao",
+    "es": "Elige cómo quieres trabajar con SolCacao"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.titles.0",
+    "en": "Custom Corporate Molds",
+    "es": "Moldes Corporativos Personalizados"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.titles.1",
+    "en": "Luxury Packaging",
+    "es": "Empaque de Lujo"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.titles.2",
+    "en": "White-Label Programs",
+    "es": "Programas de Marca Privada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.titles.3",
+    "en": "Hospitality & Events",
+    "es": "Hospitalidad y Eventos"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.descriptions.0",
+    "en": "Create branded chocolate shapes for hotels, launches and signature experiences.",
+    "es": "Crea formas de chocolate con tu marca para hoteles y experiencias exclusivas."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.descriptions.1",
+    "en": "Rigid boxes, gift sleeves and branded presentation kits for premium gifting.",
+    "es": "Cajas rígidas, fundas y kits de presentación para regalos premium."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.descriptions.2",
+    "en": "Pair your brand identity with SolCacao sourcing and manufacturing.",
+    "es": "Combina tu identidad con el abastecimiento y fabricación de SolCacao."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.descriptions.3",
+    "en": "Volume programs for guest rooms, conferences, weddings and corporate events.",
+    "es": "Programas por volumen para hoteles, conferencias, bodas y eventos."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.cta",
+    "en": "Ready to design your custom chocolate program?",
+    "es": "¿Listo para diseñar tu programa de chocolate?"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.gate",
+    "en": "Business account authentication is required before creating a custom quote.",
+    "es": "Se requiere una cuenta empresarial aprobada para crear una cotización."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "services.request",
+    "en": "Request a Custom Quote",
+    "es": "Solicitar cotización personalizada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.steps.0",
+    "en": "Cacao",
+    "es": "Cacao"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.steps.1",
+    "en": "Brand Files",
+    "es": "Marca y archivos"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.steps.2",
+    "en": "Packaging",
+    "es": "Empaque"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.steps.3",
+    "en": "Review",
+    "es": "Revisión"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.titles.0",
+    "en": "Select cacao profile & quantity",
+    "es": "Selecciona el perfil de cacao y la cantidad"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.titles.1",
+    "en": "Upload brand or technical files",
+    "es": "Sube archivos de marca o técnicos"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.titles.2",
+    "en": "Choose packaging & white-label options",
+    "es": "Elige el empaque y la marca"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.titles.3",
+    "en": "Review your custom quote request",
+    "es": "Revisa tu solicitud de cotización"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.descriptions.0",
+    "en": "Choose a starting profile for your custom manufacturing request.",
+    "es": "Elige un perfil para tu solicitud de fabricación."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.descriptions.1",
+    "en": "Upload your logo, vector artwork, PDF or technical design files for this request.",
+    "es": "Sube tu logo, vector, PDF o archivo técnico."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.descriptions.2",
+    "en": "Select the presentation style and how your brand should appear.",
+    "es": "Selecciona el estilo de presentación y la marca."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.descriptions.3",
+    "en": "Confirm the details below before submitting your request.",
+    "es": "Confirma los detalles antes de enviar tu solicitud."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.quantity",
+    "en": "Requested Quantity (kg)",
+    "es": "Cantidad solicitada (kg)"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.brand",
+    "en": "Brand / Campaign Name",
+    "es": "Nombre de marca / campaña"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.design",
+    "en": "Custom Mold / Design Details",
+    "es": "Detalles del molde / diseño personalizado"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.white",
+    "en": "White Label Branding",
+    "es": "Marca de etiqueta blanca"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.yes",
+    "en": "Yes — use our company branding",
+    "es": "Sí — usar la marca de nuestra empresa"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.no",
+    "en": "No — SolCacao co-branding",
+    "es": "No — marca compartida con SolCacao"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.notes",
+    "en": "Special Instructions",
+    "es": "Instrucciones especiales"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.back",
+    "en": "Back",
+    "es": "Atrás"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.next",
+    "en": "Continue",
+    "es": "Continuar"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.review",
+    "en": "Review",
+    "es": "Revisar"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.submit",
+    "en": "Submit Quote Request",
+    "es": "Enviar solicitud de cotización"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.saving",
+    "en": "Submitting…",
+    "es": "Enviando…"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.upload",
+    "en": "Drop a logo, PDF, SVG or design file here",
+    "es": "Arrastra tu logo, PDF, SVG o diseño aquí"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.choose",
+    "en": "Choose File",
+    "es": "Elegir archivo"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.fileHelp",
+    "en": "PDF, SVG, PNG or JPG · up to 5 files, 5 MB total · optional",
+    "es": "PDF, SVG, PNG o JPG · hasta 5 archivos, 5 MB en total · opcional"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.remove",
+    "en": "Remove file",
+    "es": "Eliminar archivo"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.minimum",
+    "en": "Minimum order: 5 kg",
+    "es": "Pedido mínimo: 5 kg"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.success",
+    "en": "Custom Request Submitted",
+    "es": "Solicitud personalizada enviada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.successText",
+    "en": "Your request and attachments have been saved. SolCacao can now review your configuration.",
+    "es": "Tu solicitud y archivos se han guardado. SolCacao puede revisar tu configuración."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.view",
+    "en": "View My Requests",
+    "es": "Mis solicitudes"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.new",
+    "en": "New Custom Request",
+    "es": "Nueva solicitud"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.noFile",
+    "en": "No file uploaded",
+    "es": "Ningún archivo cargado"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.invalid",
+    "en": "Check this field before continuing.",
+    "es": "Revisa este campo antes de continuar."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.fileError",
+    "en": "Choose up to 5 PDF, SVG, PNG or JPG files totaling no more than 5 MB.",
+    "es": "Elige hasta 5 archivos PDF, SVG, PNG o JPG con un total máximo de 5 MB."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.empty",
+    "en": "Not provided",
+    "es": "No proporcionado"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.company",
+    "en": "Company",
+    "es": "Empresa"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "wizard.quantityError",
+    "en": "Enter a whole-number quantity from 5 to 1,000,000 kg.",
+    "es": "Ingresa una cantidad entera de 5 a 1.000.000 kg."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "navigation",
+    "en": "Business navigation",
+    "es": "Navegación empresarial"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "myRequests",
+    "en": "My Requests",
+    "es": "Mis solicitudes"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "manageRequests",
+    "en": "Manage Requests",
+    "es": "Gestionar solicitudes"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Request",
+    "en": "Request",
+    "es": "Solicitud"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Status",
+    "en": "Status",
+    "es": "Estado"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Submitted",
+    "en": "Submitted",
+    "es": "Enviada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Under review",
+    "en": "Under review",
+    "es": "En revisión"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Quoted",
+    "en": "Quoted",
+    "es": "Cotizada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Accepted",
+    "en": "Accepted",
+    "es": "Aceptada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Declined",
+    "en": "Declined",
+    "es": "Rechazada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Manage Requests",
+    "en": "Manage Requests",
+    "es": "Gestionar solicitudes"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.My Requests",
+    "en": "My Requests",
+    "es": "Mis solicitudes"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.B2B Services",
+    "en": "B2B Services",
+    "es": "Servicios empresariales"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Request Detail",
+    "en": "Request Detail",
+    "es": "Detalle de solicitud"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Business Requests",
+    "en": "Business Requests",
+    "es": "Solicitudes empresariales"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Refresh",
+    "en": "Refresh",
+    "es": "Actualizar"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.New Custom Request",
+    "en": "New Custom Request",
+    "es": "Nueva solicitud personalizada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Business Account Review",
+    "en": "Business Account Review",
+    "es": "Revisión de cuentas empresariales"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Loading requests…",
+    "en": "Loading requests…",
+    "es": "Cargando solicitudes…"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.View Request",
+    "en": "View Request",
+    "es": "Ver solicitud"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.No requests yet.",
+    "en": "No requests yet.",
+    "es": "Aún no hay solicitudes."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Cacao Profile",
+    "en": "Cacao Profile",
+    "es": "Perfil de cacao"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Quantity",
+    "en": "Quantity",
+    "es": "Cantidad"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Brand / Campaign Name",
+    "en": "Brand / Campaign Name",
+    "es": "Nombre de marca / campaña"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Custom Mold / Design",
+    "en": "Custom Mold / Design",
+    "es": "Molde / diseño personalizado"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Packaging",
+    "en": "Packaging",
+    "es": "Empaque"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.White Label",
+    "en": "White Label",
+    "es": "Marca privada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Company branding",
+    "en": "Company branding",
+    "es": "Marca de la empresa"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.SolCacao co-branding",
+    "en": "SolCacao co-branding",
+    "es": "Marca compartida con SolCacao"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Special Instructions",
+    "en": "Special Instructions",
+    "es": "Instrucciones especiales"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Attachments",
+    "en": "Attachments",
+    "es": "Archivos adjuntos"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.No attachments",
+    "en": "No attachments",
+    "es": "Sin archivos adjuntos"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Status History",
+    "en": "Status History",
+    "es": "Historial de estados"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Manufacturing Quote",
+    "en": "Manufacturing Quote",
+    "es": "Cotización de fabricación"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Quote Number",
+    "en": "Quote Number",
+    "es": "Número de cotización"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Amount (USD)",
+    "en": "Amount (USD)",
+    "es": "Importe (USD)"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Valid Until",
+    "en": "Valid Until",
+    "es": "Válida hasta"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Owner Notes",
+    "en": "Owner Notes",
+    "es": "Notas del propietario"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Accept Quote",
+    "en": "Accept Quote",
+    "es": "Aceptar cotización"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Decline Quote",
+    "en": "Decline Quote",
+    "es": "Rechazar cotización"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Contact SolCacao",
+    "en": "Contact SolCacao",
+    "es": "Contactar a SolCacao"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.This quote has expired. Contact SolCacao for an updated quote.",
+    "en": "This quote has expired. Contact SolCacao for an updated quote.",
+    "es": "Esta cotización ha vencido. Contacta a SolCacao para actualizarla."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Review and Send Quote",
+    "en": "Review and Send Quote",
+    "es": "Revisar y enviar cotización"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Mark Under Review",
+    "en": "Mark Under Review",
+    "es": "Marcar en revisión"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Choose a valid expiry date.",
+    "en": "Choose a valid expiry date.",
+    "es": "Elige una fecha de vencimiento válida."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Sending…",
+    "en": "Sending…",
+    "es": "Enviando…"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Send Quote",
+    "en": "Send Quote",
+    "es": "Enviar cotización"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Not provided",
+    "en": "Not provided",
+    "es": "No proporcionado"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Reason if rejected",
+    "en": "Reason if rejected",
+    "es": "Motivo del rechazo"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Approve Business",
+    "en": "Approve Business",
+    "es": "Aprobar empresa"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Reject Business",
+    "en": "Reject Business",
+    "es": "Rechazar empresa"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Loading account…",
+    "en": "Loading account…",
+    "es": "Cargando cuenta…"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Connect your business account",
+    "en": "Connect your business account",
+    "es": "Conecta tu cuenta empresarial"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Quote requests are unavailable in offline demo mode. Connect the application to the server and sign in again.",
+    "en": "Quote requests are unavailable in offline demo mode. Connect the application to the server and sign in again.",
+    "es": "Las solicitudes no están disponibles sin conexión. Conecta el servidor e inicia sesión de nuevo."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Business Login",
+    "en": "Business Login",
+    "es": "Acceso empresarial"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Business account review",
+    "en": "Business account review",
+    "es": "Revisión de cuenta empresarial"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Your business account needs additional information.",
+    "en": "Your business account needs additional information.",
+    "es": "Tu cuenta empresarial necesita información adicional."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Please add business phone verification and company website details.",
+    "en": "Please add business phone verification and company website details.",
+    "es": "Agrega la verificación telefónica de la empresa y los datos de su sitio web."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Your business account is under review. Quote requests will be available once approved.",
+    "en": "Your business account is under review. Quote requests will be available once approved.",
+    "es": "Tu cuenta empresarial está en revisión. Podrás solicitar cotizaciones cuando se apruebe."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.View company information",
+    "en": "View company information",
+    "es": "Ver información de la empresa"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Luxury Gift Box",
+    "en": "Luxury Gift Box",
+    "es": "Caja de regalo de lujo"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Foil Wrap",
+    "en": "Foil Wrap",
+    "es": "Envoltura de aluminio"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Event Sleeve",
+    "en": "Event Sleeve",
+    "es": "Faja para eventos"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.SUBMITTED",
+    "en": "SUBMITTED",
+    "es": "Enviada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.UNDER_REVIEW",
+    "en": "UNDER_REVIEW",
+    "es": "En revisión"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.QUOTED",
+    "en": "QUOTED",
+    "es": "Cotizada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.ACCEPTED",
+    "en": "ACCEPTED",
+    "es": "Aceptada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.DECLINED",
+    "en": "DECLINED",
+    "es": "Rechazada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.APPROVED",
+    "en": "APPROVED",
+    "es": "Aprobada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.PENDING",
+    "en": "PENDING",
+    "es": "Pendiente"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.REJECTED",
+    "en": "REJECTED",
+    "es": "Rechazada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "messages.Unable to complete the request. Please try again.",
+    "en": "Unable to complete the request. Please try again.",
+    "es": "No se pudo completar la solicitud. Inténtalo de nuevo."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.wizardTitle",
+    "en": "Custom Chocolate Quote",
+    "es": "Cotización de chocolate personalizado"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.backServices",
+    "en": "← B2B Services",
+    "es": "← Servicios B2B"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.progress",
+    "en": "Request progress",
+    "es": "Progreso de solicitud"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.step",
+    "en": "Step {step} of 4",
+    "es": "Paso {step} de 4"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.branding",
+    "en": "Branding",
+    "es": "Marca y diseño"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.packagingNames.0",
+    "en": "Luxury Gift Box",
+    "es": "Caja de regalo de lujo"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.packagingNames.1",
+    "en": "Foil Wrap",
+    "es": "Envoltura de aluminio"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.packagingNames.2",
+    "en": "Event Sleeve",
+    "es": "Faja para eventos"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.packagingDetails.0",
+    "en": "Rigid premium box",
+    "es": "Caja rígida premium"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.packagingDetails.1",
+    "en": "Minimal branded wrap",
+    "es": "Envoltura con marca"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.packagingDetails.2",
+    "en": "Custom printed sleeve",
+    "es": "Faja impresa personalizada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.cacaoDetails.0",
+    "en": "Berry • bright",
+    "es": "Frutal • brillante"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.cacaoDetails.1",
+    "en": "Floral • rich",
+    "es": "Floral • intenso"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.cacaoDetails.2",
+    "en": "Nutty • bold",
+    "es": "Nuez • audaz"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.heroAlt",
+    "en": "Premium chocolate gift box and cocoa beans",
+    "es": "Caja de chocolate premium y cacao"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.sent",
+    "en": "Sent",
+    "es": "Enviada"
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.submittedNote",
+    "en": "Request submitted by business account.",
+    "es": "Solicitud enviada por la cuenta empresarial."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.reviewNote",
+    "en": "Request is being reviewed.",
+    "es": "La solicitud está en revisión."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.respondedNote",
+    "en": "Business account responded to quote.",
+    "es": "La cuenta empresarial respondió a la cotización."
+  },
+  {
+    "namespace": "b2b",
+    "keyName": "extra.quoteNote",
+    "en": "Quote {number} issued: USD {amount}, valid until {date}.",
+    "es": "Cotización {number} emitida: USD {amount}, válida hasta {date}."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "8424f5476793cca0c387f569fb9bd7c909bfb64cf0745c7af66a342f7c1a3b3c",
+    "en": "Single-Origin Collection",
+    "es": "Colección de origen único"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "c4bdb54fc12e7cc23a3842ffc6e3854bb27cd5835658235321772925b7e69275",
+    "en": "Chocolate with a story in every square.",
+    "es": "Chocolate con una historia en cada porción."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "30afd5e36298e840b4b2aeda9e9dbc9d818ee0a3331bbe19252b49944f86f566",
+    "en": "Single-origin bars, thoughtful gifts, and artisan cacao to savor and share.",
+    "es": "Barras de origen único, regalos especiales y cacao artesanal para disfrutar y compartir."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "ec8f0c5450e71dfce4bd8dd8caf605cd39bb6a88d48112a247123f2b7e04ef58",
+    "en": "Browse Chocolates",
+    "es": "Explorar chocolates"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "57172b7268e71470814eeb94fe2654e73e0af33f27cb7b0bd98a882b5b8bc879",
+    "en": "Build a Sampler",
+    "es": "Crear un surtido"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "d75d3d4edf5d96a0de9bb32e428631c5b2880ec4d0b94e78f37a70dff1cbbbd6",
+    "en": "Premium SolCacao chocolate",
+    "es": "Chocolate prémium de SolCacao"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "1c0f8b2bb0734834892ff3c5593ca8a3b2fa28c58a0074a0b7cb901be64a077b",
+    "en": "Featured Collection",
+    "es": "Colección destacada"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "90baed3f6685567b11440c94be09967146563ac8716b80656c4324ebf273a4f5",
+    "en": "Discover by origin",
+    "es": "Descubre por origen"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "51afb1a173b44fe6b2ef6182582ecb00d23fa764b9110464d38273738f76bf80",
+    "en": "View full catalog →",
+    "es": "Ver catálogo completo →"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "5cc35f4b7e12e33950af76510e67ab7702432e8d3fc084f532eb07f7089a30cf",
+    "en": "Designed to be gifted",
+    "es": "Diseñado para regalar"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "338a466aa3309f9ca90341dcad512ebe98851be53dcdc8a0dda6e2a0ac60ff08",
+    "en": "Packaging that feels as considered as the chocolate.",
+    "es": "Un empaque tan cuidado como el chocolate."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a871bd9fad17fbc19ee282cec7333666c7f19b61e04452580d58c030aad10b3f",
+    "en": "Premium boxes, elegant presentation, and branded sleeves create a high-end unboxing experience for retail gifts and corporate programs.",
+    "es": "Cajas prémium, presentaciones elegantes y fundas personalizadas para regalos y programas empresariales."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a4a17af05a7f5f1e1f2158ed93792af5d337ff1290cef544de3e80756197f40b",
+    "en": "Premium chocolate gift box and cocoa beans",
+    "es": "Caja de chocolates prémium y granos de cacao"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "e1eab404c6664d735f7169a486adcc365474e8e44c3a5bcde96f5b548c8ce981",
+    "en": "Explore Packaging Options",
+    "es": "Explorar empaques"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b9084d4d323a2cd059013c423b2de8da8b4f126be6daeb3a658931bad4589a69",
+    "en": "Browse Gift Boxes",
+    "es": "Ver cajas de regalo"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "41b6d4c20a7d9b07b264d27cb0b9e90423c19c090d865e3ade417cfc3ac9cefb",
+    "en": "Corporate & Wholesale",
+    "es": "Empresas y mayoristas"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "71633badbc1e3da950035bf313305cc9b77736021f0fb3527d8ca93bd5bafc19",
+    "en": "Create chocolate made for your brand.",
+    "es": "Crea chocolate para tu marca."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "522981ab1619548a32b804b7428b1930f0354ab90031350cb6ac2da558fee86c",
+    "en": "Custom molds, white-label packaging, gifting programs, and high-volume manufacturing quotes for hotels, events, and wholesale customers.",
+    "es": "Moldes personalizados, empaques de marca propia, regalos y cotizaciones para hoteles, eventos y mayoristas."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "2c60159dd4c58421ae44712848f97f1f3f5f53f01abf23ac8a6cace7bd690117",
+    "en": "View B2B Services",
+    "es": "Ver servicios empresariales"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "4b2480e5fe6cf510bcf055bb10c17bc92778d6aff5ee9baa901bc55b0c1ad643",
+    "en": "Business services",
+    "es": "Servicios empresariales"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "aa88f82386db89872ee8627f719edff0bc9fc857bb2c690dc5c3513dcd58820b",
+    "en": "✓ Custom cacao profiles",
+    "es": "✓ Perfiles de cacao personalizados"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "50047e394d74e7e196c3edcbb59e9577fc0cadde7ad1f25657908842efd89d51",
+    "en": "✓ Branded molds",
+    "es": "✓ Moldes con tu marca"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a6cf02ea2e3eb7001dd5f4d3211ecb44efb2cb51ed81bcf40e27bbf398d3c1e9",
+    "en": "✓ Luxury packaging",
+    "es": "✓ Empaques de lujo"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "82ec8f18cf12f5905ee1c81debf5e0713e7a0402ed028e90c0109005d5e19e14",
+    "en": "✓ White-label options",
+    "es": "✓ Opciones de marca propia"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "d81bfd1c0cd6a08aca4e346c4925f28d0f249c185598da452f8ec5212f40c575",
+    "en": "Small batches. Big flavor.",
+    "es": "Pequeños lotes. Gran sabor."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "3688351a7c76f7ea3faef488644636e0d31843e77fb881bb27ad9aff04ea8ae1",
+    "en": "SolCacao makes single-origin chocolate with honest ingredients, thoughtful gift boxes, and smooth ordering for customers and brands.",
+    "es": "SolCacao elabora chocolate de origen único con ingredientes honestos, cajas de regalo y pedidos sencillos para clientes y marcas."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "8b9cb1b7a3fc77a60066a17199fa49c15775106dc0f92fecd3830fdd74ca947b",
+    "en": "Shop now",
+    "es": "Comprar ahora"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "9247cb620a1c322140959500a5ed4d0dd6a65b433344565a10a354c53f1a2500",
+    "en": "Our story",
+    "es": "Nuestra historia"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "f7170289f55bf4063705f4b20b7dc02ae2c1c3bb269374b9127d502879f44536",
+    "en": "We started with one question: why does most chocolate taste the same? So we began buying cacao straight from small farms and making it in small batches, tested by our own team. Today we make bars, gift boxes, and custom samplers.",
+    "es": "Comenzamos con una pregunta: ¿por qué tantos chocolates saben igual? Empezamos a comprar cacao directamente de pequeñas fincas y a elaborar lotes pequeños, probados por nuestro equipo. Hoy creamos barras, cajas de regalo y surtidos personalizados."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "71a316d4d7b3d34b7fae3659b7e0fe534a37e51d28712a4e34db521dba262817",
+    "en": "Traceable origins. Fair prices for farmers.",
+    "es": "Orígenes trazables. Precios justos para los agricultores."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "4d5f8d476166bf4f667c58c74d5a2524c8f4022bb16601fed44a5c891ec532ba",
+    "en": "Nothing we would not eat ourselves.",
+    "es": "Solo lo que nosotros mismos disfrutaríamos."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b2e82a59a1a05b7b55046f930831fc777c8bb63bc45eb86af211bed905ed6d60",
+    "en": "What we stand for",
+    "es": "Nuestros valores"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "dc1ca5b11644ddf21a56f91e6b30febb43f48a8b8e1f5ec3d9129f6c449a0d0c",
+    "en": "Traceable origins",
+    "es": "Orígenes trazables"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "c38a3423e2b2d9757ccfdff68919d0024ca0b588da6ae35c4072ee6e00f707f7",
+    "en": "Every bar names its farm.",
+    "es": "Cada barra identifica su finca."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "776f9455fd9479115fa149c1aebb0ac72bca93fed74368bed03c26a627bc997e",
+    "en": "Small batches",
+    "es": "Lotes pequeños"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "da24e2f146382fbef4f16943f6076534c0bd62924ab695d6d27aafd5b7b74f45",
+    "en": "Made fresh, never rushed.",
+    "es": "Siempre fresco, sin prisas."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "2ebc0a73a0061ba305ff12b68523f4990f4768b90e80e96027cd2d52180f79a4",
+    "en": "Fair partnerships",
+    "es": "Alianzas justas"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "676b20fa198a4755dd92c92056ed214ff5c5107e5e6da804c97b8cb50ed376f5",
+    "en": "Above-market farm prices.",
+    "es": "Precios superiores al mercado para las fincas."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "d830b5e942cf3de302626ed0138de84a27fbf6dc399de960fad3bcd2c3253ee0",
+    "en": "Made to share",
+    "es": "Hecho para compartir"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b2fd63277819e8a90d9c62d66fbe09740035a031eb5c2809b12de65325b13368",
+    "en": "Gift-ready on arrival.",
+    "es": "Listo para regalar al llegar."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "85e3f757407845f67127b117a3d3c244bd70c67e5f10cc9847e772f9b1574e91",
+    "en": "From bean to bar",
+    "es": "Del grano a la barra"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "0e570ca6fabe24f94e52c1833f3ffd25567022beb826fa16891f3322051bc221",
+    "en": "Source",
+    "es": "Origen"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "caa054f5ab243e936ef006bf60676c583f445dffea1fada8f7e62a77c2a0e2ad",
+    "en": "Beans from partner farms",
+    "es": "Granos de fincas asociadas"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "285c340e071f2459d773975f01c598f87de09e348d971762dba54ce3c16bafa9",
+    "en": "Roast",
+    "es": "Tostado"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "5b4f339decc559600e4029709aeb2e1271eaeb802922291e7260860d05974ca3",
+    "en": "Small roasts, bold flavor",
+    "es": "Pequeños lotes, gran sabor"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "9c2a44c4716dd3468ac91c4e8d8daa3f93ce028c261bded09921e3b1df5b66aa",
+    "en": "Temper",
+    "es": "Templado"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "604facb2e968a0ca612471e3356bcf6c9d4c1c238aad3ed0099dd4ca989314bd",
+    "en": "Clean snap and shine",
+    "es": "Brillo y textura perfecta"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "80dc21673e554c7bdf6e371232d2f3cb3be2cf6d9f86fd90d03515d51269a0c6",
+    "en": "Pack",
+    "es": "Empaque"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "1bc11960ab2cc237a60c8526b1a38f1960d889935b66bc3bdbbf3c231ad6369b",
+    "en": "Hand-packed, shipped fresh",
+    "es": "Empacado a mano y enviado fresco"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "9412a1c78f84b63835ea4880b65fa7ad5a8dec4ebec196f12dc97585a34705bc",
+    "en": "Taste it for yourself.",
+    "es": "Pruébalo tú mismo."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "2e677d3a25cdd42f0ef1c1a4ad02365e925c05247ae298886cce1d6a04bf15c4",
+    "en": "Browse the shop or build a custom sampler for gifts and teams.",
+    "es": "Visita la tienda o crea un surtido personalizado para regalos y equipos."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "df70f0278013824559968e8885cd389d22882a3f2046f2aae9764b537d16dc42",
+    "en": "Build a sampler",
+    "es": "Crear un surtido"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "0c3310a647b0371768e3373166353876d685dc45f853d65f2e00a271fa649d30",
+    "en": "Welcome Back",
+    "es": "Bienvenido de nuevo"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "0dffe234b44793b6158e663740fc9cf1b45738bce4be453244c96e056e6207c3",
+    "en": "Create Account",
+    "es": "Crear cuenta"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "bcc0bcc9140b0c97a6440ce56966a07a05e85bddd509ddc5e2ab98755f319af1",
+    "en": "Sign In",
+    "es": "Iniciar sesión"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "eeca4f80a184d5aa8492b2607535df2aed94744e3916807bfa7d99dd10265af1",
+    "en": "Forgot Password?",
+    "es": "¿Olvidaste tu contraseña?"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "f001f9f2b2f43f043d68d637a3611bdb9ede59d11fed833de9c285e0fdc04990",
+    "en": "Signing In...",
+    "es": "Iniciando sesión..."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "aeb5d280093018a89a457e613a9af75e5c5a21dbb00012cd2b8875571d0e349e",
+    "en": "Creating Account...",
+    "es": "Creando cuenta..."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "f31ee080d5eb08659f577537d081f31ecbdbf8ce896bbddb55804f140865cad9",
+    "en": "Authentication mode",
+    "es": "Tipo de acceso"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "dce81c5bf1aafe275f2559ec37e6075de8a18553593a2b6330a1bd0cfbe9f915",
+    "en": "Account Type",
+    "es": "Tipo de cuenta"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "3cceaf6623f899c5f7b37806d281af1eb1278dd2c8b8268188f1ddc15d1d6aa0",
+    "en": "Personal Account",
+    "es": "Cuenta personal"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b4e93f12c08647bbaf901bb5a52ec7c9fa2c7c8ca0b9653721de408f970bc090",
+    "en": "Business Account",
+    "es": "Cuenta empresarial"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "96ce6e6193a047260f5c32aa416d88b6e8959111f43f98457af9cc009a0907ad",
+    "en": "First Name",
+    "es": "Nombre"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "f55563b386a39dc3093ff86421fb665db03b571c36f17577d648da5d2a7cc245",
+    "en": "Last Name",
+    "es": "Apellido"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "969ccbd3cf6300ecd5c880459d81ae9027df7517563184a1b8b15282db230621",
+    "en": "Email",
+    "es": "Correo electrónico"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "63dceb8800b2dd4af9567a1f54f03b7c3dbdc27fac4799091ebfcc4928899ee5",
+    "en": "Phone",
+    "es": "Teléfono"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "e7cf3ef4f17c3999a94f2c6f612e8a888e5b1026878e4e19398b23bd38ec221a",
+    "en": "Password",
+    "es": "Contraseña"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "c292210c44167923a75b092a008f9d2b194fb08631a6aa43d753ed7931ad4d5e",
+    "en": "Confirm Password",
+    "es": "Confirmar contraseña"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a2e3f225d40a393ae19ab42c273d4d8c145b89ade3a372aee72f364ef9d71c96",
+    "en": "Street Address",
+    "es": "Dirección"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "fc33f73246f48295702f404001e74d56f14d2f82689b2816422dc1a4c2ec4fb2",
+    "en": "City",
+    "es": "Ciudad"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a3b50c476732c7409d297c3d7d0e23569fee5e08318553ae76041ab5fe60582e",
+    "en": "State",
+    "es": "Estado"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "525e4e813ecc5633aa9520ea17690e9ccbe40fb6416339c2c9a051a590190924",
+    "en": "ZIP Code",
+    "es": "Código postal"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "701d021d08c54579f23343581e45b65ffb1150b2c99f94352fdac4b7036dbbd5",
+    "en": "Country",
+    "es": "País"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b48362246239a266423f91ac359e950bdd7952c2fa3f8b0442c4ccf1ec27230d",
+    "en": "Company Name",
+    "es": "Nombre de la empresa"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b44484a0fa28c471455e0f2d2165094f0b547486058f593121260e74c4c7808e",
+    "en": "Industry",
+    "es": "Sector"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b5a229ac8becc6035511f432ca6018f581f0627233eada6ae8e12b505d44af7f",
+    "en": "Website",
+    "es": "Sitio web"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b610f73ac442065f19197945ab268ad07ab847a614ff5f21be7d3412b8491ff7",
+    "en": "Hotel / Hospitality",
+    "es": "Hotelería y hospitalidad"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "5d7c0cfd32a9b2caa81e68b77570339b9e81ab07c6388536c87c90a21fbe56c2",
+    "en": "Corporate Events",
+    "es": "Eventos empresariales"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "2df44c102208dafaa6302ab3ba532b7d5c95ee6a8f701c7a634dd823a6c4b3ed",
+    "en": "Retail / Boutique",
+    "es": "Comercio y boutiques"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "dfd971bc4f000be95bb4628668f32b738219f2e1321a11624c5778c9e486a5dc",
+    "en": "Restaurant / Cafe",
+    "es": "Restaurantes y cafeterías"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "09513d0ed97381c5ce2f54bb4c921ec46b17c4d1f003af62f6ef8a8ec040f085",
+    "en": "Wholesale",
+    "es": "Venta al por mayor"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "f97e9da0e3b879f0a9df979ae260a5f7e1371edb127c1862d4f861981166cdc1",
+    "en": "Other",
+    "es": "Otro"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "3060deac40712b440db2d3823adb313c87759cbddeb94e774dd46854ed9e4c78",
+    "en": "Demo Accounts",
+    "es": "Cuentas de demostración"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "96e3542fb6a22ae03162248a0f49cd5c26cf409b82bb72c526133f45aa630f0f",
+    "en": "Password for all demo accounts is",
+    "es": "La contraseña de todas las cuentas de demostración es"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "f3cdd32b5ae2929585d3deaf157282131455bff3190343625a0f4b4e3dabb54e",
+    "en": "Retail Customer",
+    "es": "Cliente particular"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "7c100f8afc9832be4e0d8ae35533652bcc769a0e07f3d90e30441cc624bfcb91",
+    "en": "Approved B2B",
+    "es": "Empresa aprobada"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "8a38f0d3773a7ce4509324d791fc60b21694a73e7645d352ba9b77da00e98752",
+    "en": "Pending B2B",
+    "es": "Empresa pendiente"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "f312448722349bda1d70402fd6f0580dfbad0a4d86914295b239a68677915cb4",
+    "en": "Rejected B2B",
+    "es": "Empresa rechazada"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "c1c224b03cd9bc7b6a86d77f5dace40191766c485cd55dc48caf9ac873335d6f",
+    "en": "Admin",
+    "es": "Administrador"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "835d6dc88b708bc646d6db82c853ef4182fabbd4a8de59c213f2b5ab3ae7d9be",
+    "en": "ADMIN",
+    "es": "ADMINISTRADOR"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "8df6bc3f93a218ee4cb31427312f62d4498cabd22742e5dea3561e16b3e5b260",
+    "en": "CUSTOMER",
+    "es": "CLIENTE"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "8eb6a764bc6f20a33477008670d0d4f5026ad1d95094790864e08923aef9d82a",
+    "en": "BUSINESS",
+    "es": "EMPRESA"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "29c797499ab819b2b9dae3aeb7e2597de52f3a375a407137d49d3f9174374b15",
+    "en": "Account Recovery",
+    "es": "Recuperación de cuenta"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "2b7783fc9a7ad3cc63f6c23771da09c72b89781156c97b91fec7e4e8cc67758a",
+    "en": "Enter your account email and we will send a secure password reset link.",
+    "es": "Introduce tu correo para recibir un enlace seguro y restablecer tu contraseña."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "2303e816b2d572c43cd966e8efa5172c8067d50f076cd41bb27f2ff2fa8f36fa",
+    "en": "Email is not available in this environment. Use this development reset link:",
+    "es": "El correo no está disponible en este entorno. Usa este enlace de restablecimiento:"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "4e70f1fd24babdea2ee43377e452e1a56fadf334e949f199b2a7642bc4fe9a04",
+    "en": "Reset Password",
+    "es": "Restablecer contraseña"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "7d5f16d496d4e50d39a4274406f8c823681942d5b8995df06f64021697da70e6",
+    "en": "Send Reset Link",
+    "es": "Enviar enlace"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "286a3af7348e83123a2525936b12ff839504effef55b21c921edbb179247b523",
+    "en": "Sending...",
+    "es": "Enviando..."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "39ff7aeec5701a8535dc5769f78f5aea60547db4107a3c0c68ef95fff25a573c",
+    "en": "Try another email",
+    "es": "Probar otro correo"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "ee9eb75e2562e63006f32234ab2ea8470f610bf94518851f5058ee49236164a7",
+    "en": "Back to Sign In",
+    "es": "Volver al inicio de sesión"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "8d8e2f1d61b44bf3dc8fb83c6fdb1ead197017b3faa8173516744916e1a83a6e",
+    "en": "Continue to Sign In",
+    "es": "Continuar al inicio de sesión"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "ae64f72319d0e4f7a88e0fe6cd9751cec96ff6bb86ec83cbe185b457d4b8638d",
+    "en": "Choose a new password for your SolCacao account.",
+    "es": "Elige una nueva contraseña para tu cuenta de SolCacao."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "ac557e96c53581ab73cb2627f523522ea9baea115c1d23cf30d217f4d391ca85",
+    "en": "Enter your new password to complete the reset.",
+    "es": "Introduce tu nueva contraseña para completar el proceso."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "74b3ca264e520b8be9569555732a3b20929847c21286a08b599abbd025c67b17",
+    "en": "Reset Token",
+    "es": "Código de restablecimiento"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "7c451e0f436d04a6f321f8d5de8da296a66cfb1d8cdc3918b1ed7ecd480cce28",
+    "en": "New Password",
+    "es": "Nueva contraseña"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "642776c02c0d14a09fb2f517ce9d5fafb129615ab487e80b36cc73d9c7babb12",
+    "en": "Confirm New Password",
+    "es": "Confirmar nueva contraseña"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "0a4e0b71b7f3583747a2885b292087c9c6f78873bdd7b3b84cb70c1d0a9a7bc4",
+    "en": "Updating...",
+    "es": "Actualizando..."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "557be0dabba688695da8841d9b8b71195f1205c9346809cba0a66be2664ecbd0",
+    "en": "Update Password",
+    "es": "Actualizar contraseña"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "3457c3af8777f2de94cccc3bffde7cfa0362e265c75ce311a3259b08919a9fa8",
+    "en": "Reset instructions were sent to your email.",
+    "es": "Las instrucciones se enviaron a tu correo."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "bb2d7cc9cf061ae948e08dee606033f8d1e696bb07fac87ce6edce2e7f9e0d63",
+    "en": "If an account exists for this email, reset instructions have been sent.",
+    "es": "Si existe una cuenta con este correo, se han enviado las instrucciones."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "cb308b5114dfdf7308ffe8fa55748c08bd5bcf538ddc882ca02ad0d5e35741b1",
+    "en": "Password updated. You can now sign in.",
+    "es": "Contraseña actualizada. Ya puedes iniciar sesión."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "ad0187add790ff172be7ea077cabe58ff704c671bafe85b675efdad19e8d32b8",
+    "en": "My Account",
+    "es": "Mi cuenta"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "d4b1ea5708dd532930a85188b45aff6f0a3ed458500c7577e0127a538eb0d100",
+    "en": "Overview",
+    "es": "Resumen"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b7e8acdd522e6190ac9567ad16dff9873cbb78882bbf435b7e189c440a949159",
+    "en": "Orders",
+    "es": "Pedidos"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "76179aafc43c51f3f583ed6da770553419ce4129499c2466ebace48d841d0f28",
+    "en": "Addresses",
+    "es": "Direcciones"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b1371e9b0601e186b87c90e4a08ab4fa3ebb2851076228a8acfd365058332a50",
+    "en": "Welcome,",
+    "es": "Bienvenido,"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "c4b37e84b553d29bd71fd26c9692ecab8e36ffdd7a03893b1fd69eb95390aa99",
+    "en": "Personal Information",
+    "es": "Información personal"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "dcd1d5223f73b3a965c07e3ff5dbee3eedcfedb806686a05b9b3868a2c3d6d50",
+    "en": "Name",
+    "es": "Nombre"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "d83b9ff3c07a8390e2ea0a2af45fba37595da25f31b85ba625363ee98c0c796f",
+    "en": "Not provided",
+    "es": "No disponible"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "764883b3f5b8ffff97f2e83b3d9d71dd03fbd2270c5c249213dc645870563bf9",
+    "en": "Recent Orders",
+    "es": "Pedidos recientes"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "affe1544acff5c268c656bb8da34bffa39dd2d1a5cd2d773921e70e0403ba6bf",
+    "en": "No recent orders yet.",
+    "es": "Todavía no hay pedidos recientes."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "5ca26e507befd92c799633a3034d705ce9507cb3e915d4152302fb7d4262df98",
+    "en": "Default Address",
+    "es": "Dirección principal"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "4968e9607bc6dc7e87acbd0b943169668e80f5680110287595766bd6a4f8421a",
+    "en": "Update the saved address for this customer account.",
+    "es": "Actualiza la dirección guardada en tu cuenta."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "5a842a8a43a5621c5541f7ee09532ffc933e9c69a554f388e54187da5e9aa124",
+    "en": "Edit / Save",
+    "es": "Editar / Guardar"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "ca1e08d37bf2e70ac195cdb9848f4aa053dbcd429bc48bece5c31995a9456c23",
+    "en": "Profile changes saved.",
+    "es": "Los cambios se guardaron."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "59fd6ff94872a9202cec83085b92a3d9e67d97d8c296a5aaf1a5c3145f9b3283",
+    "en": "Corporate Account",
+    "es": "Cuenta empresarial"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "c1327eec10bdbce2f5b8c84a5d2c13f6da7c1ae87d3861abaf61b440661cb07b",
+    "en": "Company Information",
+    "es": "Información de la empresa"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "2b5c3d26721ae9c350cf3009318b626f0fc8a90b4a2ac0ca8099c05aa849282e",
+    "en": "Contact",
+    "es": "Contacto"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "df2cfad6b5bf34c01d2e848533ad891d7f188ae5d07c78741f8a2ffd8c0d1708",
+    "en": "Contact First Name",
+    "es": "Nombre del contacto"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "1de80bfd086cb759f88ccaa4162e32cc076d0bd6ea262429a0812167586cc77d",
+    "en": "Contact Last Name",
+    "es": "Apellido del contacto"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "997c922d20b96215d3f813b833184c1cb710652e3640e89537070261fc2d372d",
+    "en": "Business Phone",
+    "es": "Teléfono de la empresa"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "e4dcea4f8777500ed817268df701fbcc14e51429a3825594c1c97b3e69068239",
+    "en": "Save Company Profile",
+    "es": "Guardar datos de la empresa"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a36c3f33e910c92901ca7d4f2fa4dce699fd37b844a6de8b4f0f87bf4953cee5",
+    "en": "Business profile saved.",
+    "es": "Datos de la empresa guardados."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "f98381659fcd44de2f32cb82ed91f0700d1649ee5bd76a1e7c3d6f18d30dd73c",
+    "en": "Approved for corporate quotes and custom brand requests.",
+    "es": "Cuenta aprobada para cotizaciones y solicitudes personalizadas."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "6171ce19829229db8341062c518114d3a79917c4e60130d59b121aee564249e4",
+    "en": "Needs attention before quote access can be enabled.",
+    "es": "Se necesita información adicional para habilitar las cotizaciones."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "1400daf2d995693fcf78f2e76f8f72d7aea11cda03e9b5c34353c6fee7d4d84b",
+    "en": "Pending review by SolCacao team.",
+    "es": "Pendiente de revisión por el equipo de SolCacao."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "0254fb3bc69ab388824a0d6404a50806744d00b21075bb25bed1b0cf50f41d0f",
+    "en": "Admin note:",
+    "es": "Nota del administrador:"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "332011b91ccd9887592cd7072f12da38748e37ee1af81985f9c8e1f066aec6fb",
+    "en": "PENDING",
+    "es": "PENDIENTE"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "f1995216dcfbca4efddfa35f22f1deceaa1d31ee7a829f9d6d72ed78a1aa258a",
+    "en": "APPROVED",
+    "es": "APROBADA"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "04cc0e71ffcffb522791a4e0119fe4cf339d8e85a4fadea0a13df0f3062ad8bf",
+    "en": "REJECTED",
+    "es": "RECHAZADA"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "aa6578c24cd0dfab727a1506d9ceca211c05e69ce673031be69462e838f0ffa7",
+    "en": "Admin Access",
+    "es": "Acceso de administración"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "dd02f0d0cb1d9cf97838485629e0360df88d9ec45234c46109779abfd738e829",
+    "en": "Admin dashboard",
+    "es": "Panel de administración"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "e78cab0032939646c3efad491c6d1716e9bfd96aa3a5cdd33960421019ca99d6",
+    "en": "Manage business accounts and site activity.",
+    "es": "Gestiona las cuentas empresariales y la actividad del sitio."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "7a087806d8080988676e923a89d28a2997274084ea05c8f73ed93668a42025cd",
+    "en": "Business approval",
+    "es": "Aprobación empresarial"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a8d7738d9b38ac424bdff8d6abf210da8babc3389b83908ad362f5f7aa3eeebf",
+    "en": "Review corporate registrations before they can use business-only flows.",
+    "es": "Revisa los registros empresariales antes de habilitar sus funciones."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "7a6c4da06ed9674592f353ea8048b89517928d17cfb74d3ad55928b599d4097b",
+    "en": "Admin Email",
+    "es": "Correo del administrador"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "14736a2eb9f4159f4b6b86f192c3c222243fd9659aadf2ecc0139e3d72bed85c",
+    "en": "Role",
+    "es": "Rol"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "f3d9e31e2d9c973cede9e91a81c549149472ff6e8bff3a01585e8e81177b0b0d",
+    "en": "Total B2B",
+    "es": "Total de empresas"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "da77d8f5b71aa0685ae760bb27ec15b782a64970c1f55ecc480a20aeab623dd5",
+    "en": "Pending Review",
+    "es": "Pendientes de revisión"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "d604ca655bbe0b0f112760a0da272f63b0e1cebe22bb473dcd37e9be7a0c296e",
+    "en": "Business account approval",
+    "es": "Aprobación de cuentas empresariales"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "c0523e519e9756f11ec0026d5f10423d9745d75761c0d14287f0df3f076c2f40",
+    "en": "Approve qualified brands or reject incomplete corporate applications.",
+    "es": "Aprueba las empresas verificadas o rechaza las solicitudes incompletas."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "70f7e861afde526e028c4e619496e790234aa2945f8a8cb0c759a6cde8119053",
+    "en": "Business status filter",
+    "es": "Filtro de estado empresarial"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "331551b0de4157c9abc7b72b61b96a2a928fd6db3cdf029c1fc44b08ad633aa6",
+    "en": "Pending",
+    "es": "Pendientes"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "87b42e40c2a290e01d87b721bf381c3c5e259d1eb0a4660e41fdbf8bc73f7ddd",
+    "en": "Approved",
+    "es": "Aprobadas"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "aea4a04a80426ed865ec2058b16854b9146166d22c1f3282a18f285941c42eba",
+    "en": "Rejected",
+    "es": "Rechazadas"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b92d45bdf58435ecf600295a3578598a17d38f3a67d7c7588072304195a4ea43",
+    "en": "Search business accounts",
+    "es": "Buscar cuentas empresariales"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "afc6c03682b68a5fd8b01c323b3e864edeb6f49b7930788e0350e311134b841f",
+    "en": "Search company / email",
+    "es": "Buscar empresa / correo"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "dfe8fedd967eb9e85847f3a1f0ef2db0eb125a44b23e9782d1bfbec97e9f7849",
+    "en": "Loading business accounts...",
+    "es": "Cargando cuentas empresariales..."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "c949f0b1dca537700a5524064f0e65d8404a2b869fdcecf1c37539e2da8ebbdb",
+    "en": "No business registrations are available yet.",
+    "es": "Todavía no hay registros empresariales."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "235187edaa280052928a932796d044fd31e952136be3cd5605c2ee00f232fa21",
+    "en": "No business accounts match this view.",
+    "es": "No hay cuentas empresariales que coincidan."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "9c3d29b6e6b58e0f71d46c79a7d2817d217bdab78ee6c04455391ef03963d464",
+    "en": "No website",
+    "es": "Sin sitio web"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "64900440a8c9a5eda335b124b9824aa4f14f2c280097d5556498d276f60ecdf1",
+    "en": "Submitted",
+    "es": "Enviada"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "fad6057bb5403e59709e79e0679965bd362af5fc0841b06c08f48efa21fc588b",
+    "en": "Reviewed",
+    "es": "Revisada"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "dc9250522c33e4585176104da3e604996cfdabcd45e0908de6008921d1f67d16",
+    "en": "Not reviewed",
+    "es": "Sin revisar"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "efe1cde6778461309d027526e573420e94b5c6b685c408126472a1e829bd4e1d",
+    "en": "No notes",
+    "es": "Sin notas"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "3425d10869214ddf41889b86984a4425eba4d3a4d95e1fbe4fb8c087725bbdee",
+    "en": "Reason:",
+    "es": "Motivo:"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "e57499264f493e5813d8b60519d02a85706f1b5edf6e179937d3d97939c8a8a8",
+    "en": "Rejection reason",
+    "es": "Motivo del rechazo"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "714a149ad340cb7b4dc5ccb2352913bd5ec572892deaddec9e13108a71656c2a",
+    "en": "(only needed if you reject)",
+    "es": "(solo si rechazas la solicitud)"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "63ab42f3f5e67cb567aca5f003b148f267900cc40dda44bcd113346ab614dfe5",
+    "en": "Explain what is missing or incomplete",
+    "es": "Explica qué falta o está incompleto"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "6007acbe30b2cd98703e83350ea665c06009fcd51f26dd73b309294235f45f21",
+    "en": "Approve",
+    "es": "Aprobar"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "ab604a360777735fe2993aec7d4ffae415f1515b0a4c989269603fd3d5c07b61",
+    "en": "Reject",
+    "es": "Rechazar"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "7d5d5d3069f680594f7ad0615e2b69c595831f5646474f721400c7165f1ffa2f",
+    "en": "Mark pending",
+    "es": "Marcar pendiente"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "349d68d327c1244840fd8d793d758ad1566f636dca31681aaf53b11aebfaae20",
+    "en": "Add a short rejection reason before rejecting.",
+    "es": "Añade un motivo antes de rechazar la solicitud."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "05a285253154d1aa7411977f015ebd1ab2fb7795cc089a36e16d789345fae5e2",
+    "en": "Rejected during admin review.",
+    "es": "Rechazada durante la revisión del administrador."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a3966fe9958a82cfeb54b37762c4a5d699eefaafdceed0bcc8a66b19a0785881",
+    "en": "Access Restricted",
+    "es": "Acceso restringido"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "06033e5e130c3c5b94a0fdfd2b8ec89f030ab0632355a8711c17df3e97053d97",
+    "en": "This page is not available for your account. You can continue shopping or return to your account.",
+    "es": "Esta página no está disponible para tu cuenta. Puedes seguir comprando o volver a tu cuenta."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "66d1605446f447dc8d2c3b0c8c2d020fe991875093512efa35efa57cd991afe4",
+    "en": "Admin Dashboard",
+    "es": "Panel de administración"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "d2f9ecbf6cc99b23d1fa70da020f2c7c93cc82a781a8be478d4f9658de6187ac",
+    "en": "Return Home",
+    "es": "Volver al inicio"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "82bb31f5587bb202857b2dcaec427409e6f2406d3c69bff1302bb1869a43deca",
+    "en": "Loading account...",
+    "es": "Cargando cuenta..."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "c887f134c26ea8310e1fb4bd6fbab7b640393bd1b556e62691c7a442be92ec2a",
+    "en": "Skip to main content",
+    "es": "Saltar al contenido principal"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "dfc1e6d16ba5e2e5f8632c1c6e90ee41dfcbda8c31f1a23afe5601823431b183",
+    "en": "Toggle navigation",
+    "es": "Abrir o cerrar navegación"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "e1bfe7eccc45465f536688db2ec9f2cc8a09819fe80bdd9f4dc098363eb9f0b4",
+    "en": "Primary navigation",
+    "es": "Navegación principal"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "806f228ffbd42e4e03fe6ed413f037614c822b34c3be4b2cc0625cc5eed917cb",
+    "en": "Mobile navigation",
+    "es": "Navegación móvil"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "b7bb3f342402da33656b6a44500c15a43770e66814b74f924f8b9ab36ac28e59",
+    "en": "Dismiss notification",
+    "es": "Cerrar notificación"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "dcf91099a86c77094f291af64a40e263fbc3b038541b8126d3e1571a7881ed7f",
+    "en": "Language selector",
+    "es": "Selector de idioma"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "662aa986616901072d0f6710ec1cf935403ce7aaf994bdcc82d8602c81d6b553",
+    "en": "Please add business phone verification and company website details.",
+    "es": "Agrega la verificación telefónica de la empresa y los datos de su sitio web."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "0120ff1ab4d4cfa1ba9c858b36e68dd3904062dd5be971b3e870028786b9c4c0",
+    "en": "Sampler progress",
+    "es": "Progreso del surtido"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a61c254e6f4e5fe86e90ac52bee7cd8c8367b2f9b50310410f8024d29e9aacab",
+    "en": "Chocolate",
+    "es": "Chocolate"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "45cceda8377a0f8cfb7a5dc927ee1760c648406764291c2032cbadad6e8e44fb",
+    "en": "Authentication required.",
+    "es": "Es necesario iniciar sesión."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "6f8e6becc59df5bec4d0bec7b295f91373312ece29f480a605dc3b19739a1014",
+    "en": "Incorrect email or password.",
+    "es": "Correo o contraseña incorrectos."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "6a928737f3131bd2bb57431870ab8465cf2d10326f4f8e7d1f5b5bab3bbb6e87",
+    "en": "This account is inactive.",
+    "es": "Esta cuenta está inactiva."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "30490788523c0597bddcb1ec76dab4366f41acfc6d37c1f31714a62f83143ffb",
+    "en": "An account already exists for this email.",
+    "es": "Ya existe una cuenta con este correo."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "526962d3ae4bce29392c1ffbef620f786f158a940b17a6e7ade42393128fbcee",
+    "en": "An account already uses this email.",
+    "es": "Ya existe una cuenta con este correo."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "25bbaf43a896f5b285c410d130e8636940b18399e5aa9e47ce6fd40ef75b1a99",
+    "en": "Unable to find account.",
+    "es": "No se pudo encontrar la cuenta."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a0b8614977a3d6968c3c70e637353957fee37116d883a745e5e2b75055520115",
+    "en": "Unable to complete the request.",
+    "es": "No se pudo completar la solicitud."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "39c1132e6d10c778eea29f58084f34b572a35c66b7ddb47caa5e6c88255707a3",
+    "en": "Business account was not found.",
+    "es": "No se encontró la cuenta empresarial."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "39087cea1f7bd88d2a74334ae4ff57f854aecb1f6c38b3bfedd378de0a7d9685",
+    "en": "Reset link expired. Request a new link.",
+    "es": "El enlace ha caducado. Solicita uno nuevo."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "8a966af884a06484aad2032a003c8bb514b24890ef0e2e917a8e0a4df0858def",
+    "en": "Enter a valid email address.",
+    "es": "Introduce un correo electrónico válido."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "90eeb8ff8c3a02124a44cfff39e4057d677b1ce7df90355b2ef8a4cfd141c972",
+    "en": "Enter a valid phone number.",
+    "es": "Introduce un número de teléfono válido."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "8b8eb3ddba77275545930c7ed3c3c5ece992d752c7a8caa94962cf619a2bdab1",
+    "en": "Enter a valid ZIP/postal code.",
+    "es": "Introduce un código postal válido."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "66ed74c6fb9cff6b830874074794766d5158eb6b42d4b30ea637d613280559b3",
+    "en": "Enter a valid URL starting with http:// or https://.",
+    "es": "Introduce una URL válida que comience con http:// o https://."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "5dca4ea845ec445088d743ea3c15e332cc923faf2bdddcbb8984e4f1165405c7",
+    "en": "Use at least 8 characters with letters and numbers.",
+    "es": "Usa al menos 8 caracteres con letras y números."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "6c6e178ad2a856ca5ef833b947c98dffb8476349703d1720f28dbff9ee503cac",
+    "en": "Passwords do not match.",
+    "es": "Las contraseñas no coinciden."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "7b2d442b1917269c1051ca88175aa92c4cd1541bd07e797897c93b578ba179a8",
+    "en": "Choose a valid account type.",
+    "es": "Elige un tipo de cuenta válido."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "288e8d800174e31c77b58805b7e59cd2d4d26698393b757a4b99d1fb3a512ebf",
+    "en": "Email is required.",
+    "es": "El correo electrónico es obligatorio."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "3f3874845a7ea29fa4e098336b0fc9de5ca3ea5cc48d5a9597336b2fb5f98e95",
+    "en": "email is required.",
+    "es": "El correo electrónico es obligatorio."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "4a6bfc94b5309968acbc888e6ce83a101a64d9d6faeb7639718f13bcc3ffb22a",
+    "en": "Password is required.",
+    "es": "La contraseña es obligatoria."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "7633806b104639f5f3cbed7c10abdead2b383f87344946b2088df2ca2faecb38",
+    "en": "First name is required.",
+    "es": "El nombre es obligatorio."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "9d8dc637e16fa2ba8a7c25f088ea19d0781cabffe99e19625291208d8efc2a2d",
+    "en": "Last name is required.",
+    "es": "El apellido es obligatorio."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "9e8b38f7bdaf085b6f2a15acc9009f6a9aad80d659938c189f314a433e2267c6",
+    "en": "First name must be at least 2 characters.",
+    "es": "El nombre debe tener al menos 2 caracteres."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a3be47ccb423eb2e7cc211ef39bbfbba0df4196afe5791dadf7f6a9b3d6eb96b",
+    "en": "Last name must be at least 2 characters.",
+    "es": "El apellido debe tener al menos 2 caracteres."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "44c6d9f35c98bf7be873c54eeed979fbb849499098d343371170dd6368cd8ff7",
+    "en": "Phone is required.",
+    "es": "El teléfono es obligatorio."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "020b970556107c00e98ff83f378ff9aa054497d9341743355cfd859ab2270a3c",
+    "en": "Confirm password is required.",
+    "es": "Confirma tu contraseña."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "a5e52bf6d475206db56fd31941008197a9da27394380495ff117e984e5b9b833",
+    "en": "Company name is required.",
+    "es": "El nombre de la empresa es obligatorio."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "2c75a5654cee18732ca189cdedd4888ac3d7e4077448c306610f1cdd13ff8f9a",
+    "en": "Industry is required.",
+    "es": "El sector es obligatorio."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "82a198792224d27a47a10d32ee07c6bcd2e1a35eee79ef3dad995a0a1082da2a",
+    "en": "Business phone is required.",
+    "es": "El teléfono de la empresa es obligatorio."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "3b96ab87f90b6a39876d9dd1bb6135745c36fb596f391a418f6cb6f36afa8157",
+    "en": "Reset token is required.",
+    "es": "El código de restablecimiento es obligatorio."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "99f484b774811cf4c83754a8e2f2176a59c85750a33ac4fa67ee1224c034e044",
+    "en": "{company} marked {status}.",
+    "es": "{company}: estado {status}."
+  },
+  {
+    "namespace": "ui",
+    "keyName": "2687f86ed6784b8a5fca36e6c468e12aa44dc3c7e8137e3160d1a95079bdcd02",
+    "en": "approved",
+    "es": "aprobado"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "20cd938a2ea64f612b3523bc9219130c6fc66cd09b394ea38437488c0b8898b2",
+    "en": "rejected",
+    "es": "rechazado"
+  },
+  {
+    "namespace": "ui",
+    "keyName": "62a2fed3d6e08c44835fce71f02210b1ddabfb066e39edf1e6c261988f824dd3",
+    "en": "pending",
+    "es": "pendiente"
+  }
+]

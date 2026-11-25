@@ -1,0 +1,45 @@
+.contact-sampler-page {
+  padding: 38px 0 56px;
+}
+
+.module-confirmation-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.module-confirmation-actions .primary-button, .module-confirmation-actions .secondary-button { display: inline-flex; align-items: center; text-decoration: none; }
+
+.contact-sampler-page h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(2.35rem, 4.6vw, 4rem);
+  line-height: 0.98;
+}
+
+.contact-sampler-page .intro { color: var(--muted); font-size: 1.05rem; line-height: 1.6; max-width: 650px; }
+.contact-sampler-page .form-card, .contact-sampler-page .wizard-card { margin-top: 2rem; padding: clamp(1.3rem, 4vw, 2.5rem); border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: var(--shadow); }
+.contact-sampler-page .grid, .contact-sampler-page .size-grid, .contact-sampler-page .chocolate-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.contact-sampler-page .size-grid, .contact-sampler-page .chocolate-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.contact-sampler-page .field { display: block; margin-top: 1rem; color: var(--ink); font-size: .9rem; font-weight: 750; }
+.contact-sampler-page .field input, .contact-sampler-page .field select, .contact-sampler-page .field textarea { display: block; width: 100%; margin-top: .45rem; padding: .72rem .8rem; border: 1px solid var(--line); border-radius: 7px; background: #fff; color: var(--ink); resize: vertical; }
+.contact-sampler-page .primary-button, .contact-sampler-page .secondary-button { margin-top: 1.4rem; padding: .8rem 1.1rem; border-radius: 7px; font-weight: 800; }
+.contact-sampler-page .primary-button { border: 0; color: #fff; background: var(--primary); }
+.contact-sampler-page .secondary-button { border: 1px solid var(--line); color: var(--primary); background: transparent; }
+.contact-sampler-page .success { padding: 1rem; border: 1px solid #b7d8bd; border-radius: 8px; color: var(--success); background: #edf7ef; }
+.contact-sampler-page .steps { display: flex; gap: .5rem; margin: 2.2rem 0 0; padding: 0; list-style: none; }
+.contact-sampler-page .steps li { flex: 1; padding-bottom: .65rem; border-bottom: 3px solid var(--line); color: var(--muted); font-size: .78rem; font-weight: 800; }
+.contact-sampler-page .steps li.active { border-color: var(--gold); color: var(--primary); }
+.contact-sampler-page .size-card, .contact-sampler-page .chocolate-card { padding: 1.1rem; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); text-align: left; }
+.contact-sampler-page .size-card.selected { border: 2px solid var(--gold); }
+.contact-sampler-page .size-card strong, .contact-sampler-page .chocolate-card strong { display: block; }
+.contact-sampler-page .size-card span, .contact-sampler-page .chocolate-card p { color: var(--muted); font-size: .88rem; }
+.contact-sampler-page .section-title { margin: 0 0 1.2rem; font-family: var(--serif); font-size: 1.55rem; }
+.contact-sampler-page .count, .contact-sampler-page .error { color: var(--danger); font-size: .9rem; font-weight: 700; }
+.contact-sampler-page .wizard-actions { display: flex; justify-content: space-between; margin-top: 1.6rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
+.contact-sampler-page .summary { margin: 0; padding: .5rem 1rem; border-radius: 9px; background: var(--surface-strong); }
+.contact-sampler-page .summary div { display: flex; justify-content: space-between; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--line); }
+.contact-sampler-page .summary div:last-child { border: 0; font-weight: 800; }
+.contact-sampler-page .summary dd { margin: 0; text-align: right; }
+
+@media (max-width: 680px) {
+  .contact-sampler-page .grid, .contact-sampler-page .size-grid, .contact-sampler-page .chocolate-grid { grid-template-columns: 1fr; }
+  .contact-sampler-page .steps { flex-wrap: wrap; }
+  .contact-sampler-page .steps li { flex-basis: 40%; }
+}

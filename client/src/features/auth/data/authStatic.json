@@ -1,0 +1,325 @@
+{
+  "defaults": {
+    "login": {
+      "email": "customer@solcacao.test",
+      "password": "Password123!"
+    },
+    "register": {
+      "accountType": "RETAIL",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "phone": "",
+      "password": "",
+      "confirmPassword": "",
+      "street": "",
+      "city": "",
+      "state": "",
+      "postalCode": "",
+      "country": "United States",
+      "companyName": "",
+      "industry": "Hotel / Hospitality",
+      "website": ""
+    }
+  },
+  "accountTypes": [
+    {
+      "label": "Personal Account",
+      "value": "RETAIL"
+    },
+    {
+      "label": "Business Account",
+      "value": "B2B"
+    }
+  ],
+  "industries": [
+    "Hotel / Hospitality",
+    "Corporate Events",
+    "Retail / Boutique",
+    "Restaurant / Cafe",
+    "Wholesale",
+    "Other"
+  ],
+  "loginFields": [
+    {
+      "label": "Email",
+      "name": "email",
+      "type": "email",
+      "autoComplete": "email"
+    },
+    {
+      "label": "Password",
+      "name": "password",
+      "type": "password",
+      "autoComplete": "current-password"
+    }
+  ],
+  "registerFields": [
+    {
+      "label": "First Name",
+      "name": "firstName",
+      "autoComplete": "given-name"
+    },
+    {
+      "label": "Last Name",
+      "name": "lastName",
+      "autoComplete": "family-name"
+    },
+    {
+      "label": "Email",
+      "name": "email",
+      "type": "email",
+      "autoComplete": "email"
+    },
+    {
+      "label": "Phone",
+      "name": "phone",
+      "type": "tel",
+      "autoComplete": "tel"
+    },
+    {
+      "label": "Password",
+      "name": "password",
+      "type": "password",
+      "autoComplete": "new-password"
+    },
+    {
+      "label": "Confirm Password",
+      "name": "confirmPassword",
+      "type": "password",
+      "autoComplete": "new-password"
+    }
+  ],
+  "retailFields": [
+    {
+      "label": "Street Address",
+      "name": "street",
+      "required": false,
+      "autoComplete": "street-address"
+    },
+    {
+      "label": "City",
+      "name": "city",
+      "required": false,
+      "autoComplete": "address-level2"
+    },
+    {
+      "label": "State",
+      "name": "state",
+      "required": false,
+      "autoComplete": "address-level1"
+    },
+    {
+      "label": "ZIP Code",
+      "name": "postalCode",
+      "required": false,
+      "autoComplete": "postal-code"
+    }
+  ],
+  "businessFields": [
+    {
+      "label": "Company Name",
+      "name": "companyName",
+      "autoComplete": "organization"
+    },
+    {
+      "label": "Industry",
+      "name": "industry",
+      "type": "select",
+      "optionsKey": "industries"
+    },
+    {
+      "label": "Website",
+      "name": "website",
+      "type": "url",
+      "required": false,
+      "autoComplete": "url"
+    }
+  ],
+  "demoUsers": [
+    {
+      "id": "usr-retail-demo",
+      "firstName": "Alex",
+      "lastName": "Morgan",
+      "email": "customer@solcacao.test",
+      "password": "Password123!",
+      "phone": "555-0101",
+      "role": "CUSTOMER",
+      "accountType": "RETAIL",
+      "preferredLanguage": "en",
+      "isActive": true,
+      "addresses": [
+        {
+          "id": "addr-retail-home",
+          "label": "Home",
+          "street": "123 Main Street",
+          "city": "Arlington",
+          "state": "TX",
+          "postalCode": "76010",
+          "country": "United States",
+          "isDefault": true
+        }
+      ]
+    },
+    {
+      "id": "usr-b2b-approved",
+      "firstName": "Jamie",
+      "lastName": "Rivera",
+      "email": "business@solcacao.test",
+      "password": "Password123!",
+      "phone": "555-0201",
+      "role": "BUSINESS",
+      "accountType": "B2B",
+      "preferredLanguage": "en",
+      "isActive": true,
+      "corporatePartner": {
+        "id": "corp-approved",
+        "companyName": "ABC Luxury Hotels",
+        "industry": "Hotel / Hospitality",
+        "businessPhone": "555-0201",
+        "website": "https://example.com",
+        "approvalStatus": "APPROVED",
+        "reviewedAt": "2026-09-02",
+        "rejectionReason": ""
+      },
+      "addresses": []
+    },
+    {
+      "id": "usr-b2b-pending",
+      "firstName": "Morgan",
+      "lastName": "Rivera",
+      "email": "pending@solcacao.test",
+      "password": "Password123!",
+      "phone": "555-0202",
+      "role": "BUSINESS",
+      "accountType": "B2B",
+      "preferredLanguage": "en",
+      "isActive": true,
+      "corporatePartner": {
+        "id": "corp-pending",
+        "companyName": "Gather Events",
+        "industry": "Corporate Events",
+        "businessPhone": "555-0202",
+        "website": "",
+        "approvalStatus": "PENDING",
+        "reviewedAt": null,
+        "rejectionReason": ""
+      },
+      "addresses": []
+    },
+    {
+      "id": "usr-b2b-boutique",
+      "firstName": "Priya",
+      "lastName": "Shah",
+      "email": "boutique@solcacao.test",
+      "password": "Password123!",
+      "phone": "555-0210",
+      "role": "BUSINESS",
+      "accountType": "B2B",
+      "preferredLanguage": "en",
+      "isActive": true,
+      "corporatePartner": {
+        "id": "corp-boutique",
+        "companyName": "Bean & Bloom Boutique",
+        "industry": "Retail / Boutique",
+        "businessPhone": "555-0210",
+        "website": "https://beanbloom.example",
+        "approvalStatus": "PENDING",
+        "reviewedAt": null,
+        "rejectionReason": ""
+      },
+      "addresses": []
+    },
+    {
+      "id": "usr-b2b-cafe",
+      "firstName": "Mateo",
+      "lastName": "Cruz",
+      "email": "cafe@solcacao.test",
+      "password": "Password123!",
+      "phone": "555-0211",
+      "role": "BUSINESS",
+      "accountType": "B2B",
+      "preferredLanguage": "en",
+      "isActive": true,
+      "corporatePartner": {
+        "id": "corp-cafe",
+        "companyName": "Cocoa Table Cafe",
+        "industry": "Restaurant / Cafe",
+        "businessPhone": "555-0211",
+        "website": "",
+        "approvalStatus": "PENDING",
+        "reviewedAt": null,
+        "rejectionReason": ""
+      },
+      "addresses": []
+    },
+    {
+      "id": "usr-b2b-rejected",
+      "firstName": "Taylor",
+      "lastName": "Kim",
+      "email": "rejected@solcacao.test",
+      "password": "Password123!",
+      "phone": "555-0212",
+      "role": "BUSINESS",
+      "accountType": "B2B",
+      "preferredLanguage": "en",
+      "isActive": true,
+      "corporatePartner": {
+        "id": "corp-rejected",
+        "companyName": "Northstar Events",
+        "industry": "Corporate Events",
+        "businessPhone": "555-0212",
+        "website": "https://northstar.example",
+        "approvalStatus": "REJECTED",
+        "reviewedAt": "2026-09-12",
+        "rejectionReason": "Please add business phone verification and company website details."
+      },
+      "addresses": []
+    },
+    {
+      "id": "usr-admin-demo",
+      "firstName": "SolCacao",
+      "lastName": "Admin",
+      "email": "admin@solcacao.test",
+      "password": "Password123!",
+      "phone": "555-0303",
+      "role": "ADMIN",
+      "accountType": "B2B",
+      "preferredLanguage": "en",
+      "isActive": true,
+      "corporatePartner": {
+        "id": "corp-admin",
+        "companyName": "SolCacao Admin",
+        "industry": "Internal",
+        "businessPhone": "555-0303",
+        "website": "",
+        "approvalStatus": "APPROVED",
+        "reviewedAt": "2026-09-02",
+        "rejectionReason": ""
+      },
+      "addresses": []
+    }
+  ],
+  "demoCredentials": [
+    {
+      "label": "Retail Customer",
+      "email": "customer@solcacao.test"
+    },
+    {
+      "label": "Approved B2B",
+      "email": "business@solcacao.test"
+    },
+    {
+      "label": "Pending B2B",
+      "email": "pending@solcacao.test"
+    },
+    {
+      "label": "Rejected B2B",
+      "email": "rejected@solcacao.test"
+    },
+    {
+      "label": "Admin",
+      "email": "admin@solcacao.test"
+    }
+  ]
+}

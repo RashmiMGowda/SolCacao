@@ -1,0 +1,22 @@
+[Unit]
+Description=SolCacao Express API
+After=network-online.target docker.service
+Wants=network-online.target docker.service
+
+[Service]
+User=solcacao
+Group=solcacao
+WorkingDirectory=/opt/solcacao/current/server
+Environment=NODE_ENV=production
+Environment=HOST=127.0.0.1
+Environment=PORT=5000
+Environment=TRUST_LOOPBACK_PROXY=true
+Environment=B2B_DATA_DIR=/opt/solcacao/shared/b2b
+ExecStart=/usr/bin/node src/index.js
+Restart=on-failure
+RestartSec=3
+UMask=0077
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

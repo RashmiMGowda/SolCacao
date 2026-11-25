@@ -1,0 +1,131 @@
+[
+  {
+    "id": "usr-retail-demo",
+    "firstName": "Alex",
+    "lastName": "Morgan",
+    "email": "customer@solcacao.test",
+    "phone": "555-0101",
+    "role": "CUSTOMER",
+    "accountType": "RETAIL",
+    "preferredLanguage": "en",
+    "address": {
+      "id": "addr-retail-home",
+      "label": "Home",
+      "street": "123 Cocoa Lane",
+      "city": "Arlington",
+      "state": "TX",
+      "postalCode": "76010",
+      "country": "United States"
+    }
+  },
+  {
+    "id": "usr-b2b-approved",
+    "firstName": "Jamie",
+    "lastName": "Rivera",
+    "email": "business@solcacao.test",
+    "phone": "555-0202",
+    "role": "BUSINESS",
+    "accountType": "B2B",
+    "preferredLanguage": "en",
+    "corporatePartner": {
+      "id": "corp-approved",
+      "companyName": "Cacao Hospitality Group",
+      "industry": "Hotel / Hospitality",
+      "businessPhone": "555-0202",
+      "website": "https://cacaohospitality.example",
+      "approvalStatus": "APPROVED",
+      "reviewedAt": "2026-09-02 09:00:00",
+      "rejectionReason": ""
+    }
+  },
+  {
+    "id": "usr-b2b-pending",
+    "firstName": "Morgan",
+    "lastName": "Rivera",
+    "email": "pending@solcacao.test",
+    "phone": "555-0203",
+    "role": "BUSINESS",
+    "accountType": "B2B",
+    "preferredLanguage": "en",
+    "corporatePartner": {
+      "id": "corp-pending",
+      "companyName": "Gather Events",
+      "industry": "Corporate Events",
+      "businessPhone": "555-0203",
+      "website": "",
+      "approvalStatus": "PENDING",
+      "reviewedAt": null,
+      "rejectionReason": ""
+    }
+  },
+  {
+    "id": "usr-b2b-boutique",
+    "firstName": "Priya",
+    "lastName": "Shah",
+    "email": "boutique@solcacao.test",
+    "phone": "555-0210",
+    "role": "BUSINESS",
+    "accountType": "B2B",
+    "preferredLanguage": "en",
+    "corporatePartner": {
+      "id": "corp-boutique",
+      "companyName": "Bean & Bloom Boutique",
+      "industry": "Retail / Boutique",
+      "businessPhone": "555-0210",
+      "website": "https://beanbloom.example",
+      "approvalStatus": "PENDING",
+      "reviewedAt": null,
+      "rejectionReason": ""
+    }
+  },
+  {
+    "id": "usr-b2b-cafe",
+    "firstName": "Mateo",
+    "lastName": "Cruz",
+    "email": "cafe@solcacao.test",
+    "phone": "555-0211",
+    "role": "BUSINESS",
+    "accountType": "B2B",
+    "preferredLanguage": "en",
+    "corporatePartner": {
+      "id": "corp-cafe",
+      "companyName": "Cocoa Table Cafe",
+      "industry": "Restaurant / Cafe",
+      "businessPhone": "555-0211",
+      "website": "",
+      "approvalStatus": "PENDING",
+      "reviewedAt": null,
+      "rejectionReason": ""
+    }
+  },
+  {
+    "id": "usr-b2b-rejected",
+    "firstName": "Taylor",
+    "lastName": "Kim",
+    "email": "rejected@solcacao.test",
+    "phone": "555-0212",
+    "role": "BUSINESS",
+    "accountType": "B2B",
+    "preferredLanguage": "en",
+    "corporatePartner": {
+      "id": "corp-rejected",
+      "companyName": "Northstar Events",
+      "industry": "Corporate Events",
+      "businessPhone": "555-0212",
+      "website": "https://northstar.example",
+      "approvalStatus": "REJECTED",
+      "reviewedAt": "2026-09-12 14:30:00",
+      "rejectionReason": "Please add business phone verification and company website details."
+    }
+  },
+  {
+    "id": "usr-admin-demo",
+    "firstName": "SolCacao",
+    "lastName": "Admin",
+    "email": "admin@solcacao.test",
+    "phone": "555-0303",
+    "role": "ADMIN",
+    "accountType": "B2B",
+    "preferredLanguage": "en"
+  }
+]
